@@ -3,7 +3,7 @@ const { pick } = require('../../utils'),
 
 module.exports = function (locals) {
   let lang = hexo.config.language,
-    posts = locals.posts.sort('date', -1).filter(post => post.published).map(post => pick(post, archiveProps));
+    posts = locals.posts.sort('-date').filter(post => post.published).map(post => pick(post, archiveProps));
 
   if (!posts.length) return [];
 

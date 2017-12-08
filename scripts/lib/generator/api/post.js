@@ -4,7 +4,7 @@ const postProps = ['title', 'slug', 'author', 'date', 'updated', 'comments', 'ex
   postPageProps = ['title', 'slug', 'author', 'date', 'updated', 'comments', 'excerpt', 'thumbnail', 'tags'];
 
 module.exports = function (locals) {
-  let postList = locals.posts.sort('date', -1).filter(post => post.published).map(post => pick(post, postPageProps)),
+  let postList = locals.posts.sort('-date').filter(post => post.published).map(post => pick(post, postPageProps)),
     len = postList.length,
     pageSize = 4,
     pageCount = Math.ceil(len / pageSize),

@@ -6,7 +6,8 @@ html
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     meta(name='theme-color', content='#36534e')
     base(href='/')
-    title= config.title
+    title= title(page)
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
     | !{load_css('styles')}
 body
   app

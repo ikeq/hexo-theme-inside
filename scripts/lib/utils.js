@@ -7,7 +7,7 @@ const fs = require('fs'),
  * page => folder/subfolder/title
  *
  * @param   {Page}    page
- * @param   {boolean} noIndex not align to index
+ * @param   {boolean} noIndex dont't align to index
  * @returns {string}
  */
 exports.classifyPage = function (page, noIndex) {
@@ -47,6 +47,7 @@ exports.pick = function (obj, keys) {
   }
   if (newObj.prev) newObj.prev = { title: newObj.prev.title, slug: newObj.prev.slug };
   if (newObj.next) newObj.next = { title: newObj.next.title, slug: newObj.next.slug };
+  if (newObj.thumbnail) newObj.thumbnail = exports.qiniu(newObj.thumbnail)
 
   return newObj;
 }

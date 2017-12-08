@@ -1,0 +1,21 @@
+{
+  "name": "hexo-theme-inside",
+  "version": "0.1.0",
+  "description": "Clean and one page theme for Hexo.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmorec/hexo-theme-inside.git"
+  },
+  "keywords": [
+    "hexo theme",
+    "hexo",
+    "blog",
+    "angular4"
+  ],
+  "author": "Elmore Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elmorec/hexo-theme-inside/issues"
+  },
+  "homepage": "https://github.com/elmorec/hexo-theme-inside#readme"
+}

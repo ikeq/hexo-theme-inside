@@ -1,29 +1,35 @@
 const utils = require('../utils');
 
 module.exports = function (locals) {
-  let result = [],
-    postNameList = locals.posts.sort('-date')/*.filter(post => post.published)*/.map(post => post.slug);
+  let posts = locals.posts.sort('-date').toArray(),
+    pages = locals.pages
+    customs = [];
 
-  postNameList.forEach((post) => {
-    result.push({
-      path: `/post/${post}/index.html`,
-      layout: 'index',
-      data: {}
-    });
-  })
-  locals.pages.forEach((page) => {
-    result.push({
-      path: utils.classifyPage(page) + '.html',
-      layout: 'index',
-      data: {}
-    });
-  })
+  posts = posts.map((post) => {
+    post.__post = true;
 
-  result.push({
-    path: '/search/index.html',
-    layout: 'index',
-    data: {}
+    return {
+      path: `/post/${post.slug}/index.html`,
+      layout: 'index',
+      data: post
+    };
   });
 
-  return result;
+  pages = pages.map((page) => {
+    page.__page = true;
+
+    return {
+      path: utils.classifyPage(page) + '.html',
+      layout: 'index',
+      data: page
+    };
+  })
+
+  // customs.push({
+  //   path: '/search/index.html',
+  //   layout: 'index',
+  //   data: {}
+  // });
+
+  return [...posts, ...pages, ...customs];
 }
