@@ -7,7 +7,7 @@ module.exports = function (page) {
   else if (page.tag)
     title = 'Tag: ' + page.tag;
 
-  title = title ? title + ' - ' + hexo.config.title : hexo.config.title;
+  title = title ? title + ' - ' + this.config.title : this.config.title;
 
   return title;
 }

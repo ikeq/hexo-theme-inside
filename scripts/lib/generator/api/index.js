@@ -6,10 +6,10 @@ let tags = require('./tag'),
 
 module.exports = function (locals) {
   return [
-    ...tags(locals),
-    ...config(locals),
-    ...page(locals),
-    ...post(locals),
-    ...archives(locals),
+    ...tags.call(this, locals),
+    ...config.call(this, locals),
+    ...page.call(this, locals),
+    ...post.call(this, locals),
+    ...archives.call(this, locals),
   ];
 };

@@ -20,21 +20,22 @@ exports.classifyPage = function (page, noIndex) {
 }
 
 exports.getFiles = function (ext, names) {
-  let typedFiles = getFilesMap(ext);
+  let hexo = this,
+    typedFiles = getFilesMap(ext);
 
   return names.map(name => typedFiles[name]).filter(i => i);
-}
 
-function getFilesMap(ext) {
-  let files = fs.readdirSync(path.join(hexo.theme_dir, 'source')).filter(name => name.match(new RegExp(`\.${ext}$`))),
-    len = files.length,
-    map = {};
+  function getFilesMap(ext) {
+    let files = fs.readdirSync(path.join(hexo.theme_dir, 'source')).filter(name => name.match(new RegExp(`\.${ext}$`))),
+      len = files.length,
+      map = {};
 
-  files.forEach(file => {
-    // simple but enough here
-    map[file.split('.')[0]] = file
-  })
-  return map;
+    files.forEach(file => {
+      // simple but enough here
+      map[file.split('.')[0]] = file
+    })
+    return map;
+  }
 }
 
 // simply convert hexo circular structure to regular

@@ -5,8 +5,8 @@ module.exports = function (locals) {
   return [{
     path: 'api/config.json',
     data: JSON.stringify({
-      site: pick(hexo.config, siteConfigProps),
-      theme: hexo.theme.config
+      site: pick(this.config, siteConfigProps),
+      theme: this.theme.config
     })
   }]
 };

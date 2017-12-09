@@ -2,8 +2,7 @@ const { pick } = require('../../utils'),
   archiveProps = ['title', 'date', 'updated', 'slug', 'tags', 'author'];
 
 module.exports = function (locals) {
-  let lang = hexo.config.language,
-    posts = locals.posts.sort('-date').filter(post => post.published).map(post => pick(post, archiveProps));
+  let posts = locals.posts.sort('-date').filter(post => post.published).map(post => pick(post, archiveProps));
 
   if (!posts.length) return [];
 
