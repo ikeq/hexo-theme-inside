@@ -35,10 +35,10 @@ page:
   - page1:
     - page1-1
   - page2:
-    - page1-1:
-      - page1-1-1
-      - page1-1-2
-    - page1-2
+    - page2-1:
+      - page2-1-1
+      - page2-1-2
+    - page2-2
 
 profile:
   email: example@mail.com
