@@ -41,6 +41,7 @@ page:
     - page2-2
 
 profile:
+  # also used as you gravatar
   email: example@mail.com
   bio: Awesome guy.
 
