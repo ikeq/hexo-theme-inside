@@ -8,7 +8,7 @@ menu:
   # page2: /page2
 
 # routes
-page:
+# page:
   # - about
   # - links
   # multi-level route example
