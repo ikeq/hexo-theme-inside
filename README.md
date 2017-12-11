@@ -22,26 +22,25 @@ then place it in your hexo theme folder, and change `theme` to `inside` at your 
 menu:
   home: /
   archives: /archives
-  about: /about
+  # about: /about
   # links: /links
   # page1: /page1
   # page2: /page2
 
-# page routes
-page:
-  - about
-  - links
+# routes
+# page:
+  # - about
+  # - links
   # multi-level route example
-  - page1:
-    - page1-1
-  - page2:
-    - page2-1:
-      - page2-1-1
-      - page2-1-2
-    - page2-2
+  # - page1:
+  #   - page1-1
+  # - page2:
+  #   - page2-1:
+  #     - page2-1-1
+  #     - page2-1-2
+  #   - page2-2
 
 profile:
-  # also used as you gravatar
   email: example@mail.com
   bio: Awesome guy.
 
@@ -54,4 +53,5 @@ sns:
 
 # copyright info at site footer
 copyright: ©2017
+
 ```

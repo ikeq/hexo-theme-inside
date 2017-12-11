@@ -1,5 +1,9 @@
-const { getFiles } = require('../utils');
+const { getAssetsName } = require('../utils'),
+  path = require('path');
 
 module.exports = function (...args) {
-  return getFiles.apply(this, ['css', args]).map(i => `<link href="${i}" rel="stylesheet">`).join('');
+  let hexo = this;
+
+  return getAssetsName(path.join(hexo.theme_dir, 'source'), 'css', args)
+    .map(i => `<link href="${i}" rel="stylesheet">`).join('');
 }

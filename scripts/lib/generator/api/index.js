@@ -5,11 +5,13 @@ let tags = require('./tag'),
   post = require('./post');
 
 module.exports = function (locals) {
+  let hexo = this;
+
   return [
-    ...tags.call(this, locals),
-    ...config.call(this, locals),
-    ...page.call(this, locals),
-    ...post.call(this, locals),
-    ...archives.call(this, locals),
+    ...tags.call(hexo, locals),
+    ...config.call(hexo, locals),
+    ...page.call(hexo, locals),
+    ...post.call(hexo, locals),
+    ...archives.call(hexo, locals),
   ];
 };
