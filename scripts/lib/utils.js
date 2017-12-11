@@ -7,7 +7,7 @@ const fs = require('fs'),
  * page => folder/subfolder/title
  *
  * @param   {Page}    page
- * @param   {boolean} noIndex dont't align to index
+ * @param   {boolean} noIndex set to true will not align to index
  * @returns {string}
  */
 exports.classifyPage = function (page, noIndex) {
@@ -19,23 +19,26 @@ exports.classifyPage = function (page, noIndex) {
   return arr.concat(noIndex ? [] : `index`).join('/')
 }
 
-exports.getFiles = function (ext, names) {
+/**
+ * get file name without hash suffixed
+ *
+ * @param {string} dir
+ * @param {string} ext
+ * @param {string[]} names
+ * @returns {string[]}
+ */
+exports.getAssetsName = function (dir, ext, names) {
   let hexo = this,
-    typedFiles = getFilesMap(ext);
+    filenames = fs.readdirSync(dir),
+    out = [];
 
-  return names.map(name => typedFiles[name]).filter(i => i);
-
-  function getFilesMap(ext) {
-    let files = fs.readdirSync(path.join(hexo.theme_dir, 'source')).filter(name => name.match(new RegExp(`\.${ext}$`))),
-      len = files.length,
-      map = {};
-
-    files.forEach(file => {
-      // simple but enough here
-      map[file.split('.')[0]] = file
+  names.forEach(name => {
+    filenames.forEach(filename => {
+      new RegExp(`^${name}\..*\.${ext}$`).test(filename) && out.push(filename);
     })
-    return map;
-  }
+  });
+
+  return out;
 }
 
 // simply convert hexo circular structure to regular

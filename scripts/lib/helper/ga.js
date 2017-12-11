@@ -1,5 +1,7 @@
 module.exports = function () {
-  let id = this.config.ga;
+  let hexo = this,
+    id = hexo.config.ga;
+
   return id ? `
   <script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
   <script>
