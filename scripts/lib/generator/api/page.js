@@ -2,6 +2,7 @@ let { classifyPage, pick } = require('../../utils');
 
 module.exports = function (locals) {
   let hexo = this,
+    siteUrl = hexo.config.url.replace(/\/*$/, '') + '/',
     pages = locals.pages,
     pageProps = ['title', 'url', 'date', 'updated', 'comments', 'content', 'thumbnail', 'toc'];
 
@@ -9,7 +10,7 @@ module.exports = function (locals) {
     let slug = classifyPage(page, true);
 
     // set url
-    page.url = hexo.config.url.replace(/\/*$/, '') + '/' + slug;
+    page.url = siteUrl + slug;
 
     return {
       path: `api/page/${slug}.json`,
