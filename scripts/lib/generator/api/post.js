@@ -1,28 +1,36 @@
 let { pick } = require('../../utils');
 
-const postProps = ['title', 'slug', 'author', 'date', 'updated', 'comments', 'excerpt', 'content', 'thumbnail', 'tags', 'prev', 'next'],
-  postPageProps = ['title', 'slug', 'author', 'date', 'updated', 'comments', 'excerpt', 'thumbnail', 'tags'];
+const postProps = ['title', 'slug', 'url', 'author', 'date', 'updated', 'comments', 'excerpt', 'content', 'thumbnail', 'tags', 'prev', 'next'],
+  postListProps = ['title', 'slug', 'url', 'author', 'date', 'updated', 'comments', 'excerpt', 'thumbnail', 'tags'];
 
 module.exports = function (locals) {
-  let postList = locals.posts.sort('-date').filter(post => post.published).map(post => pick(post, postPageProps)),
-    len = postList.length,
+  let hexo = this,
+    siteUrl = hexo.config.url.replace(/\/*$/, '') + '/',
+    posts = locals.posts.sort('-date').map(post => {
+      // set url
+      post.url = siteUrl + post.slug;
+
+      return post;
+    }),
+    publishedPostList = posts.filter(post => post.published).map(post => pick(post, postListProps)),
+    publishedPostListLen = publishedPostList.length,
     pageSize = 4,
-    pageCount = Math.ceil(len / pageSize),
+    pageCount = Math.ceil(publishedPostListLen / pageSize),
     pagePosts = '.'.repeat(pageCount).split('').map((a, i) => {
       return {
         path: `api/posts/${i + 1}.json`,
         data: JSON.stringify({
-          total: len,
+          total: publishedPostListLen,
           pageSize: pageSize,
           pageCount: pageCount,
           current: i + 1,
-          data: postList.slice(i * pageSize, (i + 1) * pageSize)
+          data: publishedPostList.slice(i * pageSize, (i + 1) * pageSize)
         })
       }
     });
 
   return [
-    ...locals.posts.map(post => {
+    ...posts.map(post => {
       return {
         path: `api/articles/${post.slug}.json`,
         data: JSON.stringify(pick(post, postProps))
