@@ -54,4 +54,12 @@ sns:
 # copyright info at site footer
 copyright: ©2017
 
+# disqus
+disqus:
+  shortname: your_disqus_shortname
+  # set to true to auto load disqus, otherwise will display a button
+  autoload: true
 ```
+
+## Changelog
+- 0.1.5 support disqus
