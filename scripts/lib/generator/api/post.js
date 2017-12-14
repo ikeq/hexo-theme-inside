@@ -4,8 +4,7 @@ const postProps = ['title', 'slug', 'url', 'author', 'date', 'updated', 'comment
   postListProps = ['title', 'slug', 'url', 'author', 'date', 'updated', 'comments', 'excerpt', 'thumbnail', 'tags'];
 
 module.exports = function (locals) {
-  let hexo = this,
-    siteUrl = hexo.config.url.replace(/\/*$/, '') + '/',
+  let siteUrl = this.config.url.replace(/\/*$/, '') + '/',
     posts = locals.posts.sort('-date').map(post => {
       // set url
       post.url = siteUrl + post.slug;
@@ -14,7 +13,7 @@ module.exports = function (locals) {
     }),
     publishedPostList = posts.filter(post => post.published).map(post => pick(post, postListProps)),
     publishedPostListLen = publishedPostList.length,
-    pageSize = 4,
+    pageSize = this.config.per_page || 5,
     pageCount = Math.ceil(publishedPostListLen / pageSize),
     pagePosts = '.'.repeat(pageCount).split('').map((a, i) => {
       return {

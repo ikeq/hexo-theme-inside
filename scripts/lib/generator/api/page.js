@@ -1,8 +1,7 @@
 let { classifyPage, pick } = require('../../utils');
 
 module.exports = function (locals) {
-  let hexo = this,
-    siteUrl = hexo.config.url.replace(/\/*$/, '') + '/',
+  let siteUrl = this.config.url.replace(/\/*$/, '') + '/',
     pages = locals.pages,
     pageProps = ['title', 'url', 'date', 'updated', 'comments', 'content', 'thumbnail', 'toc'];
 
