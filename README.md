@@ -59,7 +59,15 @@ disqus:
   shortname: your_disqus_shortname
   # set to true to auto load disqus, otherwise will display a button
   autoload: true
+
+# prefix/suffix post assets with assets filter automaticly
+# for example, `![cat](images/cat.gif)` will convert to
+# `![cat](https://cdn.example.com/images/cat.gif?m=webp&q=80)`
+assets:
+  prefix: 'https://cdn.example.com'
+  suffix: '?m=webp&q=80'
 ```
 
 ## Changelog
 - 0.1.5 support disqus
+- 0.1.6 prefix/suffix post assets with assets filter automaticly
