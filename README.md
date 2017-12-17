@@ -63,3 +63,4 @@ disqus:
 
 ## Changelog
 - 0.1.5 support disqus
+- 0.1.6 prefix/suffix post assets with assets filter automaticly
