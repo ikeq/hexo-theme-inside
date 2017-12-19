@@ -60,7 +60,7 @@ disqus:
   # set to true to auto load disqus, otherwise will display a button
   autoload: true
 
-# prefix/suffix post assets with assets filter automaticly
+# prefix/suffix post assets with assets filter
 # for example, `![cat](images/cat.gif)` will convert to
 # `![cat](https://cdn.example.com/images/cat.gif?m=webp&q=80)`
 assets:
@@ -70,4 +70,5 @@ assets:
 
 ## Changelog
 - 0.1.5 support disqus
-- 0.1.6 prefix/suffix post assets with assets filter automaticly
+- 0.1.6 prefix/suffix post assets with assets filter
+- 0.1.7 amend style & fix table style
