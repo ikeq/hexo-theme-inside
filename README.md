@@ -73,3 +73,4 @@ assets:
 - 0.1.6 prefix/suffix post assets with assets filter
 - 0.1.7 amend style & fix table style
 - 0.1.8 redesign post header
+- 0.1.9 hash based cache control
