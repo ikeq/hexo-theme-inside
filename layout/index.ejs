@@ -1,13 +1,20 @@
 <html>
   <head>
-    <meta http-equiv='content-type', content='text/html; charset=utf-8'>
-    <meta name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'>
-    <meta name='apple-mobile-web-app-title', content='<%= config.author %>'>
-    <meta name='apple-mobile-web-app-status-bar-style', content='black'>
-    <meta name='theme-color', content='#36534e'>
-    <base href='/'>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="google" value="notranslate">
+    <meta name="apple-mobile-web-app-title" content="<%= config.author %>">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#36534e">
+    <base href="/">
     <title><%= title(page) %></title>
-    <link rel='shortcut icon', href='/favicon.ico', type='image/x-icon'>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <% if (config.feed && config.feed.path) { %>
+    <link rel="alternate" type="application/rss+xml" title="<%= title(page) %>" href="<%= config.feed.path %>">
+    <% } %>
     <%- load_css('styles') %>
   </head>
 <body>
