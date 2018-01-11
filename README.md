@@ -2,16 +2,8 @@
 
 ## Install
 
-Download via `git`
-
 ```bash
 git clone https://github.com/elmorec/hexo-theme-inside.git inside
-```
-
-Or via `npm`
-
-```bash
-npm install hexo-theme-inside
 ```
 
 then place it in your hexo theme folder, and change `theme` to `inside` at your `_config.yaml` file.
