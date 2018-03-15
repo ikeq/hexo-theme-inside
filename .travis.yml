@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "6"
+
+before_install:
+  - git clone https://github.com/elmorec/hexo-starter.git test
+  - git clone https://github.com/elmorec/hexo-theme-inside.git test/themes/inside
+  - cd test
