@@ -8,7 +8,7 @@ menu:
 
 # Routes for custom pages
 page:
-  - about?
+  - about
   # Multi-level route example
   # - awesome-stuff:
   #   - chapter-1
@@ -16,7 +16,8 @@ page:
 
 # Profile
 profile:
-  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar.
+  avatar: /avatar.jpg
+  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
   email: example@mail.com
   bio: Awesome guy.
 

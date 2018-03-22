@@ -65,6 +65,20 @@ Other built-in routes are as follows:
 - categories: [/categories]()
 - 404: [/404]()
 
+### Multiple languages
+- :cn: Simplified Chinese & Traditional Chinese
+- :us: English
+- :jp: Japanese
+
+Support 3 languages for now, default language is English.
+
+```yml
+language: en
+# language: zh-Hans
+# language: zh-Hant
+# language: ja
+```
+
 ### Disqus comments.
 
 ```yaml
@@ -146,19 +160,23 @@ dropcap: true
 
 ## Configuration
 
+### Site's `_config.yml`
+
 For best experience, make sure the following default generators have been **removed** from site's `package.json`.
 
 - [hexo-generator-archive]
 - [hexo-generator-category]
 - [hexo-generator-tag]
 
-It's recommended to configure the site's `_config.yml` as follows.
+And configure the site's `_config.yml` as follows.
 
 ```yaml
 permalink: post/:title/index.html
 default_layout: index
 pagination_dir: page
 ```
+
+### Theme's `_config.yml`
 
 Full configuration of theme's `_config.yml` can be found [here](_config.yml).
 

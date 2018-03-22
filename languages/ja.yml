@@ -1,0 +1,12 @@
+menu:
+  home: ホーム
+  archives: アーカイブ
+  categories: カテゴリ
+  tags: タグ
+  about: About
+
+title:
+  archive: アーカイブ
+  category: カテゴリ
+  tag: タグ
+  about: About

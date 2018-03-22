@@ -1,0 +1,12 @@
+menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+
+title:
+  archive: Archive
+  category: Category
+  tag: Tag
+  about: About

@@ -9,17 +9,18 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="<%= theme.color || '#111' %>">
     <base href="<%= config.root %>">
-    <title><%= title(page) %></title>
+    <title><%= title(page, __) %></title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
-    <% if (config.feed && config.feed.path) { %>
-    <link rel="alternate" type="application/rss+xml" title="<%= title(page) %>" href="<%= config.feed.path %>">
-    <% } %>
-    <%- load_css('styles') %>
+    <% if (config.feed && config.feed.path) {
+    %><link rel="alternate" type="application/rss+xml" title="<%= title(page) %>" href="<%= config.feed.path %>">
+    <% }
+    %><%- load_css() %>
+    <script src="<%= configScript %>"></script>
   </head>
 <body>
   <is-root></is-root>
-  <%- load_js('inline', 'polyfills', 'vendor', 'main') %>
+  <%- load_js() %>
   <%- ga() %>
 </body>
 </html>
