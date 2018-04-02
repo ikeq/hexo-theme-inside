@@ -1,6 +1,7 @@
 # Inside
 
 [![build-img]][root]
+[![release-img]][release]
 [![license-img]](LICENSE)
 
 A flat and clean theme for [Hexo] ❤️.
@@ -191,8 +192,10 @@ Full configuration of theme's `_config.yml` can be found [here](_config.yml).
 [hexo-renderer-marked]: https://github.com/hexojs/hexo-renderer-marked
 
 [root]: https://github.com/elmorec/hexo-theme-inside
+[release]: https://github.com/elmorec/hexo-theme-inside/releases
 [build-img]: https://travis-ci.org/elmorec/hexo-theme-inside.svg?branch=master
-[license-img]: https://img.shields.io/dub/l/vibe-d.svg
+[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg
+[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg
 [hexo]: https://hexo.io/
 [meta-theme-color-img]: https://developers.google.com/web/updates/images/2014/11/theme-color-ss.png
 [meta-theme-color-img-origin]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
