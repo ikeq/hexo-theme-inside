@@ -5,19 +5,22 @@
 <base href="<%= config.root %>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<meta name="theme-color" content="<%= theme.color || '#2A2B33' %>">
+<% if (theme.manifest !== undefined) {
+%><link rel="manifest" href="manifest.json">
+<% }
+%><meta name="theme-color" content="#2a2b33">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-<link rel="apple-touch-icon" href="/favicon.ico">
+<%- open_graph({ image: page.thumbnail }) %>
 <% if (config.feed && config.feed.path) {
 %><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= config.feed.path %>">
 <% }
 %><%- load_css() %>
+<%- ga() %>
 <script src="<%= configScript %>"></script>
 </head>
 <body>
 <is-root></is-root>
 <%- load_js() %>
-<%- ga() %>
 </body>
 </html>

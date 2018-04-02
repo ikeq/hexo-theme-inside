@@ -42,8 +42,20 @@ assets:
   prefix: 'https://cdn.example.com'
   suffix: '?m=webp&q=80'
 
-# Meta Theme Color
-# color: '#111'
+# Web App Manifest
+manifest:
+  # short_name:
+  # name:
+  # start_url: /
+  # theme_color: '#2a2b33'
+  # background_color: '#2a2b33'
+  # icons:
+  #   - src: icon-194x194.png
+  #     sizes: 194x194 512x512
+  #     type: image/png
+  #   - src: icon-144x144.png
+  #     sizes: 144x144
+  #     type: image/png
 
 ### Pagination size
 # The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.

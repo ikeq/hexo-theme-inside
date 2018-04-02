@@ -73,6 +73,7 @@ Other built-in routes are as follows:
 
 Support 3 languages for now, default language is English.
 
+Change `language` at site's `_config.yml` to take effects.
 ```yml
 language: en
 # language: zh-Hans
@@ -80,7 +81,7 @@ language: en
 # language: ja
 ```
 
-### Disqus comments.
+### Disqus comments
 
 ```yaml
 disqus:
@@ -99,7 +100,7 @@ sns:
   weibo: your-weibo-url
 ```
 
-### Feed.
+### Feed
 
 1. Install [hexo-generator-feed]:
    ```bash
@@ -127,18 +128,40 @@ ga: UA-00000000-0
 ```
 
 
+### Web App Manifest
+
+> The web app manifest is a simple JSON file that gives you, the developer, the ability to control how your app appears to the user in the areas that they would expect to see apps (for example the mobile home screen), direct what the user can launch and more importantly how they can launch it. See [here][manifest] for more information.
+
+```yaml
+manifest:
+  short_name:
+  name:
+  start_url: /
+  theme_color: '#2a2b33'
+  background_color: '#2a2b33'
+  icons:
+    - src: icon-194x194.png
+      sizes: 194x194 512x512
+      type: image/png
+    - src: icon-144x144.png
+      sizes: 144x144
+      type: image/png
+```
+
 ### Meta Theme Color
 
-> To specify the theme color for Chrome on Android, use the [meta theme color][meta-theme-color].
+> To specify the theme color for Chrome on Android, use the meta theme color.
 
-Inside changes the meta theme color automatically by extracts the color from the thumbnail of each post.
+See [here][meta-theme-color] for more information.
 
-[![meta-theme-color-img]][meta-theme-color-img-origin]
+Inside changes the meta theme color dynamicly by automatically extracting the color from the thumbnail of each post.
 
 Note this only works for **Chrome on Android**.
 
-## Enhanced front matter
-Inside extended the default front matter of your post with the following properties:
+### Sitemap
+
+### Enhanced front matter
+Inside extended the default front matter of your posts with the following properties:
 - `author` author of the post, optional
 - `thumbnail` picture which shows on your post header
 - `dropcap` capitalizes the first character, optional
@@ -182,7 +205,13 @@ pagination_dir: page
 Full configuration of theme's `_config.yml` can be found [here](_config.yml).
 
 
-[meta-theme-color]: https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#meta_theme_color_for_chrome_and_opera
+[root]: https://github.com/elmorec/hexo-theme-inside
+[release]: https://github.com/elmorec/hexo-theme-inside/releases
+[build-img]: https://travis-ci.org/elmorec/hexo-theme-inside.svg?branch=master
+[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg
+[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg
+
+[hexo]: https://hexo.io/
 [hexo-generator-archive]: https://github.com/hexojs/hexo-generator-archive
 [hexo-generator-category]: https://github.com/hexojs/hexo-generator-category
 [hexo-generator-index]: https://github.com/hexojs/hexo-generator-index
@@ -191,11 +220,5 @@ Full configuration of theme's `_config.yml` can be found [here](_config.yml).
 [hexo-renderer-ejs]: https://github.com/hexojs/hexo-renderer-ejs
 [hexo-renderer-marked]: https://github.com/hexojs/hexo-renderer-marked
 
-[root]: https://github.com/elmorec/hexo-theme-inside
-[release]: https://github.com/elmorec/hexo-theme-inside/releases
-[build-img]: https://travis-ci.org/elmorec/hexo-theme-inside.svg?branch=master
-[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg
-[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg
-[hexo]: https://hexo.io/
-[meta-theme-color-img]: https://developers.google.com/web/updates/images/2014/11/theme-color-ss.png
-[meta-theme-color-img-origin]: https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+[manifest]: https://www.w3.org/TR/appmanifest/
+[meta-theme-color]: https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#meta_theme_color_for_chrome_and_opera
