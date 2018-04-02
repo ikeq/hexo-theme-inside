@@ -1,26 +1,23 @@
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="google" value="notranslate">
-    <meta name="apple-mobile-web-app-title" content="<%= config.author %>">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="<%= theme.color || '#111' %>">
-    <base href="<%= config.root %>">
-    <title><%= title(page, __) %></title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/favicon.ico">
-    <% if (config.feed && config.feed.path) {
-    %><link rel="alternate" type="application/rss+xml" title="<%= title(page) %>" href="<%= config.feed.path %>">
-    <% }
-    %><%- load_css() %>
-    <script src="<%= configScript %>"></script>
-  </head>
+<head>
+<meta charset="utf-8">
+<title><%= title %></title>
+<base href="<%= config.root %>">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="theme-color" content="<%= theme.color || '#2A2B33' %>">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<link rel="apple-touch-icon" href="/favicon.ico">
+<% if (config.feed && config.feed.path) {
+%><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= config.feed.path %>">
+<% }
+%><%- load_css() %>
+<script src="<%= configScript %>"></script>
+</head>
 <body>
-  <is-root></is-root>
-  <%- load_js() %>
-  <%- ga() %>
+<is-root></is-root>
+<%- load_js() %>
+<%- ga() %>
 </body>
 </html>
