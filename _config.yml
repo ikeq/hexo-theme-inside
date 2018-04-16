@@ -1,14 +1,11 @@
 # Sidebar menu
 menu:
   home: /
-  archives: /archives
-  categories: /categories
-  tags: /tags
   # about: /about
 
 # Routes for custom pages
 page:
-  - about
+  # - about
   # Multi-level route example
   # - awesome-stuff:
   #   - chapter-1
@@ -39,8 +36,8 @@ copyright: ©2018
 
 # Assets path
 assets:
-  prefix: 'https://cdn.example.com'
-  suffix: '?m=webp&q=80'
+  # prefix: 'https://cdn.example.com'
+  # suffix: '?m=webp&q=80'
 
 # Web App Manifest
 manifest:
