@@ -163,7 +163,7 @@ Note this only works for **Chrome on Android**.
 ### Enhanced front matter
 Inside extended the default front matter of your posts with the following properties:
 - `author` author of the post, optional
-- `thumbnail` picture which shows on your post header
+- `thumbnail` picture which shows on your post header, optional
 - `dropcap` capitalizes the first character, optional
 
 For example:
