@@ -49,24 +49,27 @@ HEXO
 ```
 
 And urls will be:
-- [/about]()
-- [/links]()
-- [/awesome-stuff]()
-- [/awesome-stuff/chapter-1]()
-- [/awesome-stuff/chapter-2]()
-- [/amazing-stuff]()
-- [/awesome-stuff/chapter-1]()
-- [/awesome-stuff/chapter-1/part-1]()
-- [/awesome-stuff/chapter-1/part-2]()
+
+- [/about]('')
+- [/links]('')
+- [/awesome-stuff]('')
+- [/awesome-stuff/chapter-1]('')
+- [/awesome-stuff/chapter-2]('')
+- [/amazing-stuff]('')
+- [/awesome-stuff/chapter-1]('')
+- [/awesome-stuff/chapter-1/part-1]('')
+- [/awesome-stuff/chapter-1/part-2]('')
 
 Other built-in routes are as follows:
-- home: [/]()
-- archives: [/archives]()
-- tags: [/tags]()
-- categories: [/categories]()
-- 404: [/404]()
+
+- home: [/]('')
+- archives: [/archives]('')
+- tags: [/tags]('')
+- categories: [/categories]('')
+- 404: [/404]('')
 
 ### Multiple languages
+
 - :cn: Simplified Chinese & Traditional Chinese
 - :us: English
 - :jp: Japanese
@@ -74,6 +77,7 @@ Other built-in routes are as follows:
 Support 3 languages for now, default language is English.
 
 Change `language` at site's `_config.yml` to take effects.
+
 ```yml
 language: en
 # language: zh-Hans
@@ -92,6 +96,7 @@ disqus:
 Set `autoload` to `true` to auto load disqus, otherwise will display a button.
 
 ### Social Media
+
 ```yaml
 sns:
   github: your-github-url
@@ -103,30 +108,35 @@ sns:
 ### Feed
 
 1. Install [hexo-generator-feed]:
+
    ```bash
    npm install hexo-generator-feed --save
    ```
+
 2. Config site's `_config.yml` as follows:
+
    ```yaml
    feed:
      path: atom.xml
    ```
 
 ### Assets path
+
 Prefix/Suffix post assets path with assets filter. Useful for resource cdn.
+
 ```yaml
 assets:
   prefix: 'https://cdn.example.com'
   suffix: '?m=webp&q=80'
 ```
+
 For example, `![cat](images/cat.gif)` will convert to `![cat](https://cdn.example.com/images/cat.gif?m=webp&q=80)`
 
-
 ### Google Analytics
+
 ```yaml
 ga: UA-00000000-0
 ```
-
 
 ### Web App Manifest
 
@@ -161,13 +171,16 @@ Note this only works for **Chrome on Android**.
 ### Sitemap
 
 ### Enhanced front matter
+
 Inside extended the default front matter of your posts with the following properties:
+
 - `author` author of the post, optional
 - `thumbnail` picture which shows on your post header, optional
 - `dropcap` capitalizes the first character, optional
 
 For example:
-```
+
+```markdown
 ---
 title: You've got to find what you love
 date: 2005-06-15
@@ -180,7 +193,6 @@ thumbnail: images/people/jobs.jpg
 dropcap: true
 ---
 ```
-
 
 ## Configuration
 
@@ -203,7 +215,6 @@ pagination_dir: page
 ### Theme's `_config.yml`
 
 Full configuration of theme's `_config.yml` can be found [here](_config.yml).
-
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases
