@@ -2,10 +2,12 @@
 menu:
   home: /
   # about: /about
+  # links: /links
 
 # Routes for custom pages
 page:
   # - about
+  # - links
   # Multi-level route example
   # - awesome-stuff:
   #   - chapter-1
@@ -25,8 +27,17 @@ sns:
   gplus: https://plus.google.com/u/0/xxx
   weibo: http://weibo.com/yourname
 
-# Copyright
-copyright: ©2018
+footer:
+  # If not defined, will display current year and author, eg: ©2018 • Superman
+  copyright:
+
+  # Set `powered` to false to hide Hexo link.
+  powered: true
+  # Set `theme` to false to hide theme info.
+  theme: true
+
+  # Custom text can be defined here.
+  # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
 
 # Disqus comments
 # disqus:
