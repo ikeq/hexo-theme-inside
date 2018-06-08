@@ -4,15 +4,6 @@ menu:
   # about: /about
   # links: /links
 
-# Routes for custom pages
-page:
-  # - about
-  # - links
-  # Multi-level route example
-  # - awesome-stuff:
-  #   - chapter-1
-  #   - chapter-2
-
 # Profile
 profile:
   avatar: /avatar.jpg
@@ -28,7 +19,7 @@ sns:
   weibo: http://weibo.com/yourname
 
 footer:
-  # If not defined, will display current year and author, eg: ©2018 • Superman
+  # If not defined, will show current year and author, eg: ©2018 • Superman
   copyright:
 
   # Set `powered` to false to hide Hexo link.
@@ -42,8 +33,8 @@ footer:
 # Disqus comments
 # disqus:
   # shortname: your_disqus_shortname
-  # Set to true to auto load disqus, otherwise will display a button
-  # autoload: true
+  # Set to true to auto load disqus, otherwise will show a button
+  # autoload: false
 
 # Assets path
 assets:

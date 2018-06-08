@@ -4,22 +4,20 @@
 [![release-img]][release]
 [![license-img]](LICENSE)
 
-A SPA, flat and clean theme for [Hexo] ❤️.
+SPA、扁平、干净的 hexo 主题 ❤️。
 
-[中文文档](README_zh-Hans.md)
+## 特色
 
-## Features
+### 嵌套的 page 路由
 
-### Sub-page routes
-
-For example, the directory structure looks like this:
+例如 page 这么写：
 
 ```css
 ROOT
   |-source
+    |-_posts
+      ...
     |-about
-      |-index.md
-    |-links
       |-index.md
     |-awesome-stuff
       |-index.md
@@ -33,7 +31,7 @@ ROOT
         |-part-2.md
 ```
 
-And urls will be:
+路由会是这样：
 
 - [/about]('') `about/index.md`
 - [/awesome-stuff]('') `awesome-stuff/index.md`
@@ -44,7 +42,7 @@ And urls will be:
 - [/amazing-stuff/chapter-1/part-1]('') `amazing-stuff/chapter-1/part-1.md`
 - [/amazing-stuff/chapter-1/part-2]('') `amazing-stuff/chapter-1/part-2.md`
 
-Other built-in routes are as follows:
+其他内置路由如下：
 
 - home: [/]('')
 - archives: [/archives]('')
@@ -52,25 +50,25 @@ Other built-in routes are as follows:
 - categories: [/categories]('')
 - 404: [/404]('')
 
-Routes can be configured at site's sidebar directly, for example:
+路由可直接配置在侧边栏，例如：
 
 ```yml
 menu:
   home: /
   about: /about
-  Awesome Stuff: /awesome-stuff
-  Amazing Stuff: /amazing-stuff
-  Just Kidding: /404
+  很酷: /awesome-stuff
+  很棒: /amazing-stuff
+  开玩笑: /404
 ```
 
-### Multiple languages
+### 多语言
 
-- :cn: Simplified Chinese & Traditional Chinese
+- :cn: 简体中文 & 繁體中文
 - :us: English
 - :jp: Japanese
 
-Support 3 languages for now, default is English.
-Change `language` at site's configuration file to take effects.
+目前支持三种语言，默认 English。
+通过修改网站配置文件的 `language` 字段来设置语言。
 
 ```yml
 language: en
@@ -79,7 +77,7 @@ language: en
 # language: ja
 ```
 
-### Disqus comments
+### Disqus 评论
 
 ```yaml
 disqus:
@@ -87,38 +85,44 @@ disqus:
   autoload: true
 ```
 
-Set `autoload` to `true` to auto load disqus, otherwise will show a button.
+设置 `autoload` 字段为 `true` 来自动加载 disqus，否则展示一个手动加载的按钮。
 
-### Social Media
+### 社交账号
 
 ```yaml
 sns:
+  # github
   github: your-github-url
+  # twitter
   twitter: your-twitter-url
+  # google plus
   gplus: your-google-plus-url
+  # weibo
   weibo: your-weibo-url
 ```
 
 ### Feed
 
-1. Install [hexo-generator-feed]:
+启用 feed 需要：
+
+1. 安装 [hexo-generator-feed]:
 
    ```bash
    npm install hexo-generator-feed --save
    ```
 
-2. Config site's configuration file as follows:
+2. 在网站配置文件中增加如下项：
 
    ```yaml
    feed:
      path: atom.xml
    ```
 
-See [hexo-generator-feed][hexo-generator-feed] for more information.
+更多信息见 [hexo-generator-feed](hexo-generator-feed)。
 
-### Assets path
+### 资源后缀
 
-Prefix/Suffix post assets path with assets filter, useful for CDN settings.
+自动为博文中引用的资源添加域名和后缀，方便 CDN 设置。
 
 ```yaml
 assets:
@@ -126,13 +130,13 @@ assets:
   suffix: '?m=webp&q=80'
 ```
 
-For example
+举个栗子：
 
 ```markdown
 ![cat](images/cat.gif)
 ```
 
-will convert to:
+会转换成：
 
 ```html
 <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
@@ -146,7 +150,7 @@ ga: UA-00000000-0
 
 ### Web App Manifest
 
-Add a `manifest.json` file for your site.
+为网站添加 manifest.json。
 
 ```yaml
 manifest:
@@ -164,31 +168,31 @@ manifest:
       type: image/png
 ```
 
- See [here][manifest] for more information.
+更多信息见[这里][manifest]。
 
-### Meta Theme Color
+### `theme-color` meta 标签
 
-By default, `#2a2b33` is used as the value of `theme-color`; if a thumbnail is set, the color of the first pixel of the thumbnail is extracted as `theme-color`.
+默认使用 `#2a2b33` 作为 `theme-color` 的值 ；如果设置了缩略图，则自动提取缩略图第一个像素的色值，动态设置 `theme-color`。
 
-**Note** this only works for **Chrome on Android**.
+**注意** 这个特性目前只在安卓机的 Chrome 浏览器中生效。
 
-See [here][meta-theme-color] for more information.
+更多信息见[这里][meta-theme-color]。
 
 ### Sitemap
 
-Add a `sitemap.xml` file for your site.
+为网站添加 `sitemap.xml` 文件。
 
-### Enhanced front matter
+### 增强的 front matter
 
-Inside extended the default front matter with the following properties used by itself:
+默认的 front matter 多了如下几个由主题使用的字段：
 
-- `author` author of the post
-- `thumbnail` picture which shows on your post header
-- `dropcap` capitalizes the first character
+- `author` 作者
+- `thumbnail` 缩略图
+- `dropcap` 首字母大写
 
-None of them are required.
+都是不必须的。
 
-For example:
+栗子：
 
 ```markdown
 ---
@@ -204,17 +208,17 @@ dropcap: true
 ---
 ```
 
-## Configuration
+## 配置
 
-### Site (`ROOT/_config.yml`)
+### 网站配置 (`ROOT/_config.yml`)
 
-Since some of the components provided by Hexo are not satisfactory for use, Inside uses its own implementation. In order to avoid conflicts, it is highly recommended to remove the following generators from site's `package.json`.
+因 hexo 官方提供的一部分组件不满足使用，故本主题使用了自己的实现，为避免冲突，墙裂建议将以下项从网站的 `package.json` 中移除。
 
 - [hexo-generator-archive]
 - [hexo-generator-category]
 - [hexo-generator-tag]
 
-And configure the site's `_config.yml` as follows.
+同时配置以下字段：
 
 ```yaml
 permalink: post/:title/index.html
@@ -222,9 +226,9 @@ default_layout: index
 pagination_dir: page
 ```
 
-### Theme (`themes/inside/_config.yml`)
+### 主题配置 (`themes/inside/_config.yml`)
 
-Full configuration of theme's `_config.yml` can be found [here](_config.yml).
+完整的配置见[这里](_config.yml)。
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases
