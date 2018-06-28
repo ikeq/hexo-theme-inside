@@ -224,7 +224,87 @@ pagination_dir: page
 
 ### Theme (`themes/inside/_config.yml`)
 
-Full configuration of theme's `_config.yml` can be found [here](_config.yml).
+```yaml
+# Sidebar menu
+menu:
+  home: /
+  # about: /about
+  # links: /links
+
+# Profile
+profile:
+  avatar: /avatar.jpg
+  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
+  email: example@mail.com
+  bio: Awesome guy.
+
+# Social media
+sns:
+  github: https://github.com/yourname
+  twitter: https://twitter.com/yourname
+  gplus: https://plus.google.com/xxx
+  weibo: http://weibo.com/yourname
+
+footer:
+  # If not defined, will show current year and author, eg: ©2018 • Superman
+  copyright:
+
+  # Set to false to hide Hexo link.
+  powered: true
+  # Set to false to hide theme info.
+  theme: true
+
+  # Custom text can be defined here.
+  # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+# Post
+post:
+  # Table of content
+  # Set to false to disable
+  toc:
+    # The depth of toc, default is 2, maximum to 4.
+    # depth: 3
+    # Showing index before toc, eg. 1.1 title
+    index: true
+
+# Disqus comments
+# disqus:
+  # shortname: your_disqus_shortname
+  # Set to true to auto load disqus, otherwise will show a button
+  # autoload: false
+
+# Assets path
+assets:
+  # prefix: 'https://cdn.example.com'
+  # suffix: '?m=webp&q=80'
+
+# Web App Manifest
+manifest:
+  # short_name:
+  # name:
+  # start_url: /
+  # theme_color: '#2a2b33'
+  # background_color: '#2a2b33'
+  # icons:
+  #   - src: icon-194x194.png
+  #     sizes: 194x194 512x512
+  #     type: image/png
+  #   - src: icon-144x144.png
+  #     sizes: 144x144
+  #     type: image/png
+
+### Pagination size
+# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Google analytics
+# ga: UA-00000000-0
+```
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases

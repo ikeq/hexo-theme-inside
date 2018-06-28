@@ -228,7 +228,87 @@ pagination_dir: page
 
 ### 主题配置 (`themes/inside/_config.yml`)
 
-完整的配置见[这里](_config.yml)。
+```yaml
+# 侧边栏菜单
+menu:
+  home: /
+  # about: /about
+  # links: /links
+
+# Profile
+profile:
+  ## 头像
+  avatar: /avatar.jpg
+  # 若未指定 `avatar`，此 Email 地址会被用来展示 gravatar(https://en.gravatar.com) 头像
+  email: example@mail.com
+  bio: Awesome guy.
+
+# 社交媒体
+sns:
+  github: https://github.com/yourname
+  twitter: https://twitter.com/yourname
+  gplus: https://plus.google.com/u/0/xxx
+  weibo: http://weibo.com/yourname
+
+footer:
+  # 自定义 copyright 信息，支持写 HTML，默认显示当前年份和作者，例如: ©2018 • Superman
+  copyright:
+
+  # 设置为 false 以隐藏 `由 Hexo 强力驱动`
+  powered: true
+  # 设置为 false 以隐藏 `主题 - Inside`
+  theme: true
+
+  # 自定义信息
+  # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+# Post
+post:
+  # 目录
+  # 设置为 false 以禁用
+  toc:
+    # 深度，即最多可显示的标题级别数，默认为 2，最大可到 4.
+    # depth: 3
+    # 标题前显示标号，如：1.1 标题
+    index: true
+
+# Disqus comments
+# disqus:
+  # shortname: your_disqus_shortname
+  # 设置为 true 以自动加载，设置为 false 显示为一个手动加载的按钮
+  # autoload: false
+
+# 资源前缀/后缀
+assets:
+  # prefix: 'https://cdn.example.com'
+  # suffix: '?m=webp&q=80'
+
+# Web App Manifest
+manifest:
+  # short_name:
+  # name:
+  # start_url: /
+  # theme_color: '#2a2b33'
+  # background_color: '#2a2b33'
+  # icons:
+  #   - src: icon-194x194.png
+  #     sizes: 194x194 512x512
+  #     type: image/png
+  #   - src: icon-144x144.png
+  #     sizes: 144x144
+  #     type: image/png
+
+### 分页大小
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Google analytics
+# ga: UA-00000000-0
+```
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases

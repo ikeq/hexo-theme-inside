@@ -22,13 +22,23 @@ footer:
   # If not defined, will show current year and author, eg: ©2018 • Superman
   copyright:
 
-  # Set `powered` to false to hide Hexo link.
+  # Set to false to hide Hexo link.
   powered: true
-  # Set `theme` to false to hide theme info.
+  # Set to false to hide theme info.
   theme: true
 
   # Custom text can be defined here.
   # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+# Post
+post:
+  # Table of content
+  # Set to false to disable
+  toc:
+    # The depth of toc, default is 2, maximum to 4.
+    # depth: 3
+    # Showing index before toc, eg. 1.1 title
+    index: true
 
 # Disqus comments
 # disqus:
