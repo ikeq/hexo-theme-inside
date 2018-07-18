@@ -92,29 +92,24 @@ Set `autoload` to `true` to auto load disqus, otherwise will show a button.
 ### Social Media
 
 ```yaml
+# Try to sort by changing the order of the keys
 sns:
-  github: your-github-url
-  twitter: your-twitter-url
-  gplus: your-google-plus-url
-  weibo: your-weibo-url
+  # `email` will fallback to `profile.email` if not specified
+  email:
+  # `feed` will fallback to `feed.path` of site if not specified
+  # You may need to install hexo-generator-feed, see more at https://github.com/hexojs/hexo-generator-feed.
+  feed:
+  github:
+  telegram:
+  twitter:
+  facebook:
+  tumblr:
+  instagram:
+  dribbble:
+  gplus:
+  weibo:
+  qq:
 ```
-
-### Feed
-
-1. Install [hexo-generator-feed]:
-
-   ```bash
-   npm install hexo-generator-feed --save
-   ```
-
-2. Config site's configuration file as follows:
-
-   ```yaml
-   feed:
-     path: atom.xml
-   ```
-
-See [hexo-generator-feed][hexo-generator-feed] for more information.
 
 ### Assets path
 
@@ -239,11 +234,23 @@ profile:
   bio: Awesome guy.
 
 # Social media
+# Try to sort by changing the order of the keys
 sns:
-  github: https://github.com/yourname
-  twitter: https://twitter.com/yourname
-  gplus: https://plus.google.com/xxx
-  weibo: http://weibo.com/yourname
+  # `email` will fallback to `profile.email` if not specified
+  email:
+  # `feed` will fallback to `feed.path` of site if not specified
+  # You may need to install hexo-generator-feed, see more at https://github.com/hexojs/hexo-generator-feed.
+  feed:
+  github:
+  telegram:
+  twitter:
+  facebook:
+  tumblr:
+  instagram:
+  dribbble:
+  gplus:
+  weibo:
+  qq:
 
 footer:
   # If not defined, will show current year and author, eg: ©2018 • Superman

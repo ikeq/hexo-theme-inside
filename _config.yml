@@ -12,11 +12,22 @@ profile:
   bio: Awesome guy.
 
 # Social media
+# Try to sort by changing the order of the keys
 sns:
-  github: https://github.com/yourname
-  twitter: https://twitter.com/yourname
-  gplus: https://plus.google.com/u/0/xxx
-  weibo: http://weibo.com/yourname
+  # `email` will fallback to `profile.email` if not specified
+  email:
+  # `feed` will fallback to `feed.path` of site if not specified
+  feed:
+  github:
+  telegram:
+  twitter:
+  facebook:
+  tumblr:
+  instagram:
+  dribbble:
+  gplus:
+  weibo:
+  qq:
 
 footer:
   # If not defined, will show current year and author, eg: ©2018 • Superman

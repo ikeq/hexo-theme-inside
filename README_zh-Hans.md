@@ -87,38 +87,27 @@ disqus:
 
 设置 `autoload` 字段为 `true` 来自动加载 disqus，否则展示一个手动加载的按钮。
 
-### 社交账号
+### 社交媒体
 
 ```yaml
+# 通过改变键值顺序可自定义排序
 sns:
-  # github
-  github: your-github-url
-  # twitter
-  twitter: your-twitter-url
-  # google plus
-  gplus: your-google-plus-url
-  # weibo
-  weibo: your-weibo-url
+  # 若 `email` 为空，会尝试取 `profile.email`
+  email:
+  # 若 `feed` 为空，会尝试取网站配置的 `feed.path`
+  # `feed` 可能需要 hexo-generator-feed 的支持，详见 https://github.com/hexojs/hexo-generator-feed。
+  feed:
+  github:
+  telegram:
+  twitter:
+  facebook:
+  tumblr:
+  instagram:
+  dribbble:
+  gplus:
+  weibo:
+  qq:
 ```
-
-### Feed
-
-启用 feed 需要：
-
-1. 安装 [hexo-generator-feed]:
-
-   ```bash
-   npm install hexo-generator-feed --save
-   ```
-
-2. 在网站配置文件中增加如下项：
-
-   ```yaml
-   feed:
-     path: atom.xml
-   ```
-
-更多信息见 [hexo-generator-feed](hexo-generator-feed)。
 
 ### 资源后缀
 
@@ -244,11 +233,23 @@ profile:
   bio: Awesome guy.
 
 # 社交媒体
+# 通过改变键值顺序可自定义排序
 sns:
-  github: https://github.com/yourname
-  twitter: https://twitter.com/yourname
-  gplus: https://plus.google.com/u/0/xxx
-  weibo: http://weibo.com/yourname
+  # 若 `email` 为空，会尝试取 `profile.email`
+  email:
+  # 若 `feed` 为空，会尝试取网站配置的 `feed.path`
+  # `feed` 可能需要 hexo-generator-feed 的支持，详见 https://github.com/hexojs/hexo-generator-feed。
+  feed:
+  github:
+  telegram:
+  twitter:
+  facebook:
+  tumblr:
+  instagram:
+  dribbble:
+  gplus:
+  weibo:
+  qq:
 
 footer:
   # 自定义 copyright 信息，支持写 HTML，默认显示当前年份和作者，例如: ©2018 • Superman
