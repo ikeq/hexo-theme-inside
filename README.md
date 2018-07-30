@@ -79,12 +79,13 @@ language: en
 # language: ja
 ```
 
-### Disqus comments
+### Comments
 
 ```yaml
-disqus:
-  shortname: your_disqus_shortname
-  autoload: true
+comments:
+  disqus:
+    shortname: your_disqus_shortname
+    autoload: true
 ```
 
 Set `autoload` to `true` to auto load disqus, otherwise will show a button.
@@ -203,18 +204,10 @@ dropcap: true
 
 ### Site (`ROOT/_config.yml`)
 
-Since some of the components provided by Hexo are not satisfactory for use, Inside uses its own implementation. In order to avoid conflicts, it is highly recommended to remove the following generators from site's `package.json`.
-
-- [hexo-generator-archive]
-- [hexo-generator-category]
-- [hexo-generator-tag]
-
-And configure the site's `_config.yml` as follows.
+Configure the site's `_config.yml` as follows.
 
 ```yaml
 permalink: post/:title/index.html
-default_layout: index
-pagination_dir: page
 ```
 
 ### Theme (`themes/inside/_config.yml`)
@@ -266,6 +259,7 @@ footer:
 
 # Post
 post:
+  per_page: 10
   # Table of content
   # Set to false to disable
   toc:
@@ -274,11 +268,24 @@ post:
     # Showing index before toc, eg. 1.1 title
     index: true
 
-# Disqus comments
-# disqus:
-  # shortname: your_disqus_shortname
-  # Set to true to auto load disqus, otherwise will show a button
-  # autoload: false
+### Pagination size
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Favicon
+# Default is `favicon.ico`
+favicon: favicon.ico
+
+# Comments
+comments:
+  # disqus:
+    # shortname: your_disqus_shortname
+    # Set to true to auto load disqus, otherwise will show a button
+    # autoload: false
 
 # Assets path
 assets:
@@ -300,33 +307,17 @@ manifest:
   #     sizes: 144x144
   #     type: image/png
 
-### Pagination size
-# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
-archive:
-  per_page: 10
-tag:
-  per_page: 10
-category:
-  per_page: 10
-
 # Google analytics
 # ga: UA-00000000-0
 ```
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases
-[build-img]: https://travis-ci.org/elmorec/hexo-theme-inside.svg?branch=master
-[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg
-[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg
+[build-img]: https://img.shields.io/travis-ci/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
 
 [hexo]: https://hexo.io/
-[hexo-generator-archive]: https://github.com/hexojs/hexo-generator-archive
-[hexo-generator-category]: https://github.com/hexojs/hexo-generator-category
-[hexo-generator-index]: https://github.com/hexojs/hexo-generator-index
-[hexo-generator-tag]: https://github.com/hexojs/hexo-generator-tag
-[hexo-generator-feed]: https://github.com/hexojs/hexo-generator-feed
-[hexo-renderer-ejs]: https://github.com/hexojs/hexo-renderer-ejs
-[hexo-renderer-marked]: https://github.com/hexojs/hexo-renderer-marked
 [hexo-generator-feed]: https://github.com/hexojs/hexo-generator-feed
 
 [manifest]: https://www.w3.org/TR/appmanifest/

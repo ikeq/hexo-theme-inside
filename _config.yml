@@ -43,6 +43,7 @@ footer:
 
 # Post
 post:
+  per_page: 10
   # Table of content
   # Set to false to disable
   toc:
@@ -51,11 +52,25 @@ post:
     # Showing index before toc, eg. 1.1 title
     index: true
 
+### Pagination size
+# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Favicon
+# Default is `favicon.ico`
+# favicon: favicon.ico
+
 # Disqus comments
-# disqus:
-  # shortname: your_disqus_shortname
-  # Set to true to auto load disqus, otherwise will show a button
-  # autoload: false
+comments:
+  # disqus:
+    # shortname: your_disqus_shortname
+    # Set to true to auto load disqus, otherwise will show a button
+    # autoload: false
 
 # Assets path
 assets:
@@ -76,15 +91,6 @@ manifest:
   #   - src: icon-144x144.png
   #     sizes: 144x144
   #     type: image/png
-
-### Pagination size
-# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
-archive:
-  per_page: 10
-tag:
-  per_page: 10
-category:
-  per_page: 10
 
 # Google analytics
 # ga: UA-00000000-0

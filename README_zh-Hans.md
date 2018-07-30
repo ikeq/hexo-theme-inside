@@ -77,12 +77,13 @@ language: en
 # language: ja
 ```
 
-### Disqus 评论
+### 评论
 
 ```yaml
-disqus:
-  shortname: your_disqus_shortname
-  autoload: true
+comments:
+  disqus:
+    shortname: your_disqus_shortname
+    autoload: true
 ```
 
 设置 `autoload` 字段为 `true` 来自动加载 disqus，否则展示一个手动加载的按钮。
@@ -201,18 +202,10 @@ dropcap: true
 
 ### 网站配置 (`ROOT/_config.yml`)
 
-因 hexo 官方提供的一部分组件不满足使用，故本主题使用了自己的实现，为避免冲突，墙裂建议将以下项从网站的 `package.json` 中移除。
-
-- [hexo-generator-archive]
-- [hexo-generator-category]
-- [hexo-generator-tag]
-
-同时配置以下字段：
+配置以下字段：
 
 ```yaml
 permalink: post/:title/index.html
-default_layout: index
-pagination_dir: page
 ```
 
 ### 主题配置 (`themes/inside/_config.yml`)
@@ -265,6 +258,8 @@ footer:
 
 # Post
 post:
+  # 分页大小
+  per_page: 10
   # 目录
   # 设置为 false 以禁用
   toc:
@@ -273,11 +268,25 @@ post:
     # 标题前显示标号，如：1.1 标题
     index: true
 
-# Disqus comments
-# disqus:
-  # shortname: your_disqus_shortname
-  # 设置为 true 以自动加载，设置为 false 显示为一个手动加载的按钮
-  # autoload: false
+# 分页大小
+# 设为 0 以禁用分页
+archive:
+  per_page: 10
+tag:
+  per_page: 10
+category:
+  per_page: 10
+
+# Favicon
+# 默认 `favicon.ico`
+favicon: favicon.ico
+
+# Comments
+comments:
+  # disqus:
+    # shortname: your_disqus_shortname
+    # 设置为 true 以自动加载，设置为 false 显示为一个手动加载的按钮
+    # autoload: false
 
 # 资源前缀/后缀
 assets:
@@ -299,32 +308,17 @@ manifest:
   #     sizes: 144x144
   #     type: image/png
 
-### 分页大小
-archive:
-  per_page: 10
-tag:
-  per_page: 10
-category:
-  per_page: 10
-
 # Google analytics
 # ga: UA-00000000-0
 ```
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases
-[build-img]: https://travis-ci.org/elmorec/hexo-theme-inside.svg?branch=master
-[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg
-[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg
+[build-img]: https://img.shields.io/travis-ci/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
 
 [hexo]: https://hexo.io/
-[hexo-generator-archive]: https://github.com/hexojs/hexo-generator-archive
-[hexo-generator-category]: https://github.com/hexojs/hexo-generator-category
-[hexo-generator-index]: https://github.com/hexojs/hexo-generator-index
-[hexo-generator-tag]: https://github.com/hexojs/hexo-generator-tag
-[hexo-generator-feed]: https://github.com/hexojs/hexo-generator-feed
-[hexo-renderer-ejs]: https://github.com/hexojs/hexo-renderer-ejs
-[hexo-renderer-marked]: https://github.com/hexojs/hexo-renderer-marked
 [hexo-generator-feed]: https://github.com/hexojs/hexo-generator-feed
 
 [manifest]: https://www.w3.org/TR/appmanifest/
