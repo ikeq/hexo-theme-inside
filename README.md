@@ -280,6 +280,14 @@ category:
 # Default is `favicon.ico`
 favicon: favicon.ico
 
+theme:
+  # body background image
+  background: confectionary.png
+  # sidebar background image
+  sidebar_background: shattered-island.png
+  # maximum width of content
+  content_width: 640
+
 # Comments
 comments:
   # disqus:

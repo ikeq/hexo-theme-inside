@@ -281,6 +281,14 @@ category:
 # 默认 `favicon.ico`
 favicon: favicon.ico
 
+theme:
+  # body 背景图
+  background: confectionary.png
+  # sidebar 背景图
+  sidebar_background: shattered-island.png
+  # 主体最大宽度
+  content_width: 640
+
 # Comments
 comments:
   # disqus:

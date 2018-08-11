@@ -65,6 +65,14 @@ category:
 # Default is `favicon.ico`
 # favicon: favicon.ico
 
+theme:
+  # body background image
+  background:
+  # sidebar background image
+  sidebar_background:
+  # maximum width of content
+  # content_width: 640
+
 # Disqus comments
 comments:
   # disqus:
