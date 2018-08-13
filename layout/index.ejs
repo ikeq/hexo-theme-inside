@@ -16,7 +16,11 @@
 <% if (config.feed && config.feed.path) {
 %><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% }
-%><%- css('theme.' + theme.themeHash)%>
+%>
+<% if (theme.head.structured_data === true ){ %>
+    <%- partial('structured-data') %>
+<% } %>
+<%- css('theme.' + theme.themeHash)%>
 <%- load_css() %>
 <%- ga() %>
 <%- js('config.' + theme.hash) %>
