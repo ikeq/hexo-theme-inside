@@ -11,6 +11,11 @@ profile:
   email: example@mail.com
   bio: Awesome guy.
 
+# HTTP head tag
+head:
+  structured_data: true
+  favicon: /favicon.ico
+
 # Social media
 # Try to sort by changing the order of the keys
 sns:
