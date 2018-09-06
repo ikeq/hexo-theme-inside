@@ -1,0 +1,216 @@
+{
+  "theme": {
+    "type": "object",
+    "properties": {
+      "background": { "type": "string" },
+      "sidebar_background": { "type": "string" },
+      "content_width": { "type": "number" },
+      "api_prefix": { "type": "string", "default": "api", "required": true }
+    },
+    "required": true,
+    "default": { "api_prefix": "api" }
+  },
+  "menu": { "type": "object", "default": {}, "required": true },
+  "profile": {
+    "type": "object",
+    "properties": {
+      "avatar": { "type": "string", "default": "$gravatar", "required": true },
+      "email": { "type": "string", "default": "$email", "required": true },
+      "bio": { "type": "string" }
+    }
+  },
+  "sns": {
+    "type": "object",
+    "ordered": true,
+    "properties": {
+      "email": { "type": "string", "default": "$email" },
+      "feed": { "type": "string", "default": "$feed" },
+      "github": { "type": "string" },
+      "twitter": { "type": "string" },
+      "facebook": { "type": "string" },
+      "google+": { "type": "string" },
+      "instagram": { "type": "string" },
+      "tumblr": { "type": "string" },
+      "dribbble": { "type": "string" },
+      "telegram": { "type": "string" },
+      "youtube": { "type": "string" },
+      "hangouts": { "type": "string" },
+      "linkedin": { "type": "string" },
+      "pinterest": { "type": "string" },
+      "soundcloud": { "type": "string" },
+      "myspace": { "type": "string" },
+      "weibo": { "type": "string" },
+      "qq": { "type": "string" }
+    }
+  },
+  "footer": {
+    "type": "object",
+    "properties": {
+      "copyright": {
+        "oneOf": [
+          { "type": "string" },
+          { "enum": [false] }
+        ],
+        "default": "$copyright",
+        "required": true
+      },
+      "powered": { "type": "boolean", "default": true, "required": true },
+      "theme": { "type": "boolean", "default": true, "required": true },
+      "custom": { "type": "string" }
+    }
+  },
+  "post": {
+    "type": "object",
+    "properties": {
+      "per_page": { "type": "number", "default": 10, "required": true },
+      "toc": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "depth": { "type": "number", "default": 3, "required": true },
+              "index": { "type": "boolean", "default": true, "required": true }
+            }
+          },
+          { "enum": [false] }
+        ],
+        "required": true,
+        "default": { "depth": 3, "index": true }
+      },
+      "copyright": {
+        "oneOf": [
+          {
+            "type": "object",
+            "ordered": true,
+            "properties": {
+              "global": { "type": "boolean", "default": true, "required": true },
+              "author": { "type": "boolean" },
+              "link": { "type": "boolean", "default": true, "required": true },
+              "license": { "type": "string", "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)", "required": true },
+              "published": { "type": "boolean", "default": true, "required": true },
+              "custom": { "type": "string" }
+            }
+          },
+          { "enum": [false] }
+        ],
+        "default": { "global": true, "link": true, "license": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)", "published": true }
+      }
+    }
+  },
+  "archive": {
+    "type": "object",
+    "properties": {
+      "per_page": { "type": "number", "default": 10, "required": true }
+    }
+  },
+  "tag": {
+    "type": "object",
+    "properties": {
+      "per_page": { "type": "number", "default": 10, "required": true }
+    }
+  },
+  "category": {
+    "type": "object",
+    "properties": {
+      "per_page": { "type": "number", "default": 10, "required": true }
+    }
+  },
+  "favicon": { "type": "string", "default": "favicon.ico", "required": true },
+  "assets": {
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "prefix": { "type": "string" },
+          "suffix": { "type": "string" }
+        }
+      },
+      { "enum": [false] }
+    ]
+  },
+  "comments": {
+    "type": "object",
+    "properties": {
+      "disqus": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "shortname": { "type": "string" },
+              "autoload": { "type": "boolean", "default": true, "required": true }
+            }
+          },
+          { "enum": [false] }
+        ]
+      }
+    }
+  },
+  "pwa": {
+    "type": "object",
+    "properties": {
+      "workbox": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "cdn": { "type": "string", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js", "required": true },
+              "module_path_prefix": { "type": "string" },
+              "expire": { "type": "number", "default": 1, "required": true },
+              "name": { "type": "string", "default": "sw.js", "required": true },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "type": {
+                    "name": { "type": "string", "required": true },
+                    "strategy": { "enum": ["networkOnly", "cacheFirst", "cacheOnly", "staleWhileRevalidate"], "required": true },
+                    "regex": { "type": "string", "required": true }
+                  }
+                }
+              }
+            }
+          },
+          { "enum": [false] }
+        ],
+        "default": { "cdn": "https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js", "expire": 1, "name": "sw.js" }
+      },
+      "manifest": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "default": "$title", "required": true },
+              "short_name": { "type": "string", "default": "$title", "required": true },
+              "description": { "type": "string", "default": "$description", "required": true },
+              "start_url": { "type": "string", "default": ".", "required": true },
+              "theme_color": { "type": "string", "default": "#2a2b33", "required": true },
+              "background_color": { "type": "string", "default": "#2a2b33", "required": true },
+              "icons": {
+                "type": "array",
+                "items": {
+                  "type": {
+                    "src": { "type": "string", "required": true },
+                    "sizes": { "type": "string", "required": true },
+                    "type": { "type": "string", "required": true }
+                  }
+                },
+                "default": [],
+                "required": true
+              },
+              "display": { "enum": ["minimal-ui", "fullscreen", "standalone", "browser"], "default": "minimal-ui", "required": true }
+            }
+          },
+          { "enum": [false] }
+        ]
+      }
+
+    }
+  },
+  "seo": {
+    "type": "object",
+    "properties": {
+      "structured_data": { "type": "boolean" }
+    }
+  },
+  "ga": { "type": "string" }
+}

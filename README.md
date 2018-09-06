@@ -1,8 +1,6 @@
 # Inside
 
-[![build-img]][root]
-[![release-img]][release]
-[![license-img]](LICENSE)
+[![build-img]][root] [![release-img]][release] [![license-img]](LICENSE)
 
 A SPA, flat and clean theme for [Hexo] ❤️.
 
@@ -15,7 +13,7 @@ A SPA, flat and clean theme for [Hexo] ❤️.
 For example, the directory structure looks like this:
 
 ```css
-ROOT
+HEXO
   |-source
     |-about
       |-index.md
@@ -70,7 +68,7 @@ menu:
 - :jp: Japanese
 
 Support 3 languages for now, default is English.
-Change `language` at site's configuration file to take effects.
+Change `language` at `HEXO/_config.yaml` to take effects.
 
 ```yml
 language: en
@@ -79,7 +77,7 @@ language: en
 # language: ja
 ```
 
-### Comments
+### Comments (disqus)
 
 ```yaml
 comments:
@@ -88,33 +86,35 @@ comments:
     autoload: true
 ```
 
-Set `autoload` to `true` to auto load disqus, otherwise will show a button.
+Set `autoload` to `true` to enable auto load, otherwise will show a button.
 
 ### Social Media
 
 ```yaml
-# Try to sort by changing the order of the keys
 sns:
-  # `email` will fallback to `profile.email` if not specified
   email:
-  # `feed` will fallback to `feed.path` of site if not specified
-  # You may need to install hexo-generator-feed, see more at https://github.com/hexojs/hexo-generator-feed.
   feed:
   github:
-  telegram:
   twitter:
   facebook:
-  tumblr:
+  google+:
   instagram:
+  tumblr:
   dribbble:
-  gplus:
+  telegram:
+  youtube:
+  hangouts:
+  linkedin:
+  pinterest:
+  soundcloud:
+  myspace:
   weibo:
   qq:
 ```
 
 ### Assets path
 
-Prefix/Suffix post assets path with assets filter, useful for CDN settings.
+Prefix/Suffix post images path with assets filter, useful for CDN settings.
 
 ```yaml
 assets:
@@ -134,15 +134,11 @@ will convert to:
 <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
 ```
 
-### Google Analytics
+### PWA
 
-```yaml
-ga: UA-00000000-0
-```
+#### Web App Manifest
 
-### Web App Manifest
-
-Add a `manifest.json` file for your site.
+Add a `manifest.json` for your site.
 
 ```yaml
 manifest:
@@ -160,29 +156,58 @@ manifest:
       type: image/png
 ```
 
- See [here][manifest] for more information.
+See [manifest] for more information.
 
-### Meta Theme Color
+#### Offline cache
+
+Uses Workbox for offline support
+
+```yaml
+workbox:
+  cdn: https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js
+  expire: 4
+  name: sw.js
+  rules:
+    - name: jsdelivery
+      strategy: staleWhileRevalidate
+      regex: https://cdn\\.jsdelivr\\.net
+    - name: gtm
+      strategy: staleWhileRevalidate
+      regex: https://www\\.googletagmanager\\.com
+```
+
+See [workbox] for more information.
+
+#### Meta Theme Color
 
 By default, `#2a2b33` is used as the value of `theme-color`; if a thumbnail is set, the color of the first pixel of the thumbnail is extracted as `theme-color`.
 
 **Note** this only works for **Chrome on Android**.
 
-See [here][meta-theme-color] for more information.
+See [theme-color][meta-theme-color] for more information.
 
-### Sitemap
+### SEO
 
-Add a `sitemap.xml` file for your site.
+#### Sitemap
+
+Add a `sitemap.xml` for your site.
+
+#### Structured Data
+
+```yaml
+seo:
+  structured_data: true
+```
+
+See [Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data) for more information.
 
 ### Enhanced front matter
 
 Inside extended the default front matter with the following properties used by itself:
 
-- `author` author of the post
-- `thumbnail` picture which shows on your post header
-- `dropcap` capitalizes the first character
-
-None of them are required.
+- `author` author of the post, optional
+- `thumbnail` picture which shows on your post header, optional
+- `dropcap` capitalizes the first character, optional
 
 For example:
 
@@ -202,122 +227,17 @@ dropcap: true
 
 ## Configuration
 
-### Site (`ROOT/_config.yml`)
+### Site (HEXO/_config.yml)
 
-Configure the site's `_config.yml` as follows.
-
-```yaml
-permalink: post/:title/index.html
-```
-
-### Theme (`themes/inside/_config.yml`)
+Configure site's `_config.yml` as follows.
 
 ```yaml
-# Sidebar menu
-menu:
-  home: /
-  # about: /about
-  # links: /links
-
-# Profile
-profile:
-  avatar: /avatar.jpg
-  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
-  email: example@mail.com
-  bio: Awesome guy.
-
-# Social media
-# Try to sort by changing the order of the keys
-sns:
-  # `email` will fallback to `profile.email` if not specified
-  email:
-  # `feed` will fallback to `feed.path` of site if not specified
-  # You may need to install hexo-generator-feed, see more at https://github.com/hexojs/hexo-generator-feed.
-  feed:
-  github:
-  telegram:
-  twitter:
-  facebook:
-  tumblr:
-  instagram:
-  dribbble:
-  gplus:
-  weibo:
-  qq:
-
-footer:
-  # If not defined, will show current year and author, eg: ©2018 • Superman
-  copyright:
-
-  # Set to false to hide Hexo link.
-  powered: true
-  # Set to false to hide theme info.
-  theme: true
-
-  # Custom text can be defined here.
-  # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
-
-# Post
-post:
-  per_page: 10
-  # Table of content
-  # Set to false to disable
-  toc:
-    # The depth of toc, default is 2, maximum to 4.
-    # depth: 3
-    # Showing index before toc, eg. 1.1 title
-    index: true
-
-### Pagination size
-archive:
-  per_page: 10
-tag:
-  per_page: 10
-category:
-  per_page: 10
-
-# Favicon
-# Default is `favicon.ico`
-favicon: favicon.ico
-
-theme:
-  # body background image
-  background: confectionary.png
-  # sidebar background image
-  sidebar_background: shattered-island.png
-  # maximum width of content
-  content_width: 640
-
-# Comments
-comments:
-  # disqus:
-    # shortname: your_disqus_shortname
-    # Set to true to auto load disqus, otherwise will show a button
-    # autoload: false
-
-# Assets path
-assets:
-  # prefix: 'https://cdn.example.com'
-  # suffix: '?m=webp&q=80'
-
-# Web App Manifest
-manifest:
-  # short_name:
-  # name:
-  # start_url: /
-  # theme_color: '#2a2b33'
-  # background_color: '#2a2b33'
-  # icons:
-  #   - src: icon-194x194.png
-  #     sizes: 194x194 512x512
-  #     type: image/png
-  #   - src: icon-144x144.png
-  #     sizes: 144x144
-  #     type: image/png
-
-# Google analytics
-# ga: UA-00000000-0
+permalink: post/:title/
 ```
+
+### Theme (HEXO/themes/inside/_config.yml)
+
+Full configuration can be found [here](_config.yml).
 
 [root]: https://github.com/elmorec/hexo-theme-inside
 [release]: https://github.com/elmorec/hexo-theme-inside/releases
@@ -329,4 +249,5 @@ manifest:
 [hexo-generator-feed]: https://github.com/hexojs/hexo-generator-feed
 
 [manifest]: https://www.w3.org/TR/appmanifest/
+[workbox]: https://developers.google.com/web/tools/workbox/
 [meta-theme-color]: https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#meta_theme_color_for_chrome_and_opera

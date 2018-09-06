@@ -6,7 +6,14 @@ menu:
   about: 關於
 
 title:
-  archive: 歸檔
-  category: 分類
-  tag: 標簽
-  about: 關於
+  archives: 歸檔
+  categories: 分類
+  tags: 標簽
+
+post:
+  copyright:
+    author: 文章作者
+    link: 文章連結
+    license: 版權聲明
+    published: 發表日期
+    updated: 更新日期

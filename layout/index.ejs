@@ -5,24 +5,26 @@
 <title><%= title %></title>
 <base href="<%= config.root %>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="<%=url_trim(url)%>">
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>">
-<% if (theme.manifest.name) {
-%><link rel="manifest" href="<%= url_for('manifest.json') %>">
-<% }
-%><meta name="theme-color" content="<%= theme.manifest.theme_color %>">
+<% if (theme.pwa.manifest) { -%>
+<link rel="manifest" href="<%= url_for('manifest.json') %>">
+<meta name="theme-color" content="<%= theme.pwa.manifest.theme_color %>">
+<% } -%>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
 <%- open_graph({ image: page.thumbnail }) %>
-<% if (config.feed && config.feed.path) {
-%><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
-<% }
-%><%- css('theme.' + theme.themeHash)%>
-<%- load_css() %>
-<%- ga() %>
-<%- js('config.' + theme.hash) %>
+<% if (theme.sns.feed) { -%>
+<link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(theme.sns.feed) %>">
+<% } -%>
+<% if (theme.theme) { %><%- css('theme.' + theme.runtime.themeHash) %><% } -%>
+<%- theme_static('css') %>
+<%- js('config.' + theme.runtime.configHash) %>
+<% if (theme.seo.structured_data) { %><%- structured_data(page) %><% } -%>
+<% if (theme.ga) { %><%- ga(theme.ga) %><% } -%>
 </head>
 <body>
 <is-root></is-root>
-<%- load_js() %>
+<%- theme_static('js') -%>
 </body>
 </html>

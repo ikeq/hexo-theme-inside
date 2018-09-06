@@ -1,3 +1,13 @@
+theme:
+  # url prefix of the fetching of json data
+  # api_prefix: api
+  # body background
+  background: confectionary.png \#f5f7fa
+  # sidebar background
+  sidebar_background: shattered-island.png
+  # maximum width of content
+  # content_width: 640
+
 # Sidebar menu
 menu:
   home: /
@@ -19,18 +29,24 @@ sns:
   # `feed` will fallback to `feed.path` of site if not specified
   feed:
   github:
-  telegram:
   twitter:
   facebook:
-  tumblr:
+  google+:
   instagram:
+  tumblr:
   dribbble:
-  gplus:
+  telegram:
+  youtube:
+  hangouts:
+  linkedin:
+  pinterest:
+  soundcloud:
+  myspace:
   weibo:
   qq:
 
 footer:
-  # If not defined, will show current year and author, eg: ©2018 • Superman
+  # If not defined, will show current year and author, eg: ©2018 • Superman.
   copyright:
 
   # Set to false to hide Hexo link.
@@ -44,20 +60,40 @@ footer:
 # Post
 post:
   per_page: 10
-  # Table of content
-  # Set to false to disable
+  # Table of content, enabled by default, set to false to disable.
   toc:
     # The depth of toc, default is 2, maximum to 4.
     # depth: 3
     # Showing index before toc, eg. 1.1 title
-    index: true
+    # index: true
+  # Copyright notice
+  # Disabled by default, remove the hash to enable
+  # You can also use front matter `copyright` to override this setting.
+  # copyright:
+    # Global enable, true by default
+    # global: true
+    # Show author, false by default
+    # author: true
+    # Show post link, true by default
+    # link: false
+    # license: Attribution-NonCommercial-NoDerivatives 4.0 International
+    #   (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
+    # Show post date, true by default
+    # published: false
+    # Show post update date, false by default
+    # updated: false
+    # Totally custom copyright
+    # custom: my copyright
 
-### Pagination size
-# The amount of posts displayed on a single archive/tag/category page, default is `10`, set to `0` to disable pagination.
+# Archive
 archive:
   per_page: 10
+
+# Tag
 tag:
   per_page: 10
+
+# Category
 category:
   per_page: 10
 
@@ -65,18 +101,12 @@ category:
 # Default is `favicon.ico`
 # favicon: favicon.ico
 
-theme:
-  # body background image
-  background:
-  # sidebar background image
-  sidebar_background:
-  # maximum width of content
-  # content_width: 640
-
 # Disqus comments
 comments:
   # disqus:
     # shortname: your_disqus_shortname
+    # Or you can set disqus script directly
+    # script: //your_disqus_shortname.disqus.com/embed.js
     # Set to true to auto load disqus, otherwise will show a button
     # autoload: false
 
@@ -85,20 +115,43 @@ assets:
   # prefix: 'https://cdn.example.com'
   # suffix: '?m=webp&q=80'
 
-# Web App Manifest
-manifest:
-  # short_name:
-  # name:
-  # start_url: /
-  # theme_color: '#2a2b33'
-  # background_color: '#2a2b33'
-  # icons:
-  #   - src: icon-194x194.png
-  #     sizes: 194x194 512x512
-  #     type: image/png
-  #   - src: icon-144x144.png
-  #     sizes: 144x144
-  #     type: image/png
+# PWA
+pwa:
+  # Workbox(https://developers.google.com/web/tools/workbox/) is a JavaScript libraries for adding offline support to web apps
+  # Disabled by default, remove the hash to enable
+  # workbox:
+    # Workbox cdn, uses google by default, below is an example of using alicdn
+    # cdn: https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js
+    # module_path_prefix: https://g.alicdn.com/kg/workbox/3.3.0/
+    # Expire time in hour, 1 by default, set to 0 to be permanent, caches will be forcibly deleted the next time the site is updated.
+    # expire: 4
+    # The worker script name, `sw.js` by default
+    # name: sw.js
+    # Custom rules
+    # rules:
+    #   - name: jsdelivr
+    #     strategy: cacheFirst
+    #     regex: https://cdn\\.jsdelivr\\.net
+
+  manifest:
+    # short_name:
+    # name:
+    # start_url: /
+    # theme_color: '#2a2b33'
+    # background_color: '#2a2b33'
+    # icons:
+    #   - src: icon-194x194.png
+    #     sizes: 194x194 512x512
+    #     type: image/png
+    #   - src: icon-144x144.png
+    #     sizes: 144x144
+    #     type: image/png
+
+# SEO
+seo:
+  # Render structured-data
+  # Disabled by default, set to true to enable
+  # structured_data: true
 
 # Google analytics
 # ga: UA-00000000-0

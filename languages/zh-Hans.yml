@@ -6,7 +6,14 @@ menu:
   about: 关于
 
 title:
-  archive: 归档
-  category: 分类
-  tag: 标签
-  about: 关于
+  archives: 归档
+  categories: 分类
+  tags: 标签
+
+post:
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license: 版权声明
+    published: 发表日期
+    updated: 更新日期

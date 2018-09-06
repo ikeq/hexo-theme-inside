@@ -3,10 +3,17 @@ menu:
   archives: アーカイブ
   categories: カテゴリ
   tags: タグ
-  about: About
+  about: について
 
 title:
-  archive: アーカイブ
-  category: カテゴリ
-  tag: タグ
-  about: About
+  archives: アーカイブ
+  categories: カテゴリ
+  tags: タグ
+
+post:
+  copyright:
+    author: 著者
+    link: 記事へのリンク
+    license: 著作権表示
+    published: 出版日
+    updated: 更新日
