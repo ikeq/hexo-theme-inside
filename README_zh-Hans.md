@@ -165,7 +165,7 @@ workbox:
   expire: 4
   name: sw.js
   rules:
-    - name: jsdelivery
+    - name: jsdelivr
       strategy: staleWhileRevalidate
       regex: https://cdn\\.jsdelivr\\.net
     - name: gtm

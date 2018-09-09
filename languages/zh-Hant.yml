@@ -17,3 +17,10 @@ post:
     license: 版權聲明
     published: 發表日期
     updated: 更新日期
+
+reward:
+  donate: 請我喝咖啡 ☕。
+  paypal: Paypal
+  wechat: WeChat
+  alipay: Alipay
+  bitcoin: Bitcoin

@@ -5,7 +5,8 @@
       "background": { "type": "string" },
       "sidebar_background": { "type": "string" },
       "content_width": { "type": "number" },
-      "api_prefix": { "type": "string", "default": "api", "required": true }
+      "api_prefix": { "type": "string", "default": "api", "required": true },
+      "cdn": { "type": "string" }
     },
     "required": true,
     "default": { "api_prefix": "api" }
@@ -59,6 +60,12 @@
       "custom": { "type": "string" }
     }
   },
+  "page": {
+    "type": "object",
+    "properties": {
+      "reward": { "type": "boolean" }
+    }
+  },
   "post": {
     "type": "object",
     "properties": {
@@ -94,7 +101,8 @@
           { "enum": [false] }
         ],
         "default": { "global": true, "link": true, "license": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)", "published": true }
-      }
+      },
+      "reward": { "type": "boolean" }
     }
   },
   "archive": {
@@ -156,7 +164,7 @@
             "properties": {
               "cdn": { "type": "string", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js", "required": true },
               "module_path_prefix": { "type": "string" },
-              "expire": { "type": "number", "default": 1, "required": true },
+              "expire": { "type": "number", "default": 4, "required": true },
               "name": { "type": "string", "default": "sw.js", "required": true },
               "rules": {
                 "type": "array",
@@ -212,5 +220,21 @@
       "structured_data": { "type": "boolean" }
     }
   },
-  "ga": { "type": "string" }
+  "ga": { "type": "string" },
+  "reward": {
+    "type": "object",
+    "properties": {
+      "methods": {
+        "type": "array",
+        "items": {
+          "type": {
+            "name": { "enum": ["wechat", "alipay", "paypal", "bitcoin"], "required": true },
+            "qrcode": { "type": "string" },
+            "url": { "type": "string" },
+            "text": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
 }

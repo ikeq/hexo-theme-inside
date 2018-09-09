@@ -1,6 +1,8 @@
 theme:
   # url prefix of the fetching of json data
   # api_prefix: api
+  # cdn for theme statics
+  # cdn:
   # body background
   background: confectionary.png \#f5f7fa
   # sidebar background
@@ -66,6 +68,8 @@ post:
     # depth: 3
     # Showing index before toc, eg. 1.1 title
     # index: true
+  # Show reward panel
+  # reward: true
   # Copyright notice
   # Disabled by default, remove the hash to enable
   # You can also use front matter `copyright` to override this setting.
@@ -84,6 +88,11 @@ post:
     # updated: false
     # Totally custom copyright
     # custom: my copyright
+
+# Page
+page:
+  # Show reward panel
+  # reward: true
 
 # Archive
 archive:
@@ -123,7 +132,7 @@ pwa:
     # Workbox cdn, uses google by default, below is an example of using alicdn
     # cdn: https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js
     # module_path_prefix: https://g.alicdn.com/kg/workbox/3.3.0/
-    # Expire time in hour, 1 by default, set to 0 to be permanent, caches will be forcibly deleted the next time the site is updated.
+    # Expire time in hour, 4 by default, set to 0 to be permanent, caches will be forcibly deleted the next time the site is updated.
     # expire: 4
     # The worker script name, `sw.js` by default
     # name: sw.js
@@ -152,6 +161,30 @@ seo:
   # Render structured-data
   # Disabled by default, set to true to enable
   # structured_data: true
+
+# Reward
+# qrcode: url of the qrcode images, optional
+# url: link of the payment, optional
+# text: text of the url, url will be displayed as default
+# You must set either a qrcode or a url
+# reward:
+#   methods:
+#     - name: wechat
+#       qrcode:
+#       url:
+#       text:
+#     - name: alipay
+#       qrcode:
+#       url:
+#       text:
+#     - name: paypal
+#       qrcode:
+#       url:
+#       text:
+#     - name: bitcoin
+#       qrcode:
+#       url:
+#       text:
 
 # Google analytics
 # ga: UA-00000000-0
