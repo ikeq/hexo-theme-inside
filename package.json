@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "A flat and clean theme for Hexo.",
   "main": "scripts/index.js",
   "repository": {

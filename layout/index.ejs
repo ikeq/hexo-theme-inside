@@ -17,7 +17,7 @@
 <% if (theme.sns.feed) { -%>
 <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(theme.sns.feed) %>">
 <% } -%>
-<% if (theme.theme) { %><%- css('theme.' + theme.runtime.themeHash) %><% } -%>
+<% if (theme.runtime.themeHash) { %><%- css('theme.' + theme.runtime.themeHash) %><% } %>
 <%- theme_static('css') %>
 <%- js('config.' + theme.runtime.configHash) %>
 <% if (theme.seo.structured_data) { %><%- structured_data(page) %><% } -%>

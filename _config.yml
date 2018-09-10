@@ -139,8 +139,23 @@ pwa:
     # Custom rules
     # rules:
     #   - name: jsdelivr
-    #     strategy: cacheFirst
+    #     strategy: staleWhileRevalidate
     #     regex: https://cdn\\.jsdelivr\\.net
+    #   - name: gtm
+    #     strategy: staleWhileRevalidate
+    #     regex: https://www\\.googletagmanager\\.com\?id=.*
+    #   - name: gravatar
+    #     strategy: staleWhileRevalidate
+    #     regex: https://www\\.gravatar\\.com
+    #   - name: theme
+    #     strategy: staleWhileRevalidate
+    #     regex: /.*\\.(?:js|css|woff2|png|jpg|gif)$
+    #   - name: cdn
+    #     strategy: staleWhileRevalidate
+    #     regex: https://cdn\\.yourdomain\\.com
+    #   - name: json
+    #     strategy: cacheFirst
+    #     regex: your_api_prefix/.*\\.json
 
   manifest:
     # short_name:
