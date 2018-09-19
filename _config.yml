@@ -11,6 +11,7 @@ theme:
   # content_width: 640
 
 # Sidebar menu
+# Mostly for your pages
 menu:
   home: /
   # about: /about
@@ -120,6 +121,11 @@ comments:
     # autoload: false
 
 # Assets path
+# Prefix/Suffix post images path, useful for CDN settings.
+# For example
+# ![cat](images/cat.gif)
+# will convert to:
+# <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
 assets:
   # prefix: 'https://cdn.example.com'
   # suffix: '?m=webp&q=80'

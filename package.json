@@ -1,8 +1,7 @@
 {
   "name": "hexo-theme-inside",
-  "version": "1.10.4",
-  "description": "A flat and clean theme for Hexo.",
-  "main": "scripts/index.js",
+  "version": "1.10.5",
+  "description": "A SPA, flat and clean theme for Hexo ❤️.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elmorec/hexo-theme-inside.git"
