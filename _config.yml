@@ -184,28 +184,32 @@ seo:
   # structured_data: true
 
 # Reward
-# qrcode: url of the qrcode images, optional
-# url: link of the payment, optional
-# text: text of the url, url will be displayed as default
-# You must set either a qrcode or a url
-# reward:
-#   methods:
-#     - name: wechat
-#       qrcode:
-#       url:
-#       text:
-#     - name: alipay
-#       qrcode:
-#       url:
-#       text:
-#     - name: paypal
-#       qrcode:
-#       url:
-#       text:
-#     - name: bitcoin
-#       qrcode:
-#       url:
-#       text:
+reward:
+  # Text which showing at the top
+  # text: Buy me a cup of coffee ☕.
+
+  # Payment Methods
+  # `qrcode`: url of the qrcode images, optional
+  # `url`: link of the payment, optional
+  # `text`: text of the url, url will be displayed as default
+  # You must set either a qrcode or a url
+  # methods:
+  #   - name: wechat
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: alipay
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: paypal
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: bitcoin
+  #     qrcode:
+  #     url:
+  #     text:
 
 # Google analytics
 # ga: UA-00000000-0

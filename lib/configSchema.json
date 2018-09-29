@@ -224,6 +224,7 @@
   "reward": {
     "type": "object",
     "properties": {
+      "text": { "type": "string", "default": "Buy me a cup of coffee ☕.", "required": true },
       "methods": {
         "type": "array",
         "items": {

@@ -13,7 +13,7 @@
 <% } -%>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-<%- open_graph({ image: page.thumbnail }) %>
+<%- open_graph({ image: page.thumbnail || theme.profile.avatar }) %>
 <% if (theme.sns.feed) { -%>
 <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(theme.sns.feed) %>">
 <% } -%>
