@@ -140,17 +140,18 @@
     "type": "object",
     "properties": {
       "disqus": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "object",
-            "properties": {
-              "shortname": { "type": "string" },
-              "autoload": { "type": "boolean", "default": true, "required": true }
-            }
-          },
-          { "enum": [false] }
-        ]
+        "type": {
+          "shortname": { "type": "string", "required": true },
+          "script": { "type": "string" },
+          "autoload": { "type": "boolean", "default": true, "required": true }
+        }
+      },
+      "livere": {
+        "type": {
+          "uid": { "type": "string", "required": true },
+          "script": { "type": "string", "default": "https://cdn-city.livere.com/js/embed.dist.js", "required": true },
+          "autoload": { "type": "boolean", "default": true, "required": true }
+        }
       }
     }
   },

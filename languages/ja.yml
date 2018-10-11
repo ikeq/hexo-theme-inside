@@ -10,6 +10,22 @@ title:
   categories: カテゴリ
   tags: タグ
 
+footer:
+  powered: 'Powered by %s'
+  theme: テーマ
+
+reward:
+  paypal: Paypal
+  wechat: WeChat
+  alipay: Alipay
+  bitcoin: Bitcoin
+
+comments:
+  load: '%s をロードする'
+  load_faild: '%s の読み込みに失敗し、再試行'
+  livere: Livere
+  disqus: Disqus
+
 post:
   copyright:
     author: 著者
@@ -18,8 +34,13 @@ post:
     published: 出版日
     updated: 更新日
 
-reward:
-  paypal: Paypal
-  wechat: WeChat
-  alipay: Alipay
-  bitcoin: Bitcoin
+page:
+  tags:
+    zero: タグなし
+    one: 全 1 タグ
+    other: '全 %d タグ'
+
+  notfound:
+    direct_failed: '%s への誘導に失敗しました。'
+    empty: ここには何もありません。
+    home: ホームページに戻る

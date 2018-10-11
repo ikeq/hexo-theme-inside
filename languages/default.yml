@@ -10,6 +10,22 @@ title:
   categories: Category
   tags: Tag
 
+footer:
+  powered: "Powered by %s"
+  theme: Theme
+
+reward:
+  paypal: Paypal
+  wechat: WeChat
+  alipay: 支
+  bitcoin: Bitcoin
+
+comments:
+  load: Load %s
+  load_faild: Faild to load %s, click to retry
+  livere: Livere
+  disqus: Disqus
+
 post:
   copyright:
     author: Author
@@ -18,8 +34,13 @@ post:
     published: Published
     updated: Updated
 
-reward:
-  paypal: Paypal
-  wechat: WeChat
-  alipay: 支
-  bitcoin: Bitcoin
+page:
+  tags:
+    zero: No tags
+    one: 1 tag in total
+    other: "%d tags in total"
+
+  notfound:
+    direct_failed: Failed to direct to %s
+    empty: Nothing here.
+    home: back to home

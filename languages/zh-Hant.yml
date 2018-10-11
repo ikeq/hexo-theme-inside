@@ -10,6 +10,22 @@ title:
   categories: 分類
   tags: 標簽
 
+footer:
+  powered: '由 %s 強力驅動'
+  theme: 主題
+
+reward:
+  paypal: Paypal
+  wechat: WeChat
+  alipay: Alipay
+  bitcoin: Bitcoin
+
+comments:
+  load: 加載 %s
+  load_faild: 加載 %s 失敗，點擊嘗試重新加載
+  livere: Livere
+  disqus: Disqus
+
 post:
   copyright:
     author: 文章作者
@@ -18,8 +34,13 @@ post:
     published: 發表日期
     updated: 更新日期
 
-reward:
-  paypal: Paypal
-  wechat: WeChat
-  alipay: Alipay
-  bitcoin: Bitcoin
+page:
+  tags:
+    zero: 暫無標籤
+    one: 目前共有 1 個標籤
+    other: '目前共有 %d 個標籤'
+
+  notfound:
+    direct_failed: 無法跳轉到 %s
+    empty: 什麼也沒有。
+    home: 返回首頁

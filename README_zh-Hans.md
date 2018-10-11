@@ -16,6 +16,7 @@ A SPA, flat and clean theme for [Hexo] ❤️.
 ## 预览
 
 - https://blog.oniuo.com
+- https://blog.oniuo.com/post/inside-theme-showcase
 
 ## 特色
 
@@ -25,10 +26,11 @@ A SPA, flat and clean theme for [Hexo] ❤️.
   - :cn: Simplified Chinese & Traditional Chinese
   - :us: English
   - :jp: Japanese
-- 内置 `archives`、`tags`、`categories` page
-- 评论 ([Disqus])
+- 评论
+  - [Disqus]
+  - [LiveRe]
 - 丰富的社交媒体图标
-- Gravatar 头像
+- 头像
 - 文章图片 CDN 设置
 - 增强的文章展示
   - 缩略图
@@ -47,7 +49,7 @@ A SPA, flat and clean theme for [Hexo] ❤️.
   - canonical link
   - 内置 `sitemap.xml`
   - [Structured Data]
-- Open Graph Meta Tags
+  - Open Graph Meta Tags
 - Google Analytics
 
 ## 开始使用
@@ -58,7 +60,13 @@ A SPA, flat and clean theme for [Hexo] ❤️.
 npm install hexo-theme-inside
 ```
 
-2\. 详细配置见 [_config.yml](_config.yml)。
+2\. 配置 `HEXO/_config.yml` 如下：
+
+```yml
+permalink: post/:title/
+```
+
+3\. 主题配置见 [inside/_config.yml](_config.yml)，详细说明见[这里](https://blog.oniuo.com/post/inside-theme-configuration)。
 
 ## 浏览器支持
 
@@ -83,4 +91,5 @@ Licensed under [MIT](LICENSE).
 [workbox]: https://developers.google.com/web/tools/workbox/
 [Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
 [disqus]: https://disqus.com
+[livere]: https://livere.com
 [releases]: https://github.com/elmorec/hexo-theme-inside/releases

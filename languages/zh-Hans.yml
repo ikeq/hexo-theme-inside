@@ -10,6 +10,22 @@ title:
   categories: 分类
   tags: 标签
 
+footer:
+  powered: '由 %s 强力驱动'
+  theme: 主题
+
+reward:
+  paypal: Paypal
+  wechat: 微信
+  alipay: 支
+  bitcoin: Bitcoin
+
+comments:
+  load: 加载 %s
+  load_faild: 加载 %s 失败，点击尝试重新加载
+  livere: Livere
+  disqus: Disqus
+
 post:
   copyright:
     author: 本文作者
@@ -18,8 +34,13 @@ post:
     published: 发表日期
     updated: 更新日期
 
-reward:
-  paypal: Paypal
-  wechat: 微信
-  alipay: 支
-  bitcoin: Bitcoin
+page:
+  tags:
+    zero: 暂无标签
+    one: 目前共计 1 个标签
+    other: '目前共计 %d 个标签'
+
+  notfound:
+    direct_failed: 无法跳转到 %s
+    empty: 什么也没有。
+    home: 返回首页

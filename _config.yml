@@ -4,9 +4,9 @@ theme:
   # cdn for theme statics
   # cdn:
   # body background
-  background: confectionary.png \#f5f7fa
+  # background:
   # sidebar background
-  sidebar_background: shattered-island.png
+  # sidebar_background:
   # maximum width of content
   # content_width: 640
 
@@ -117,7 +117,13 @@ comments:
     # shortname: your_disqus_shortname
     # Or you can set disqus script directly
     # script: //your_disqus_shortname.disqus.com/embed.js
-    # Set to true to auto load disqus, otherwise will show a button
+    # Default is true, set to false will show a button
+    # autoload: false
+  # livere:
+    # uid: your_livere_uid
+    # LiveRe script, default is https://cdn-city.livere.com/js/embed.dist.js
+    # script:
+    # Default is true, set to false will show a button
     # autoload: false
 
 # Assets path
@@ -185,13 +191,13 @@ seo:
 
 # Reward
 reward:
-  # Text which showing at the top
+  # Text which shows at the top.
   # text: Buy me a cup of coffee ☕.
 
   # Payment Methods
-  # `qrcode`: url of the qrcode images, optional
-  # `url`: link of the payment, optional
-  # `text`: text of the url, url will be displayed as default
+  #  `qrcode`: url of the qrcode images, optional
+  #  `url`: link of the payment, optional
+  #  `text`: text of the url, url will be displayed as default
   # You must set either a qrcode or a url
   # methods:
   #   - name: wechat
