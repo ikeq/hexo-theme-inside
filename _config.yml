@@ -13,9 +13,9 @@ theme:
 # Sidebar menu
 # Mostly for your pages
 menu:
-  home: /
-  # about: /about
-  # links: /links
+  Home: /
+  # About: /about
+  # Links: /links
 
 # Profile
 profile:

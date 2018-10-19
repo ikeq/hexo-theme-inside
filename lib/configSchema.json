@@ -173,7 +173,8 @@
                   "type": {
                     "name": { "type": "string", "required": true },
                     "strategy": { "enum": ["networkOnly", "cacheFirst", "cacheOnly", "staleWhileRevalidate"], "required": true },
-                    "regex": { "type": "string", "required": true }
+                    "regex": { "type": "string", "required": true },
+                    "expire": { "type": "number" }
                   }
                 }
               }
