@@ -1,7 +1,10 @@
 {
   "name": "hexo-theme-inside",
-  "version": "1.11.3",
+  "version": "1.11.4",
   "description": "A SPA, flat and clean theme for Hexo ❤️.",
+  "scripts": {
+    "test": "jasmine --config=test/jasmine.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elmorec/hexo-theme-inside.git"
@@ -19,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/elmorec/hexo-theme-inside/issues"
   },
-  "homepage": "https://github.com/elmorec/hexo-theme-inside#readme"
+  "homepage": "https://github.com/elmorec/hexo-theme-inside#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "hexo": "^3.8.0",
+    "jasmine": "^3.3.0",
+    "uglify-js": "^3.4.9"
+  }
 }
