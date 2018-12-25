@@ -2,7 +2,7 @@
 
 [![build-img]]() [![release-img]][releases] [![license-img]](LICENSE)
 
-A SPA, flat and clean theme for [Hexo] ❤️.
+❤️ A SPA, flat and clean theme for [Hexo].
 
 ## Summary
 
@@ -36,8 +36,6 @@ A SPA, flat and clean theme for [Hexo] ❤️.
   - 缩略图
   - 首字下沉
   - 优化的 table 展示（无头表格、长表格）
-  - 可执行的 `<script>` 标签
-    - 可选的 babelify、uglify 预处理
   - 目录
   - 版权声明
   - Reward

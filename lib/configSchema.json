@@ -163,7 +163,7 @@
           {
             "type": "object",
             "properties": {
-              "cdn": { "type": "string", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js", "required": true },
+              "cdn": { "type": "string", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js", "required": true },
               "module_path_prefix": { "type": "string" },
               "expire": { "type": "number", "default": 4, "required": true },
               "name": { "type": "string", "default": "sw.js", "required": true },
@@ -236,6 +236,21 @@
             "url": { "type": "string" },
             "text": { "type": "string" }
           }
+        }
+      }
+    }
+  },
+  "plugins": {
+    "type": "array",
+    "items": {
+      "type": {
+        "template": { "type": "string", "required": true },
+        "position": {
+          "oneOf": [
+            { "enum": ["sidebar", "post", "page"], "required": true },
+            { "type": "array", "items": { "enum": ["sidebar", "post", "page"], "required": true } }
+          ],
+          "required": true
         }
       }
     }

@@ -151,10 +151,11 @@ describe('utils', () => {
       e: { a: 1 }
     });
 
-    const schemaOneOf = { a: { oneOf: [{ type: 'number' }, { enum: [false, 'a'] }] } };
+    const schemaOneOf = { a: { oneOf: [{ type: 'number' }, { enum: [false, 'a'] }, { type: 'array', items: { enum: [1,2,3], required: true } }] } };
     expect(validateSchema(schemaOneOf, { a: 1 })).toEqual({ a: 1 });
     expect(validateSchema(schemaOneOf, { a: false })).toEqual({ a: false });
     expect(validateSchema(schemaOneOf, { a: 'a' })).toEqual({ a: 'a' });
+    expect(validateSchema(schemaOneOf, { a: [1,'a'] })).toEqual({ a: [1] });
 
     const schemaArray = { a: { type: 'array', items: { type: { a: { type: 'number' }, b: { type: 'string' } } } } };
     expect(validateSchema(schemaArray, { a: [{ a: 1, b: 'b' }] })).toEqual({ a: [{ a: 1, b: 'b' }] })
