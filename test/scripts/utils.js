@@ -174,22 +174,22 @@ describe('utils', () => {
   it('jsParser()', () => {
     expect(parseJs()).toBe('');
     expect(parseJs({})).toBe('');
-    expect(parseJs(`const foo = 1; // foo`)).toBe('"use strict";var foo=1;');
+    expect(parseJs(`const foo = 1; // foo`)).toBe('var foo=1;');
     expect(parseJs(`(function() {
                        const foo = 1; // foo
-                    })();`)).toBe('"use strict";');
+                    })();`)).toBe('');
   });
 
   it('snippet()', () => {
     expect(snippet('')).toBe('');
 
     expect(snippet('alert(1)'))
-      .toBe('<div class="is-snippet"><script>"use strict";alert(1);</script></div>');
+      .toBe('<div class="is-snippet"><script>alert(1);</script></div>');
 
     expect(snippet('', 'whatever here')).toBe('<div class="is-snippet">whatever here</div>');
 
     expect(snippet('alert(1)', code => `<foo>${code}</foo>`))
-      .toBe('<div class="is-snippet"><foo>"use strict";alert(1);</foo></div>');
+      .toBe('<div class="is-snippet"><foo>alert(1);</foo></div>');
   });
 
 });

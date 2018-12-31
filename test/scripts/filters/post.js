@@ -28,7 +28,7 @@ describe('post', () => {
       content: `<script>'foo'</script>`,
     };
     post(data);
-    expect(data.content).toBe(`<div class="is-snippet"><script>"use strict";</script></div>`);
+    expect(data.content).toBe(`<div class="is-snippet"><script></script></div>`);
 
     data.content = '<script></script>';
     post(data);

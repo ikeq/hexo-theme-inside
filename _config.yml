@@ -222,19 +222,6 @@ reward:
 
 # Plugins
 # Inject html snippet to a specified position
-# Available position are sidebar (right above the sns icons), page and post (right above the tags).
 plugins:
-  # Displaying a square ad unit on sidebar
-  # - position: sidebar
-  #   template: |
-  #     <ins class="adsbygoogle"
-  #         style="display:inline-block;width:250px;height:250px"
-  #         data-ad-client=""
-  #         data-ad-slot=""></ins>
-  #     <script>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
-  #
-  # `position` can be an array. For example: post/page view counting
   # - position:
-  #   - post
-  #   - page
-  #   template: <script>fetch('//your_awesome_api?slug='+location.pathname)</script>
+  #   template:

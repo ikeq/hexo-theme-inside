@@ -247,8 +247,8 @@
         "template": { "type": "string", "required": true },
         "position": {
           "oneOf": [
-            { "enum": ["sidebar", "post", "page"], "required": true },
-            { "type": "array", "items": { "enum": ["sidebar", "post", "page"], "required": true } }
+            { "enum": ["sidebar", "post", "page", "comments"], "required": true },
+            { "type": "array", "items": { "enum": ["sidebar", "post", "page", "comments"], "required": true } }
           ],
           "required": true
         }
