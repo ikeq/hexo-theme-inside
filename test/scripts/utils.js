@@ -88,23 +88,23 @@ describe('utils', () => {
 
   it('parseToc()', () => {
     const cnt1 = `
-      <h1 a="a" id="title-1" b="b"><a></a>title 1</h1>
+      <h1 a="a" id="title-1" b="b"><a></a>title 1<a></a></h1>
       content
-      <h2 a="a" id="title-1-1" b="b"><a></a>title 1.1</h2>
+      <h2 a="a" id="title-1-1" b="b"><a></a>title 1.1<a></a></h2>
       content
-      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1</h3>
+      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1<a></a></h3>
       content
-      <h4 a="a" id="title-1-1-1-1" b="b"><a></a>title 1.1.1.1</h4>
+      <h4 a="a" id="title-1-1-1-1" b="b"><a></a>title 1.1.1.1<a></a></h4>
       content
-      <h5 a="a" id="title-1-1-1-1-1" b="b"><a></a>title 1.1.1.1.1</h5>
+      <h5 a="a" id="title-1-1-1-1-1" b="b"><a></a>title 1.1.1.1.1<a></a></h5>
       content
-      <h1 a="a" id="title-2" b="b"><a></a>title 2</h1>
+      <h1 a="a" id="title-2" b="b"><a></a>title 2<a></a></h1>
       content
     `;
     const cnt2 = `
-      <h1 a="a" id="title-1" b="b"><a></a>title 1</h1>
+      <h1 a="a" id="title-1" b="b"><a></a>title 1<a></a></h1>
       content
-      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1</h1>
+      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1<a></a></h1>
       content
     `;
 
@@ -151,11 +151,30 @@ describe('utils', () => {
       e: { a: 1 }
     });
 
-    const schemaOneOf = { a: { oneOf: [{ type: 'number' }, { enum: [false, 'a'] }, { type: 'array', items: { enum: [1,2,3], required: true } }] } };
+    const schemaOneOf = {
+      a: {
+        oneOf: [
+          { type: 'number' },
+          { enum: [false, 'a'] },
+          { type: 'array', items: { enum: [1, 2, 3], required: true } },
+        ]
+      }
+    };
     expect(validateSchema(schemaOneOf, { a: 1 })).toEqual({ a: 1 });
     expect(validateSchema(schemaOneOf, { a: false })).toEqual({ a: false });
     expect(validateSchema(schemaOneOf, { a: 'a' })).toEqual({ a: 'a' });
-    expect(validateSchema(schemaOneOf, { a: [1,'a'] })).toEqual({ a: [1] });
+    expect(validateSchema(schemaOneOf, { a: [1, 'a'] })).toEqual({ a: [1] });
+
+    const schemaOneOf2 = {
+      a: {
+        oneOf: [
+          { type: 'string' },
+          { type: 'array', items: { type: 'string' } },
+        ]
+      }
+    };
+    expect(validateSchema(schemaOneOf2, { a: 'a' })).toEqual({ a: 'a' });
+    expect(validateSchema(schemaOneOf2, { a: ['a', 'b', 1, {}] })).toEqual({ a: ['a', 'b'] });
 
     const schemaArray = { a: { type: 'array', items: { type: { a: { type: 'number' }, b: { type: 'string' } } } } };
     expect(validateSchema(schemaArray, { a: [{ a: 1, b: 'b' }] })).toEqual({ a: [{ a: 1, b: 'b' }] })

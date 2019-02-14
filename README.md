@@ -2,7 +2,7 @@
 
 [![build-img]]() [![release-img]][releases] [![license-img]](LICENSE)
 
-❤️ A SPA, flat and clean theme for [Hexo].
+❤️ SPA, flat and clean theme for [Hexo].
 
 [中文文档](README_zh-Hans.md)
 
@@ -22,6 +22,7 @@
 ## Features
 
 - SPA built with [angular]
+- Custom accent color, background
 - Sub-page routes
 - Internationalization (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
@@ -30,15 +31,15 @@
 - Comments
   - [Disqus]
   - [LiveRe]
-- Rich SNS icons
-- Avatar
-- Article image CDN
-- Enhanced article display
+  - Support most comment systems as plugin
+- Content image CDN
+- Enhanced content display
   - Thumbnail
   - Dropcap
+  - Zoomable images
   - Optimized table display (headless table, long table)
   - Table of content
-  - License notice
+  - Copyright notice
   - Reward
 - [PWA]
   - Dynamically updated `theme-color` meta tag (by extracting thumbnail pixel values)
@@ -49,7 +50,6 @@
   - built-in `sitemap.xml`
   - [Structured Data]
   - Open Graph Meta Tags
-- Google Analytics
 
 ## Quick start
 

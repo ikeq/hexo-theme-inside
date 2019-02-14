@@ -50,4 +50,34 @@ describe('assets', () => {
     });
   });
 
+  it('parses color', () => {
+    const data = {
+      thumbnail: 'img/sample.jpg #000',
+      content: '<p><img src="img/sample.jpg"></p>',
+    };
+
+    assets(data);
+
+    expect(data).toEqual({
+      thumbnail: 'https://sample.com/img/sample.jpg?q=80',
+      color: '#000',
+      content: '<p><img src="https://sample.com/img/sample.jpg?q=80"></p>',
+    });
+  });
+
+  it('doesn\'t parses color when `color` is specified', () => {
+    const data = {
+      thumbnail: 'img/sample.jpg #000',
+      color: '#fff',
+      content: '<p><img src="img/sample.jpg"></p>',
+    };
+
+    assets(data);
+
+    expect(data).toEqual({
+      thumbnail: 'https://sample.com/img/sample.jpg?q=80',
+      color: '#fff',
+      content: '<p><img src="https://sample.com/img/sample.jpg?q=80"></p>',
+    });
+  });
 });

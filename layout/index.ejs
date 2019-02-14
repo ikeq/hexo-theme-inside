@@ -9,16 +9,15 @@
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>">
 <% if (theme.pwa.manifest) { -%>
 <link rel="manifest" href="<%= url_for('manifest.json') %>">
-<meta name="theme-color" content="<%= theme.pwa.manifest.theme_color %>">
 <% } -%>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
 <%- open_graph({ image: page.thumbnail || theme.profile.avatar }) %>
-<% if (theme.sns.feed) { -%>
-<link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(theme.sns.feed) %>">
+<% if (config.feed && config.feed.path) { -%>
+<link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% } -%>
-<% if (theme.runtime.themeHash) { %><%- css('theme.' + theme.runtime.themeHash) %><% } %>
 <%- theme_static('css') %>
+<% if (theme.runtime.themeHash) { %><%- css('theme.' + theme.runtime.themeHash) %><% } %>
 <%- js('config.' + theme.runtime.configHash) %>
 <% if (theme.seo.structured_data) { %><%- structured_data(page) %><% } -%>
 <% if (theme.ga) { %><%- ga(theme.ga) %><% } -%>

@@ -1,35 +1,50 @@
-theme:
-  # url prefix of the fetching of json data
-  # api_prefix: api
-  # cdn for theme statics
-  # cdn:
-  # body background
+# ---------------------------------------------------------------
+# Basic
+# ---------------------------------------------------------------
+
+# Appearance
+appearance:
+  # Accent color
+  # accent_color: '#2a2b33'
+
+  # Set background
+  # background: '#f5f7fa'
+  # background: '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa'
+  # background: 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
+
+  # background can be an array, in which case, the second value
+  # is used as the background when the sidebar is open, default to accent_color,
+  # for the best appearance, Keep its accent consistent with accent_color
   # background:
-  # sidebar background
-  # sidebar_background:
-  # maximum width of content
+  #   - 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
+  #   - '#2a2b33'
+
+  # Maximum width of content
   # content_width: 640
 
+# Sidebar profile
+profile:
+  # `email` will fallback to `hexo.config.email` if not specified
+  email:
+
+  # Avatar URL, email address will be used for gravatar(https://en.gravatar.com) avatar if not specified.
+  # avatar:
+
+  bio: Awesome guy.
+
 # Sidebar menu
-# Mostly for your pages
 menu:
   Home: /
   # About: /about
   # Links: /links
+  # Github: https://github.com/username
 
-# Profile
-profile:
-  avatar: /avatar.jpg
-  # Email address will be used for showing gravatar(https://en.gravatar.com) avatar if `avatar` is not specified.
-  email: example@mail.com
-  bio: Awesome guy.
-
-# Social media
+# Sidebar social media
 # Try to sort by changing the order of the keys
 sns:
   # `email` will fallback to `profile.email` if not specified
   email:
-  # `feed` will fallback to `feed.path` of site if not specified
+  # `feed` will fallback to `hexo.config.feed.path` if not specified
   feed:
   github:
   twitter:
@@ -48,103 +63,189 @@ sns:
   weibo:
   qq:
 
+# Sidebar footer
 footer:
-  # If not defined, will show current year and author, eg: ©2018 • Superman.
-  copyright:
+  # Default to `©year • author`, set to false to disable.
+  # copyright:
 
   # Set to false to hide Hexo link.
-  powered: true
-  # Set to false to hide theme info.
-  theme: true
+  # powered: false
 
-  # Custom text can be defined here.
-  # custom: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+  # Set to false to hide theme link.
+  # theme: false
 
-# Post
-post:
-  per_page: 10
-  # Table of content, enabled by default, set to false to disable.
-  toc:
-    # The depth of toc, default is 2, maximum to 4.
-    # depth: 3
-    # Showing index before toc, eg. 1.1 title
-    # index: true
-  # Show reward panel
-  # reward: true
-  # Copyright notice
-  # Disabled by default, remove the hash to enable
-  # You can also use front matter `copyright` to override this setting.
-  # copyright:
-    # Global enable, true by default
-    # global: true
-    # Show author, false by default
-    # author: true
-    # Show post link, true by default
-    # link: false
-    # license: Attribution-NonCommercial-NoDerivatives 4.0 International
-    #   (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
-    # Show post date, true by default
-    # published: false
-    # Show post update date, false by default
-    # updated: false
-    # Totally custom copyright
-    # custom: my copyright
+  # Custom text.
+  # custom: Hosted by <a target="_blank" rel="noopener"
+  #   href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+
+# ---------------------------------------------------------------
+# Content
+# ---------------------------------------------------------------
 
 # Page
 page:
-  # Show reward panel
+  # Display Table of content, default to `true`
+  # toc: false
+
+  # Display reward, default to `false`
   # reward: true
+
+  # Display copyright notice, default to `false`
+  # copyright: true
+
+
+# Post
+post:
+  # per_page: 10
+
+  # Display Table of content, default to `true`
+  # toc: false
+
+  # Display reward, default to `false`
+  # reward: true
+
+  # Display copyright notice, default to `false`
+  # copyright: true
 
 # Archive
 archive:
-  per_page: 10
+  # per_page: 10
 
 # Tag
 tag:
-  per_page: 10
+  # per_page: 10
 
 # Category
 category:
-  per_page: 10
+  # per_page: 10
 
-# Favicon
-# Default is `favicon.ico`
-# favicon: favicon.ico
 
-# Disqus comments
-comments:
-  # disqus:
-    # shortname: your_disqus_shortname
-    # Or you can set disqus script directly
-    # script: //your_disqus_shortname.disqus.com/embed.js
-    # Default is true, set to false will show a button
-    # autoload: false
-  # livere:
-    # uid: your_livere_uid
-    # LiveRe script, default is https://cdn-city.livere.com/js/embed.dist.js
-    # script:
-    # Default is true, set to false will show a button
-    # autoload: false
+# ---------------------------------------------------------------
+# Content addons
+# ---------------------------------------------------------------
 
-# Assets path
-# Prefix/Suffix post images path, useful for CDN settings.
-# For example
-# ![cat](images/cat.gif)
-# will convert to:
+# Prefix/Suffix content image's path, useful for CDN setting,
+# for example: `![cat](images/cat.gif)` will convert to:
 # <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
 assets:
   # prefix: 'https://cdn.example.com'
   # suffix: '?m=webp&q=80'
 
+# Table of content, enabled by default, set to false to disable.
+toc:
+  # The depth of toc, default to `3`, maximum to `4`.
+  # depth: 3
+
+  # Showing index before title, eg. 1.1 title, default to `true`
+  # index: true
+
+# Reward
+reward:
+  # Text which shows at the top.
+  # text: Buy me a cup of coffee ☕.
+
+  # Payment Methods
+  #  - qrcode: url of the qrcode image
+  #    url: link of the payment
+  #    text: link text of the url
+  # qrcode and url must be set at least one
+  # methods:
+  #   - name: wechat
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: alipay
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: paypal
+  #     qrcode:
+  #     url:
+  #     text:
+  #   - name: bitcoin
+  #     qrcode:
+  #     url:
+  #     text:
+
+# Copyright notice
+# You can also use front matter `copyright` to override this setting.
+# copyright:
+  # Display author, default to `true`
+  # author: true
+
+  # Display link, default to `true`
+  # link: false
+
+  # license: Attribution-NonCommercial-NoDerivatives 4.0 International
+  #   (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\"
+  #   rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
+
+  # Display published date, default to `false`
+  # published: false
+
+  # Display updated date, default to `false`
+  # updated: false
+
+  # Custom text, override above settings
+  # custom: my copyright
+
+# Comments
+# Built-in support Disqus (https://disqus.com) and LiveRe (https://livere.com),
+# for other comment system, see plugins
+comments:
+  # disqus:
+    # shortname: disqus_shortname
+    # Or you can set disqus script URL directly
+    # script: //disqus_shortname.disqus.com/embed.js
+    # Autoload, default to `true`, set to `false` to display a button
+    # autoload: false
+
+  # livere:
+    # uid: livere_uid
+    # LiveRe script, default to `https://cdn-city.livere.com/js/embed.dist.js`
+    # script:
+    # Autoload, default to `true`, set to `false` to display a button
+    # autoload: false
+
+
+# ---------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------
+
+# URL prefix for theme statics
+# static_prefix:
+
+# URL prefix for json data
+# If your json file is put in a cdn server,
+# set data_prefix as '//cdn.com/path/to/path/your_json_dir' and data_dir as 'your_json_dir'
+# data_prefix:
+
+# Folder where json file will be generated to, default to 'api'
+# data_dir: api
+
+# Favicon, default to `favicon.ico`
+# favicon: favicon.ico
+
+# Google analytics
+# ga: UA-00000000-0
+
+# SEO
+seo:
+  # Render structured-data in <head>, default to `false`
+  # structured_data: true
+
 # PWA
 pwa:
-  # Workbox(https://developers.google.com/web/tools/workbox/) is a JavaScript libraries for adding offline support to web apps
-  # Disabled by default, remove the hash to enable
+  # Workbox (https://developers.google.com/web/tools/workbox/) is a JavaScript
+  # libraries for adding offline support to web apps,
+  # disabled by default, remove the hash to enable
   # workbox:
     # Workbox cdn, uses google by default, below is an example of using alicdn
     # cdn: https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js
     # module_path_prefix: https://g.alicdn.com/kg/workbox/3.3.0/
-    # Expire time in hour, 4 by default, set to 0 to be permanent, caches will be forcibly deleted the next time the site is updated.
+    # Expire time in hour, 4 by default, set to 0 to be permanent,
+    # caches will be forcibly deleted the next time the site is updated.
     # expire: 4
     # The worker script name, `sw.js` by default
     # name: sw.js
@@ -167,9 +268,10 @@ pwa:
     #     regex: https://cdn\\.yourdomain\\.com
     #   - name: json
     #     strategy: cacheFirst
-    #     regex: your_api_prefix/.*\\.json
+    #     regex: your_data_prefix/.*\\.json
 
-  manifest:
+  # manifest.json
+  # manifest:
     # short_name:
     # name:
     # start_url: /
@@ -183,45 +285,14 @@ pwa:
     #     sizes: 144x144
     #     type: image/png
 
-# SEO
-seo:
-  # Render structured-data
-  # Disabled by default, set to true to enable
-  # structured_data: true
-
-# Reward
-reward:
-  # Text which shows at the top.
-  # text: Buy me a cup of coffee ☕.
-
-  # Payment Methods
-  #  `qrcode`: url of the qrcode images, optional
-  #  `url`: link of the payment, optional
-  #  `text`: text of the url, url will be displayed as default
-  # You must set either a qrcode or a url
-  # methods:
-  #   - name: wechat
-  #     qrcode:
-  #     url:
-  #     text:
-  #   - name: alipay
-  #     qrcode:
-  #     url:
-  #     text:
-  #   - name: paypal
-  #     qrcode:
-  #     url:
-  #     text:
-  #   - name: bitcoin
-  #     qrcode:
-  #     url:
-  #     text:
-
-# Google analytics
-# ga: UA-00000000-0
-
-# Plugins
-# Inject html snippet to a specified position
+# Plugins, inject html snippet to a specified position
+#  - position: `sidebar` | `post` | `page` | `comments`, can be an array
+#    template: html code
+# For the lastest ES grammar and code minification
+# Run the following command in the root directory of Hexo (not `themes/inside`):
+# ```bash
+# npm install babel-core babel-preset-env html-minifier uglify-js --save
+# ```
 plugins:
   # - position:
   #   template:
