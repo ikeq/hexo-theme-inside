@@ -2,12 +2,26 @@
 
 describe('post', function () {
   const post = require('../../../lib/filter/post');
-  const ctx = {
-    theme: {
-      config: {}
-    },
-    config: {}
-  }
+
+  beforeEach(function () {
+    this.ctx = {
+      theme: {
+        config: {
+          comments: {},
+          reward: {},
+          toc: {},
+          copyright: {
+            license: 'a'
+          },
+          post: { reward: true, toc: true, copyright: true },
+          page: { reward: true, toc: true, copyright: true }
+        }
+      },
+      config: {
+        url: '//example.com'
+      }
+    };
+  });
 
   it('specify type', function () {
     const data = {
@@ -15,8 +29,84 @@ describe('post', function () {
       excerpt: '',
       content: ''
     }
-    post.call(ctx, data);
+    post.call(this.ctx, data);
     expect(data.type).toBe('post');
+  })
+
+  it('link', function () {
+    const data = {
+      layout: 'post',
+      excerpt: '',
+      content: '',
+      slug: 'test'
+    }
+    post.call(this.ctx, data);
+    expect(data.link).toBe('//example.com/post/test/');
+
+    data.layout = 'page';
+    data.source = 'test/index.md';
+    post.call(this.ctx, data);
+    expect(data.link).toBe('//example.com/test/');
+  })
+
+  it('comments', function () {
+    const data = {
+      layout: 'post',
+      excerpt: '',
+      content: '',
+      comments: true
+    };
+
+    post.call(this.ctx, data);
+    expect(data.comments).toBe(true);
+
+    // local comments disabled
+    data.comments = false;
+    post.call(this.ctx, data);
+    expect(data.comments).toBe(false);
+  })
+
+  it('reward', function () {
+    const data = {
+      layout: 'post',
+      excerpt: '',
+      content: ''
+    };
+
+    post.call(this.ctx, data);
+    expect(data.reward).toBe(true);
+
+    // local reward disabled
+    data.reward = false;
+    post.call(this.ctx, data);
+    expect(data.reward).toBe(false);
+  });
+
+  it('copyright', function () {
+    const data = {
+      layout: 'post',
+      excerpt: '',
+      content: ''
+    };
+
+    post.call(this.ctx, data);
+    expect(data.copyright).toEqual({ license: 'a' });
+
+    data.copyright = { license: 'b' };
+    post.call(this.ctx, data);
+    expect(data.copyright).toEqual({ license: 'b' });
+  });
+
+  it('heading anchor', function () {
+    const data = {
+      layout: 'post',
+      excerpt: '',
+      slug: 'test',
+      content: '<h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2>'
+    };
+
+    post.call(this.ctx, data);
+    expect(data.content).toBe('<h2 id="Title">Title<a href="post/test#Title"></a></h2>');
   })
 
   it('add additional tag for table and remove empty thead', function () {
@@ -26,7 +116,7 @@ describe('post', function () {
       content: `<table><thead><tr><th> </th></tr></thead><tbody><tr><td>1</td></tr></tbody></table>`,
     };
 
-    post.call(ctx, data);
+    post.call(this.ctx, data);
 
     expect(data.content).toBe('<div class="article-bounded"><div class="article-table"><table><tbody><tr><td>1</td></tr></tbody></table></div></div>');
   });
@@ -38,7 +128,7 @@ describe('post', function () {
       content: `<p><img></p><p>img<img></p><p><img><img></p>`,
     };
 
-    post.call(ctx, data);
+    post.call(this.ctx, data);
 
     expect(data.content).toBe(
       '<div class="article-img"><p><img data-zoomable=""></p></div>' +
@@ -52,11 +142,11 @@ describe('post', function () {
       excerpt: '',
       content: `<script>'foo'</script>`,
     };
-    post.call(ctx, data);
+    post.call(this.ctx, data);
     expect(data.content).toBe(`<div class="is-snippet"><script></script></div>`);
 
     data.content = '<script></script>';
-    post.call(ctx, data);
+    post.call(this.ctx, data);
     expect(data.content).toBe('<script></script>');
   });
 });
