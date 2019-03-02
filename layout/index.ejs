@@ -9,9 +9,9 @@
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>">
 <% if (theme.pwa.manifest) { -%>
 <link rel="manifest" href="<%= url_for('manifest.json') %>">
-<% } -%>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<% } -%>
 <%- open_graph({ image: page.thumbnail || theme.profile.avatar }) %>
 <% if (config.feed && config.feed.path) { -%>
 <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">

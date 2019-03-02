@@ -107,6 +107,10 @@ describe('post', function () {
 
     post.call(this.ctx, data);
     expect(data.content).toBe('<h2 id="Title">Title<a href="post/test#Title"></a></h2>');
+
+    data.content = '<h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a><span>Title</span></h2>';
+    post.call(this.ctx, data);
+    expect(data.content).toBe('<h2 id="Title"><span>Title</span><a href="post/test#Title"></a></h2>');
   })
 
   it('add additional tag for table and remove empty thead', function () {
@@ -130,10 +134,10 @@ describe('post', function () {
 
     post.call(this.ctx, data);
 
-    expect(data.content).toBe(
-      '<div class="article-img"><p><img data-zoomable=""></p></div>' +
+    expect(data.content.replace(/\=\"\"/g, '')).toBe(
+      '<div class="article-img"><p><img data-zoomable></p></div>' +
       '<p>img<img></p>' +
-      '<div class="article-img"><p><img data-zoomable=""><img data-zoomable=""></p></div>');
+      '<div class="article-img"><p><img data-zoomable><img data-zoomable></p></div>');
   });
 
   it('add additional tag for script', function () {
