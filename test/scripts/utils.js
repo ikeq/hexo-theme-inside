@@ -88,23 +88,23 @@ describe('utils', () => {
 
   it('parseToc()', () => {
     const cnt1 = `
-      <h1 a="a" id="title-1" b="b"><a></a>title 1<a></a></h1>
+      <h1 a="a" id="title-1" b="b">title 1<a href></a></h1>
       content
-      <h2 a="a" id="title-1-1" b="b"><a></a>title 1.1<a></a></h2>
+      <h2 a="a" id="title-1-1" b="b">title 1.1<a href></a></h2>
       content
-      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1<a></a></h3>
+      <h3 a="a" id="title-1-1-1" b="b">title 1.1.1<a href></a></h3>
       content
-      <h4 a="a" id="title-1-1-1-1" b="b"><a></a>title 1.1.1.1<a></a></h4>
+      <h4 a="a" id="title-1-1-1-1" b="b">title 1.1.1.1<a href></a></h4>
       content
-      <h5 a="a" id="title-1-1-1-1-1" b="b"><a></a>title 1.1.1.1.1<a></a></h5>
+      <h5 a="a" id="title-1-1-1-1-1" b="b">title 1.1.1.1.1<a href></a></h5>
       content
-      <h1 a="a" id="title-2" b="b"><a></a>title 2<a></a></h1>
+      <h1 a="a" id="title-2" b="b">title 2<a href></a></h1>
       content
     `;
     const cnt2 = `
-      <h1 a="a" id="title-1" b="b"><a></a>title 1<a></a></h1>
+      <h1 a="a" id="title-1" b="b">title 1<a href></a></h1>
       content
-      <h3 a="a" id="title-1-1-1" b="b"><a></a>title 1.1.1<a></a></h1>
+      <h3 a="a" id="title-1-1-1" b="b">title 1.1.1<a href></a></h1>
       content
     `;
 
@@ -132,8 +132,13 @@ describe('utils', () => {
       { title: 'title 2', id: 'title-2', index: '2' },
     ]);
 
-    // cnt2 shouldn't be parsed
     expect(parseToc(cnt2)).toEqual([]);
+
+    expect(parseToc(`
+    <h2 id="Title"><a href="test">Title</a><a href="post/test#Title"></a></h2>
+    `, 4)).toEqual([
+      { title: '<a>Title</a>', id: 'Title', index: '1' }
+    ]);
   });
 
   it('validateSchema()', () => {
