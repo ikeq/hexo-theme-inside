@@ -88,7 +88,7 @@
         "type": "array",
         "items": {
           "type": {
-            "name": { "enum": ["wechat", "alipay", "paypal", "bitcoin"], "required": true },
+            "name": { "type": "string", "required": true },
             "qrcode": { "type": "string" },
             "url": { "type": "string" },
             "text": { "type": "string" }
