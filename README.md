@@ -53,16 +53,13 @@
 
 ## Quick start
 
-1\. Download the latest version here: [releases], or via npm:
+1\. Download the latest version from [releases], unpack and rename to `inside`, then put it in the themes directory.
 
-```bash
-npm install hexo-theme-inside
-```
-
-2\. Config `HEXO/_config.yml` as follow:
+2\. Config `HEXO/_config.yml` as follows:
 
 ```yml
 permalink: post/:title/
+theme: inside
 ```
 
 3\. See [inside/_config.yml](_config.yml) for theme configuration.

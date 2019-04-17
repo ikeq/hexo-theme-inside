@@ -52,16 +52,15 @@
 
 ## 开始使用
 
-1\. 自行下载（[releases]）或通过 npm：
-
-```bash
-npm install hexo-theme-inside
-```
+1\. 自行下载（[releases]），解压并重命名为 `inside`，然后将其放在 themes 目录。
 
 2\. 配置 `HEXO/_config.yml` 如下：
 
 ```yml
+language: zh-Hans
+# language: zh-Hant
 permalink: post/:title/
+theme: inside
 ```
 
 3\. 主题配置见 [inside/_config.yml](_config.yml)，详细说明见[这里](https://blog.oniuo.com/post/inside-theme-configuration)。
