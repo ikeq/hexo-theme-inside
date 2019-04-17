@@ -1,7 +1,5 @@
 test/
 tmp/
-coverage/
 .travis.yml
-appveyor.yml
 .github/
 .DS_Store
