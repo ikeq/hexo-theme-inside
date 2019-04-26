@@ -120,6 +120,28 @@ tag:
 category:
   # per_page: 10
 
+# Search
+search:
+  # Local search
+  adapter:
+    # Search range
+    range:
+      - posts
+      - pages
+    # per_page: 10
+
+  # Custom search
+  # adapter:
+  #   url:
+  #   method: post
+  #   per_page: 10
+  #   data: query=:query&hitsPerPage=:per_page&page=:current
+  #   headers:
+  #     x-algolia-api-key:
+  #     x-algolia-application-id:
+  #     x-algolia-agent:
+  #   scheme: results[0].hits
+
 
 # ---------------------------------------------------------------
 # Content addons
@@ -214,18 +236,18 @@ comments:
 # ---------------------------------------------------------------
 
 # URL prefix for theme statics
-# static_prefix:
+static_prefix:
 
 # URL prefix for json data
 # If your json file is put in a cdn server,
 # set data_prefix as '//cdn.com/path/to/path/your_json_dir' and data_dir as 'your_json_dir'
-# data_prefix:
+data_prefix:
 
 # Folder where json file will be generated to, default to 'api'
-# data_dir: api
+data_dir:
 
 # Favicon, default to `favicon.ico`
-# favicon: favicon.ico
+favicon:
 
 # Google analytics
 # ga: UA-00000000-0

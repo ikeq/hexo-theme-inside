@@ -251,5 +251,32 @@
         }
       }
     }
+  },
+  "search": {
+    "type": "object",
+    "properties": {
+      "adapter": {
+        "required": true,
+        "default": {},
+        "oneOf": [
+          {
+            "type": {
+              "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
+              "per_page": { "type": "number" }
+            }
+          },
+          {
+            "type": {
+              "url": { "type": "string", "required": true },
+              "method": { "enum": ["get", "post"] },
+              "per_page": { "type": "number", "default": 10, "required": true },
+              "data": { "type": "string" },
+              "headers": { "type": "object" },
+              "scheme": { "type": "string", "required": true }
+            }
+          }
+        ]
+      }
+    }
   }
 }

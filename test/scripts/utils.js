@@ -18,8 +18,8 @@ describe('utils', () => {
   });
 
   it('pick()', () => {
-    const o = { a: 1, b: 2, c: 3, d: 4 };
-    const keys = ['a', 'b'];
+    const o = { a: 1, b: 2, c: 3, d: false };
+    const keys = ['a', 'b', 'd'];
     const result = { a: 1, b: 2 };
     const curying = pick(keys);
 
@@ -183,6 +183,12 @@ describe('utils', () => {
 
     const schemaArray = { a: { type: 'array', items: { type: { a: { type: 'number' }, b: { type: 'string' } } } } };
     expect(validateSchema(schemaArray, { a: [{ a: 1, b: 'b' }] })).toEqual({ a: [{ a: 1, b: 'b' }] })
+
+    const schemaArrayEnum = { a: { type: 'array', items: { enum: ['x', 'y', 'z'] } } };
+    expect(validateSchema(schemaArrayEnum, { a: ['a', 'x'] })).toEqual({ a: ['x'] })
+
+    const schemaSchemaType = { a: { type: { a1: { type: 'string' }, a2: { type: 'number' } } } };
+    expect(validateSchema(schemaSchemaType, { a: { a1: '1', a2: 2, a3: '3' } })).toEqual({ a: { a1: '1', a2: 2 } })
   });
 
   it('escapeIdentifier()', () => {

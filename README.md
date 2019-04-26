@@ -28,6 +28,7 @@
   - :cn: Simplified Chinese & Traditional Chinese
   - :us: English
   - :jp: Japanese
+- search
 - Comments
   - [Disqus]
   - [LiveRe]
