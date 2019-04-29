@@ -1,282 +1,306 @@
 {
-  "appearance": {
-    "type": "object",
-    "properties": {
-      "accent_color": { "type": "string", "default": "#2a2b33", "required": true },
-      "background": {
-        "oneOf": [
-          { "type": "string" },
-          { "type": "array", "items": { "type": "string" } }
-        ]
-      },
-      "content_width": { "type": "number" }
-    }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "per_page": { "type": "number", "minimum": 0, "default": 10 },
+    "color": { "type": "string", "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$", "default": "#2a2b33" }
   },
-  "menu": { "type": "object" },
-  "profile": {
-    "type": "object",
-    "properties": {
-      "avatar": { "type": "string", "default": "$gravatar", "required": true },
-      "email": { "type": "string", "default": "$email", "required": true },
-      "bio": { "type": "string" }
-    }
-  },
-  "sns": {
-    "type": "object",
-    "ordered": true,
-    "properties": {
-      "email": { "type": "string", "default": "$email" },
-      "feed": { "type": "string", "default": "$feed" },
-      "github": { "type": "string" },
-      "twitter": { "type": "string" },
-      "facebook": { "type": "string" },
-      "google+": { "type": "string" },
-      "instagram": { "type": "string" },
-      "tumblr": { "type": "string" },
-      "dribbble": { "type": "string" },
-      "telegram": { "type": "string" },
-      "youtube": { "type": "string" },
-      "hangouts": { "type": "string" },
-      "linkedin": { "type": "string" },
-      "pinterest": { "type": "string" },
-      "soundcloud": { "type": "string" },
-      "myspace": { "type": "string" },
-      "weibo": { "type": "string" },
-      "qq": { "type": "string" }
-    }
-  },
-  "footer": {
-    "type": "object",
-    "properties": {
-      "copyright": {
-        "oneOf": [
-          { "type": "string" },
-          { "enum": [false] }
-        ],
-        "default": "$copyright",
-        "required": true
-      },
-      "powered": { "type": "boolean", "default": true, "required": true },
-      "theme": { "type": "boolean", "default": true, "required": true },
-      "custom": { "type": "string" }
-    }
-  },
-  "assets": {
-    "oneOf": [
-      {
-        "type": "object",
-        "properties": {
-          "prefix": { "type": "string" },
-          "suffix": { "type": "string" }
-        }
-      },
-      { "enum": [false] }
-    ]
-  },
-  "toc": {
-    "type": "object",
-    "properties": {
-      "depth": { "type": "number", "default": 3, "required": true },
-      "index": { "type": "boolean", "default": true, "required": true }
-    }
-  },
-  "reward": {
-    "type": "object",
-    "properties": {
-      "text": { "type": "string", "default": "Buy me a cup of coffee ☕.", "required": true },
-      "methods": {
-        "type": "array",
-        "items": {
-          "type": {
-            "name": { "type": "string", "required": true },
-            "qrcode": { "type": "string" },
-            "url": { "type": "string" },
-            "text": { "type": "string" }
-          }
+  "type": "object",
+  "properties": {
+    "appearance": {
+      "type": "object",
+      "properties": {
+        "accent_color": { "$ref": "#/definitions/color" },
+        "background": {
+          "oneOf":[
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 2 }
+          ]
         },
-        "required": true,
-        "default": []
-      }
-    }
-  },
-  "copyright": {
-    "type": "object",
-    "ordered": true,
-    "properties": {
-      "author": { "type": "boolean", "default": true, "required": true },
-      "link": { "type": "boolean", "default": true, "required": true },
-      "license": { "type": "string", "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)", "required": true },
-      "published": { "type": "boolean", "default": false },
-      "updated": { "type": "boolean", "default": false },
-      "custom": { "type": "string" }
-    }
-  },
-  "comments": {
-    "type": "object",
-    "properties": {
-      "disqus": {
-        "type": {
-          "shortname": { "type": "string", "required": true },
-          "script": { "type": "string" },
-          "autoload": { "type": "boolean", "default": true, "required": true }
-        }
+        "content_width": { "type": "number", "minimum": 320 }
       },
-      "livere": {
-        "type": {
-          "uid": { "type": "string", "required": true },
-          "script": { "type": "string", "default": "https://cdn-city.livere.com/js/embed.dist.js", "required": true },
-          "autoload": { "type": "boolean", "default": true, "required": true }
-        }
+      "required": ["accent_color"],
+      "additionalProperties": false
+    },
+    "menu": { "type": "object", "additionalProperties": { "type": "string" } },
+    "sns": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email", "default": "$email" },
+        "feed": { "type": "string", "format": "uri", "default": "$feed" }
+      },
+      "patternProperties": {
+        "^(github|twitter|facebook|google+|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
       }
-    }
-  },
-  "page": {
-    "type": "object",
-    "properties": {
-      "toc": { "type": "boolean", "default": true, "required": true },
-      "reward": { "type": "boolean" },
-      "copyright": { "type": "boolean" }
-    }
-  },
-  "post": {
-    "type": "object",
-    "properties": {
-      "per_page": { "type": "number", "default": 10, "required": true },
-      "toc": { "type": "boolean", "default": true, "required": true },
-      "reward": { "type": "boolean" },
-      "copyright": { "type": "boolean" }
-    }
-  },
-  "archive": {
-    "type": "object",
-    "properties": {
-      "per_page": { "type": "number", "default": 10, "required": true }
-    }
-  },
-  "tag": {
-    "type": "object",
-    "properties": {
-      "per_page": { "type": "number", "default": 10, "required": true }
-    }
-  },
-  "category": {
-    "type": "object",
-    "properties": {
-      "per_page": { "type": "number", "default": 10, "required": true }
-    }
-  },
-  "static_prefix": { "type": "string" },
-  "data_prefix": { "type": "string" },
-  "data_dir": { "type": "string", "default": "api", "required": true },
-  "favicon": { "type": "string", "default": "favicon.ico", "required": true },
-  "ga": { "type": "string" },
-  "seo": {
-    "type": "object",
-    "properties": {
-      "structured_data": { "type": "boolean" }
-    }
-  },
-  "pwa": {
-    "type": "object",
-    "properties": {
-      "workbox": {
-        "oneOf": [
-          {
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "copyright": {
+          "oneOf":[
+            { "type": "string", "contentMediaType": "text/html" },
+            { "enum": [false] }
+          ],
+          "default": "$copyright"
+        },
+        "powered": { "type": "boolean", "default": true },
+        "theme": { "type": "boolean", "default": true },
+        "custom": { "type": "string" }
+      },
+      "required": ["copyright", "powered", "theme"],
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "prefix": { "type": "string" },
+        "suffix": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "toc": {
+      "type": "object",
+      "properties": {
+        "depth": { "type": "number", "minimum": 1, "maximum": 4, "default": 3 },
+        "index": { "type": "boolean", "default": true }
+      },
+      "required": ["depth", "index"],
+      "additionalProperties": false
+    },
+    "reward": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "default": "Buy me a cup of coffee ☕." },
+        "methods": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-              "cdn": { "type": "string", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js", "required": true },
-              "module_path_prefix": { "type": "string" },
-              "expire": { "type": "number", "default": 4, "required": true },
-              "name": { "type": "string", "default": "sw.js", "required": true },
-              "rules": {
-                "type": "array",
-                "items": {
-                  "type": {
-                    "name": { "type": "string", "required": true },
-                    "strategy": { "enum": ["networkOnly", "cacheFirst", "cacheOnly", "staleWhileRevalidate"], "required": true },
-                    "regex": { "type": "string", "required": true },
-                    "expire": { "type": "number" }
-                  }
-                }
+              "name": { "type": "string" },
+              "text": { "type": "string" },
+              "qrcode": { "type": "string" },
+              "url": { "type": "string" }
+            },
+            "required": ["name"],
+            "minProperties": 2,
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["text", "methods"],
+      "additionalProperties": false
+    },
+    "copyright": {
+      "type": "object",
+      "properties": {
+        "author": { "type": "boolean", "default": true },
+        "link": { "type": "boolean", "default": true },
+        "license": {
+          "type": "string",
+          "contentMediaType": "text/html" ,
+          "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)"
+        },
+        "published": { "type": "boolean" },
+        "updated": { "type": "boolean" },
+        "custom": { "type": "string" }
+      },
+      "required": ["author", "link", "license"],
+      "additionalProperties": false
+    },
+    "comments": {
+      "oneOf":[
+        {
+          "type": "object",
+          "properties": {
+            "shortname": { "type": "string" },
+            "script": { "type": "string", "format": "uri" },
+            "autoload": { "type": "boolean", "default": true }
+          },
+          "required": ["shortname", "autoload"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "uid": { "type": "string" },
+            "script": { "type": "string", "format": "uri", "default": "https://cdn-city.livere.com/js/embed.dist.js" },
+            "autoload": { "type": "boolean", "default": true }
+          },
+          "required": ["uid", "script", "autoload"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "page": {
+      "type": "object",
+      "properties": {
+        "toc": { "type": "boolean", "default": true },
+        "reward": { "type": "boolean" },
+        "copyright": { "type": "boolean" }
+      },
+      "required": ["toc"],
+      "additionalProperties": false
+    },
+    "post": {
+      "type": "object",
+      "properties": {
+        "per_page": { "$ref": "#/definitions/per_page" },
+        "toc": { "type": "boolean", "default": true },
+        "reward": { "type": "boolean" },
+        "copyright": { "type": "boolean" }
+      },
+      "required": ["per_page", "toc"],
+      "additionalProperties": false
+    },
+    "archive": {
+      "type": "object",
+      "properties": {
+        "per_page": { "$ref": "#/definitions/per_page" }
+      },
+      "required": ["per_page"],
+      "additionalProperties": false
+    },
+    "tag": {
+      "type": "object",
+      "properties": {
+        "per_page": { "$ref": "#/definitions/per_page" }
+      },
+      "required": ["per_page"],
+      "additionalProperties": false
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "per_page": { "$ref": "#/definitions/per_page" }
+      },
+      "required": ["per_page"],
+      "additionalProperties": false
+    },
+    "search": {
+      "type": "object",
+      "properties": {
+        "adapter": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
+                "per_page": { "$ref": "#/definitions/per_page" }
+              },
+              "required": ["range", "per_page"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "method": { "enum": ["get", "post"] },
+                "per_page": { "$ref": "#/definitions/per_page" },
+                "data": { "type": "string" },
+                "headers": { "type": "object" },
+                "scheme": { "type": "string" }
+              },
+              "required": ["url", "per_page" ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": ["adapter"],
+      "additionalProperties": false
+    },
+    "static_prefix": { "type": "string" },
+    "data_prefix": { "type": "string" },
+    "data_dir": { "type": "string", "default": "api" },
+    "favicon": { "type": "string", "default": "favicon.ico" },
+    "ga": { "type": "string" },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "structured_data": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "plugins": {
+      "type": "array",
+      "definitions": {
+        "position": { "enum": ["sidebar", "post", "page", "comments"] }
+      },
+      "items": {
+        "type": "object",
+        "properties": {
+          "template": { "type": "string" },
+          "position": {
+            "oneOf": [
+              { "$ref": "#/properties/plugins/definitions/position" },
+              { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
+            ]
+          }
+        },
+        "required": ["template", "position"],
+        "additionalProperties": false
+      }
+    },
+    "pwa": {
+      "type": "object",
+      "properties": {
+        "workbox": {
+          "definitions": {
+            "expire": { "type": "number", "minimum": 0, "default": 4 }
+          },
+          "type": "object",
+          "properties": {
+            "cdn": { "type": "string", "format": "uri", "default": "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js" },
+            "module_path_prefix": { "type": "string" },
+            "expire": { "$ref": "#/properties/pwa/properties/workbox/definitions/expire" },
+            "name": { "type": "string", "pattern": "^\\w*\\.js$", "default": "sw.js" },
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "strategy": { "enum": ["networkOnly", "cacheFirst", "cacheOnly", "staleWhileRevalidate"] },
+                  "regex": { "type": "string", "format": "regex" },
+                  "expire": { "$ref": "#/properties/pwa/properties/workbox/definitions/expire" }
+                },
+                "required": ["name", "strategy", "regex"],
+                "additionalProperties": false
               }
             }
           },
-          { "enum": [false] }
-        ],
-        "default": { "cdn": "https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js", "expire": 1, "name": "sw.js" }
-      },
-      "manifest": {
-        "oneOf": [
-          {
-            "type": "object",
-            "properties": {
-              "name": { "type": "string", "default": "$title", "required": true },
-              "short_name": { "type": "string", "default": "$title", "required": true },
-              "description": { "type": "string", "default": "$description", "required": true },
-              "start_url": { "type": "string", "default": ".", "required": true },
-              "theme_color": { "type": "string", "default": "#2a2b33", "required": true },
-              "background_color": { "type": "string", "default": "#2a2b33", "required": true },
-              "icons": {
-                "type": "array",
-                "items": {
-                  "type": {
-                    "src": { "type": "string", "required": true },
-                    "sizes": { "type": "string", "required": true },
-                    "type": { "type": "string", "required": true }
-                  }
+          "required": ["cdn", "expire", "name", "rules"],
+          "additionalProperties": false
+        },
+        "manifest": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string", "default": "$title" },
+            "short_name": { "type": "string", "default": "$title" },
+            "description": { "type": "string", "default": "$description" },
+            "start_url": { "type": "string", "format": "uri", "default": "." },
+            "theme_color": { "$ref": "#/definitions/color" },
+            "background_color": { "$ref": "#/definitions/color" },
+            "icons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "src": { "type": "string" },
+                  "sizes": { "type": "string" },
+                  "type": { "type": "string" }
                 },
-                "default": [],
-                "required": true
-              },
-              "display": { "enum": ["minimal-ui", "fullscreen", "standalone", "browser"], "default": "minimal-ui", "required": true }
-            }
+                "required": ["src", "sizes", "type"],
+                "additionalProperties": false
+              }
+            },
+            "display": { "enum": ["minimal-ui", "fullscreen", "standalone", "browser"], "default": "minimal-ui" }
           },
-          { "enum": [false] }
-        ]
-      }
-
-    }
-  },
-  "plugins": {
-    "type": "array",
-    "items": {
-      "type": {
-        "template": { "type": "string", "required": true },
-        "position": {
-          "oneOf": [
-            { "enum": ["sidebar", "post", "page", "comments"], "required": true },
-            { "type": "array", "items": { "enum": ["sidebar", "post", "page", "comments"], "required": true } }
-          ],
-          "required": true
+          "required": ["name", "short_name", "description", "start_url", "theme_color", "background_color", "icons", "display"],
+          "additionalProperties": false
         }
       }
     }
   },
-  "search": {
-    "type": "object",
-    "properties": {
-      "adapter": {
-        "required": true,
-        "default": {},
-        "oneOf": [
-          {
-            "type": {
-              "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
-              "per_page": { "type": "number" }
-            }
-          },
-          {
-            "type": {
-              "url": { "type": "string", "required": true },
-              "method": { "enum": ["get", "post"] },
-              "per_page": { "type": "number", "default": 10, "required": true },
-              "data": { "type": "string" },
-              "headers": { "type": "object" },
-              "scheme": { "type": "string", "required": true }
-            }
-          }
-        ]
-      }
-    }
-  }
+  "required": ["appearance", "footer", "toc", "reward", "copyright", "page", "post", "archive", "tag", "category", "search", "data_dir", "favicon", "pwa"],
+  "additionalProperties": false
 }

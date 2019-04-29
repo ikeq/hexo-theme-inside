@@ -2,8 +2,8 @@
 
 const cheerio = require('cheerio');
 
-describe('utils', () => {
-  const { type, isEmptyObject, pick, md5, base64, getPagePath, getAssetsName, Pagination, parseToc, validateSchema, escapeIdentifier, localeId, parseJs, snippet } = require('../../lib/utils');
+describe('utils/rest', () => {
+  const { type, isEmptyObject, pick, md5, base64, getPagePath, getAssetsName, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet } = require('../../../lib/utils');
 
   it('type()', () => {
     expect(type({})).toBe('object');
@@ -139,56 +139,6 @@ describe('utils', () => {
     `, 4)).toEqual([
       { title: '<a>Title</a>', id: 'Title', index: '1' }
     ]);
-  });
-
-  it('validateSchema()', () => {
-    const schema = {
-      a: { type: 'number', default: '$a', required: true },
-      b: { type: 'number', default: 2, required: true },
-      c: { type: 'number', default: 3 },
-      d: { type: 'object', properties: { a: { type: 'number', default: '$a', required: true }, b: { type: 'number', default: 2, required: true } } },
-      e: { type: { a: { type: 'number' } } }
-    };
-    expect(validateSchema(schema, { b: 'b', c: 'c', d: { b: 2 }, e: { a: 1 } }, { $a: 1 })).toEqual({
-      a: 1,
-      b: 2,
-      d: { a: 1, b: 2 },
-      e: { a: 1 }
-    });
-
-    const schemaOneOf = {
-      a: {
-        oneOf: [
-          { type: 'number' },
-          { enum: [false, 'a'] },
-          { type: 'array', items: { enum: [1, 2, 3], required: true } },
-        ]
-      }
-    };
-    expect(validateSchema(schemaOneOf, { a: 1 })).toEqual({ a: 1 });
-    expect(validateSchema(schemaOneOf, { a: false })).toEqual({ a: false });
-    expect(validateSchema(schemaOneOf, { a: 'a' })).toEqual({ a: 'a' });
-    expect(validateSchema(schemaOneOf, { a: [1, 'a'] })).toEqual({ a: [1] });
-
-    const schemaOneOf2 = {
-      a: {
-        oneOf: [
-          { type: 'string' },
-          { type: 'array', items: { type: 'string' } },
-        ]
-      }
-    };
-    expect(validateSchema(schemaOneOf2, { a: 'a' })).toEqual({ a: 'a' });
-    expect(validateSchema(schemaOneOf2, { a: ['a', 'b', 1, {}] })).toEqual({ a: ['a', 'b'] });
-
-    const schemaArray = { a: { type: 'array', items: { type: { a: { type: 'number' }, b: { type: 'string' } } } } };
-    expect(validateSchema(schemaArray, { a: [{ a: 1, b: 'b' }] })).toEqual({ a: [{ a: 1, b: 'b' }] })
-
-    const schemaArrayEnum = { a: { type: 'array', items: { enum: ['x', 'y', 'z'] } } };
-    expect(validateSchema(schemaArrayEnum, { a: ['a', 'x'] })).toEqual({ a: ['x'] })
-
-    const schemaSchemaType = { a: { type: { a1: { type: 'string' }, a2: { type: 'number' } } } };
-    expect(validateSchema(schemaSchemaType, { a: { a1: '1', a2: 2, a3: '3' } })).toEqual({ a: { a1: '1', a2: 2 } })
   });
 
   it('escapeIdentifier()', () => {
