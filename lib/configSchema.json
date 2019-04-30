@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
+    "email": { "type": "string", "format": "email", "default": "$email" },
     "per_page": { "type": "number", "minimum": 0, "default": 10 },
     "color": { "type": "string", "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$", "default": "#2a2b33" }
   },
@@ -21,12 +22,31 @@
       "required": ["accent_color"],
       "additionalProperties": false
     },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "email": { "$ref": "#/definitions/email" },
+        "avatar": { "type": "string", "format": "uri", "default": "$gravatar" },
+        "bio": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
     "menu": { "type": "object", "additionalProperties": { "type": "string" } },
     "sns": {
       "type": "object",
       "properties": {
-        "email": { "type": "string", "format": "email", "default": "$email" },
-        "feed": { "type": "string", "format": "uri", "default": "$feed" }
+        "email": {
+          "oneOf": [
+            { "$ref": "#/definitions/email" },
+            { "type": "null" }
+          ]
+        },
+        "feed": {
+          "oneOf": [
+            { "type": "string", "format": "uri", "default": "$feed" },
+            { "type": "null" }
+          ]
+        }
       },
       "patternProperties": {
         "^(github|twitter|facebook|google+|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
@@ -111,21 +131,33 @@
         {
           "type": "object",
           "properties": {
-            "shortname": { "type": "string" },
-            "script": { "type": "string", "format": "uri" },
-            "autoload": { "type": "boolean", "default": true }
+            "disqus": {
+              "type": "object",
+              "properties": {
+                "shortname": { "type": "string" },
+                "script": { "type": "string", "format": "uri" },
+                "autoload": { "type": "boolean", "default": true }
+              },
+              "required": ["shortname", "autoload"],
+              "additionalProperties": false
+            }
           },
-          "required": ["shortname", "autoload"],
           "additionalProperties": false
         },
         {
           "type": "object",
           "properties": {
-            "uid": { "type": "string" },
-            "script": { "type": "string", "format": "uri", "default": "https://cdn-city.livere.com/js/embed.dist.js" },
-            "autoload": { "type": "boolean", "default": true }
+            "livere": {
+              "type": "object",
+              "properties": {
+                "uid": { "type": "string" },
+                "script": { "type": "string", "format": "uri", "default": "https://cdn-city.livere.com/js/embed.dist.js" },
+                "autoload": { "type": "boolean", "default": true }
+              },
+              "required": ["uid", "script", "autoload"],
+              "additionalProperties": false
+            }
           },
-          "required": ["uid", "script", "autoload"],
           "additionalProperties": false
         }
       ]
