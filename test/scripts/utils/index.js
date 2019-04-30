@@ -2,5 +2,5 @@
 
 describe('utils', () => {
   require('./rest');
-  require('./parseSchema');
+  require('./parseConfig');
 });
