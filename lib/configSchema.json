@@ -3,7 +3,20 @@
   "definitions": {
     "email": { "type": "string", "format": "email", "default": "$email" },
     "per_page": { "type": "number", "minimum": 0, "default": 10 },
-    "color": { "type": "string", "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$", "default": "#2a2b33" }
+    "color": { "type": "string", "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$", "default": "#2a2b33" },
+    "request": {
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "format": "uri", "minLength": 1 },
+        "method": { "enum": ["post", "get", "POST", "GET"] },
+        "body": { "type": "string" },
+        "headers": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "required": ["url"]
+    }
   },
   "type": "object",
   "properties": {
@@ -106,7 +119,7 @@
           }
         }
       },
-      "required": ["text", "methods"],
+      "required": ["methods"],
       "additionalProperties": false
     },
     "copyright": {
@@ -216,22 +229,33 @@
               "type": "object",
               "properties": {
                 "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
-                "per_page": { "$ref": "#/definitions/per_page" }
+                "per_page": { "$ref": "#/definitions/per_page" },
+                "placeholder": { "type": "string" },
+                "limit": { "type": "number", "default": 10000 }
               },
-              "required": ["range", "per_page"],
+              "required": ["range", "per_page", "limit"],
               "additionalProperties": false
             },
             {
               "type": "object",
               "properties": {
-                "url": { "type": "string", "format": "uri" },
-                "method": { "enum": ["get", "post"] },
                 "per_page": { "$ref": "#/definitions/per_page" },
-                "data": { "type": "string" },
-                "headers": { "type": "object" },
-                "scheme": { "type": "string" }
+                "title": { "type": "string" },
+                "placeholder": { "type": "string" },
+                "logo": { "type": "string" },
+                "request": { "$ref": "#/definitions/request" },
+                "variable": {
+                  "type": "object",
+                  "properties": {
+                    "data": { "type": "string" },
+                    "current": { "type": "string" },
+                    "total": { "type": "string" }
+                  },
+                  "required": ["data", "current", "total"],
+                  "additionalProperties": { "type": "string" }
+                }
               },
-              "required": ["url", "per_page" ],
+              "required": ["per_page", "title", "request", "variable"],
               "additionalProperties": false
             }
           ]

@@ -3,7 +3,7 @@
 const cheerio = require('cheerio');
 const urlFor = require('hexo/lib/plugins/helper/url_for');
 
-describe('structured_data', () => {
+describe('structured_data', function () {
   const Hexo = require('hexo');
   const hexo = new Hexo();
   const ctx = {
@@ -13,7 +13,7 @@ describe('structured_data', () => {
   };
   const structuredData = require('../../../lib/helper/structured_data').bind(ctx);
 
-  it('generate WebSite entry', () => {
+  it('generate WebSite entry', function () {
     const $ = cheerio.load(structuredData({}));
     const json = JSON.parse($('script').html());
 
@@ -21,7 +21,7 @@ describe('structured_data', () => {
     expect(json[0]['@type']).toBe('WebSite');
   });
 
-  it('generate additional Article entry for post page', () => {
+  it('generate additional Article entry for post page', function () {
     const $ = cheerio.load(structuredData({ type: 'post', categories: { toArray() { return [] } } }));
     const json = JSON.parse($('script').html());
 

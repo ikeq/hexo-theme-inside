@@ -1,7 +1,6 @@
 'use strict';
 
-describe('Filters', () => {
+describe('Filters', function () {
   require('./template');
-  require('./assets');
   require('./post');
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('utils', () => {
+describe('utils', function () {
   require('./rest');
   require('./parseConfig');
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('template', () => {
+describe('template', function () {
   const Hexo = require('hexo');
   const hexo = new Hexo();
   const templates = require('../../../lib/filter/templates').bind(hexo);
@@ -12,7 +12,7 @@ describe('template', () => {
     'title.tags': 'Tags',
   });
 
-  it('change title', () => {
+  it('change title', function () {
     const config = hexo.config
     const data = {
       post: { page: { type: 'post', title: 'Hello word' }, config },
