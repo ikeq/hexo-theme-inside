@@ -43,3 +43,10 @@ page:
     direct_failed: Failed to direct to %s
     empty: Nothing here.
     home: back to home
+
+  search:
+    placeholder: Type here to search
+    hits:
+      zero: Didn't find any results for the search :query
+      one: 1 result found in :time ms
+      other: :hits results found in :time ms

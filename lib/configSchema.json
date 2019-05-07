@@ -230,7 +230,6 @@
               "properties": {
                 "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
                 "per_page": { "$ref": "#/definitions/per_page" },
-                "placeholder": { "type": "string" },
                 "limit": { "type": "number", "default": 10000 }
               },
               "required": ["range", "per_page", "limit"],
@@ -240,8 +239,6 @@
               "type": "object",
               "properties": {
                 "per_page": { "$ref": "#/definitions/per_page" },
-                "title": { "type": "string" },
-                "placeholder": { "type": "string" },
                 "logo": { "type": "string" },
                 "request": { "$ref": "#/definitions/request" },
                 "variable": {
@@ -255,7 +252,7 @@
                   "additionalProperties": { "type": "string" }
                 }
               },
-              "required": ["per_page", "title", "request", "variable"],
+              "required": ["per_page", "request", "variable"],
               "additionalProperties": false
             }
           ]

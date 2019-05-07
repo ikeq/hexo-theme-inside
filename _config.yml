@@ -128,15 +128,12 @@ search:
   #     - posts
   #     - pages
   #   per_page: 20
-  #   placeholder: Type here to search
   #   limit: 10000
 
   # Custom search
   # adapter:
   #   # Used for pagination
   #   per_page: 20
-  #   title: :hits results found in :time ms
-  #   placeholder: Type here to search
   #   # Optional
   #   logo: https://www.algolia.com/icons/icon-96x96.png
   #   request:
@@ -155,10 +152,6 @@ search:
   #     current: page
   #     # Used for theme to retrieve total page number
   #     total: nbPages
-
-  #     # Custom variable for template interpolation of title
-  #     hits: nbHits
-  #     time: processingTimeMS
 
 
 # ---------------------------------------------------------------

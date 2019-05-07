@@ -43,3 +43,10 @@ page:
     direct_failed: 无法跳转到 %s
     empty: 什么也没有。
     home: 返回首页
+
+  search:
+    placeholder: 搜索
+    hits:
+      zero: 未发现与「:query」相关的内容
+      one: :hits 条相关条目，使用了 :time 毫秒
+      other: :hits 条相关条目，使用了 :time 毫秒
