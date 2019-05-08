@@ -15,6 +15,7 @@
           "additionalProperties": { "type": "string" }
         }
       },
+      "additionalProperties": false,
       "required": ["url"]
     }
   },
@@ -42,7 +43,8 @@
         "avatar": { "type": "string", "format": "uri", "default": "$gravatar" },
         "bio": { "type": "string" }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": ["email", "avatar"]
     },
     "menu": { "type": "object", "additionalProperties": { "type": "string" } },
     "sns": {
@@ -228,7 +230,7 @@
             {
               "type": "object",
               "properties": {
-                "range": { "type": "array", "items": { "enum": ["posts", "pages"] } },
+                "range": { "type": "array", "items": { "enum": ["post", "page"] } },
                 "per_page": { "$ref": "#/definitions/per_page" },
                 "limit": { "type": "number", "default": 10000 }
               },
@@ -241,7 +243,7 @@
                 "per_page": { "$ref": "#/definitions/per_page" },
                 "logo": { "type": "string" },
                 "request": { "$ref": "#/definitions/request" },
-                "variable": {
+                "variables": {
                   "type": "object",
                   "properties": {
                     "data": { "type": "string" },
@@ -252,7 +254,7 @@
                   "additionalProperties": { "type": "string" }
                 }
               },
-              "required": ["per_page", "request", "variable"],
+              "required": ["per_page", "request", "variables"],
               "additionalProperties": false
             }
           ]
@@ -351,9 +353,11 @@
           "required": ["name", "short_name", "description", "start_url", "theme_color", "background_color", "icons", "display"],
           "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false,
+      "default": {}
     }
   },
-  "required": ["appearance", "footer", "toc", "reward", "copyright", "page", "post", "archive", "tag", "category", "search", "data_dir", "favicon", "pwa"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa"],
   "additionalProperties": false
 }

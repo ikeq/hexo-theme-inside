@@ -119,7 +119,7 @@ describe('utils/parseConfig()', function () {
     const schema = { type: 'object' }
     expect(parseConfig(schema, {})).toEqual({})
     expect(parseConfig(schema, { a: 1 })).toEqual({ a: 1 })
-    expect(parseConfig(schema, ["An", "array", "not", "an", "object"])).toEqual({})
+    expect(parseConfig(schema, ["An", "array", "not", "an", "object"])).toBe(undefined);
   });
 
   it('object/properties', function () {
@@ -149,7 +149,7 @@ describe('utils/parseConfig()', function () {
       },
       additionalProperties: false
     }
-    expect(parseConfig(schema, { "number": '1', "string": "string" })).toEqual({})
+    expect(parseConfig(schema, { "number": '1', "string": "string" })).toBe(undefined);
     expect(parseConfig(schema, { "number": 1, "string": "string" })).toEqual({ "number": 1 })
 
     schema.additionalProperties = { "type": "string" };
@@ -166,9 +166,9 @@ describe('utils/parseConfig()', function () {
       "minProperties": 2,
       "maxProperties": 3
     }
-    expect(parseConfig(schema, { "a": 0 })).toEqual({})
+    expect(parseConfig(schema, { "a": 0 })).toBe(undefined);
     expect(parseConfig(schema, { "a": 0, "b": 1 })).toEqual({ "a": 0, "b": 1 })
-    expect(parseConfig(schema, { "a": 0, "b": 1, "c": 2, "d": 3 })).toEqual({})
+    expect(parseConfig(schema, { "a": 0, "b": 1, "c": 2, "d": 3 })).toBe(undefined);
   });
 
   it('object/patternProperties', function () {
@@ -182,8 +182,8 @@ describe('utils/parseConfig()', function () {
     }
     expect(parseConfig(schema, { "S_25": "This is a string" })).toEqual({ "S_25": "This is a string" })
     expect(parseConfig(schema, { "I_0": 42 })).toEqual({ "I_0": 42 })
-    expect(parseConfig(schema, { "S_0": 42 })).toEqual({})
-    expect(parseConfig(schema, { "I_42": "This is a string" })).toEqual({})
+    expect(parseConfig(schema, { "S_0": 42 })).toBe(undefined);
+    expect(parseConfig(schema, { "I_42": "This is a string" })).toBe(undefined);
 
     schema = Object.assign(schema, {
       properties: {
@@ -193,7 +193,7 @@ describe('utils/parseConfig()', function () {
     })
     expect(parseConfig(schema, { "builtin": 42 })).toEqual({ "builtin": 42 })
     expect(parseConfig(schema, { "keyword": "value" })).toEqual({ "keyword": "value" })
-    expect(parseConfig(schema, { "keyword": 42 })).toEqual({})
+    expect(parseConfig(schema, { "keyword": 42 })).toBe(undefined);
   });
 
   it('object/required', function () {
@@ -232,7 +232,7 @@ describe('utils/parseConfig()', function () {
       "name": "William Shakespeare",
       "address": "Henley Street, Stratford-upon-Avon, Warwickshire, England",
     }))
-      .toEqual({});
+      .toBe(undefined);
 
     // fallback to default
     schema.properties.email.default = 'a@a.a';
@@ -281,7 +281,7 @@ describe('utils/parseConfig()', function () {
       "name": "John Doe",
       "credit_card": 5555555555555555
     }))
-      .toEqual({});
+      .toBe(undefined);
 
     expect(parseConfig(schema, {
       "name": "John Doe"
@@ -308,12 +308,12 @@ describe('utils/parseConfig()', function () {
       "name": "John Doe",
       "credit_card": 5555555555555555
     }))
-      .toEqual({});
+      .toBe(undefined);
     expect(parseConfig(schema, {
       "name": "John Doe",
       "billing_address": "555 Debtor's Lane"
     }))
-      .toEqual({});
+      .toBe(undefined);
 
     // Schema dependencies
     schema.dependencies = {
@@ -338,7 +338,7 @@ describe('utils/parseConfig()', function () {
       "name": "John Doe",
       "credit_card": 5555555555555555
     }))
-      .toEqual({});
+      .toBe(undefined);
     expect(parseConfig(schema, {
       "name": "John Doe",
       "billing_address": "555 Debtor's Lane"
@@ -460,6 +460,6 @@ describe('utils/parseConfig()', function () {
       "city": "Washington",
       "state": "DC",
       "type": "business"
-    })).toEqual({})
+    })).toBe(undefined)
   });
 });

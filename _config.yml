@@ -125,8 +125,8 @@ search:
   # Local search
   # adapter:
   #   range:
-  #     - posts
-  #     - pages
+  #     - post
+  #     - page
   #   per_page: 20
   #   limit: 10000
 
