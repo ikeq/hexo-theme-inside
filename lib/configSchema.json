@@ -248,9 +248,13 @@
                   "properties": {
                     "data": { "type": "string" },
                     "current": { "type": "string" },
-                    "total": { "type": "string" }
+                    "total": { "type": "string" },
+                    "hits": { "type": "string" },
+                    "time": { "type": "string" },
+                    "title": { "type": "string" },
+                    "content": { "type": "string" }
                   },
-                  "required": ["data", "current", "total"],
+                  "required": ["data", "current"],
                   "additionalProperties": { "type": "string" }
                 }
               },

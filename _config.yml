@@ -133,9 +133,9 @@ search:
   # Custom search
   # adapter:
   #   # Used for pagination
-  #   per_page: 20
+  #   per_page: 10
   #   # Optional
-  #   logo: https://www.algolia.com/icons/icon-96x96.png
+  #   logo: //cdn.worldvectorlogo.com/logos/algolia.svg
   #   request:
   #     url: https://APPLICATION_ID-dsn.algolia.net/1/indexes/INDEX/query
   #     method: post
@@ -144,14 +144,22 @@ search:
   #     headers:
   #       X-Algolia-API-Key: API_KEY
   #       X-Algolia-Application-Id: APPLICATION_ID
-  #       Content-Type: application/x-www-form-urlencoded
+  #       Content-Type: application/json; charset=UTF-8
   #   variables:
-  #     # Used for theme to retrieve search result list
+  #     # Used to retrieve result list
   #     data: hits
-  #     # Used for theme to retrieve current page number
+  #     # Used to retrieve current page number
   #     current: page
-  #     # Used for theme to retrieve total page number
-  #     total: nbPages
+  #     # Used to retrieve total page number
+  #     total: nbPage
+  #     # Used to retrieve total hits number
+  #     hits: nbHits
+  #     # Used to retrieve cost time
+  #     time: processingTimeMS
+  #     # Used to retrieve title from per hit
+  #     title: _snippetResult.title.value
+  #     # Used to retrieve content from per hit
+  #     content: _snippetResult.content.value
 
 
 # ---------------------------------------------------------------
