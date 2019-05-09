@@ -43,3 +43,10 @@ page:
     direct_failed: '%s への誘導に失敗しました。'
     empty: ここには何もありません。
     home: ホームページに戻る
+
+  search:
+    placeholder: 検索
+    hits:
+      zero: "：query"の検索結果はありません
+      one: :timeミリ秒で検索結果:hits件
+      other: :timeミリ秒で検索結果:hits件

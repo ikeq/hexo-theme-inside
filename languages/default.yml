@@ -45,8 +45,8 @@ page:
     home: back to home
 
   search:
-    placeholder: Type here to search
+    placeholder: Search
     hits:
-      zero: Didn't find any results for the search :query
+      zero: No result found for ":query"
       one: 1 result found in :time ms
       other: :hits results found in :time ms
