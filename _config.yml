@@ -22,6 +22,28 @@ appearance:
   # Maximum width of content
   # content_width: 640
 
+  # Fonts
+  font:
+    # Url of font css file
+    # Below is a built-in font set containing Baloo Bhaijaan, Josefin Sans,
+    # Montserrat and Inconsolata from Google Fonts.
+    # Please feel free to replace it with your own css file
+    url: /fonts.b9b22ef890c930ac7a13.css
+
+    # Base font which applied to <body>
+    base: Josefin Sans, PingFang SC, Microsoft YaHei
+    # Sidebar author name, fallback to `base`
+    logo:
+    # Sidebar menu font, fallback to `base`
+    menu: Baloo Bhaijaan
+    # Percentage on the fab button, month text on archives page, toc index and category pill,
+    # fallback to `base`
+    label: Montserrat
+    # Headlines(h1, h2, h3, h4, h5, h6), fallback to `base`
+    heading:
+    # <code> and code block, fallback to `base`
+    code: Inconsolata, Consolas, Menlo, Courier
+
 # Sidebar profile
 profile:
   # `email` will fallback to `hexo.config.email` if not specified
@@ -122,6 +144,12 @@ category:
 
 # Search
 search:
+  # Display a quick search button in fab
+  # fab: true
+
+  # Render a standalone searh page which can be configured in sidebar menu such as `Search: /search`
+  # page: true
+
   # Local search
   # adapter:
   #   range:
@@ -145,7 +173,7 @@ search:
   #       X-Algolia-API-Key: API_KEY
   #       X-Algolia-Application-Id: APPLICATION_ID
   #       Content-Type: application/json; charset=UTF-8
-  #   variables:
+  #   keys:
   #     # Used to retrieve result list
   #     data: hits
   #     # Used to retrieve current page number

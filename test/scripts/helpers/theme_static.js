@@ -15,8 +15,7 @@ describe('theme_static', function () {
 
   it('css', function () {
     const $ = cheerio.load(themeStatic('css'));
-    expect($('link').eq(0).attr('href')).toMatch(/^\/fonts\.\w*\.css$/);
-    expect($('link').eq(1).attr('href')).toMatch(/^\/styles\.\w*\.css$/);
+    expect($('link').eq(0).attr('href')).toMatch(/^\/styles\.\w*\.css$/);
   });
 
   it('js', function () {

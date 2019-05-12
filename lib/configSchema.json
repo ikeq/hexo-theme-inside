@@ -31,7 +31,20 @@
             { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 2 }
           ]
         },
-        "content_width": { "type": "number", "minimum": 320 }
+        "content_width": { "type": "number", "minimum": 320 },
+        "font": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "logo": { "type": "string" },
+            "menu": { "type": "string" },
+            "label": { "type": "string" },
+            "heading": { "type": "string" },
+            "code": { "type": "string" },
+            "base": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
       },
       "required": ["accent_color"],
       "additionalProperties": false
@@ -225,6 +238,8 @@
     "search": {
       "type": "object",
       "properties": {
+        "fab": { "enum": [true] },
+        "page": { "enum": [true] },
         "adapter": {
           "oneOf": [
             {
@@ -243,7 +258,7 @@
                 "per_page": { "$ref": "#/definitions/per_page" },
                 "logo": { "type": "string" },
                 "request": { "$ref": "#/definitions/request" },
-                "variables": {
+                "keys": {
                   "type": "object",
                   "properties": {
                     "data": { "type": "string" },
@@ -255,16 +270,17 @@
                     "content": { "type": "string" }
                   },
                   "required": ["data", "current"],
-                  "additionalProperties": { "type": "string" }
+                  "additionalProperties": false
                 }
               },
-              "required": ["per_page", "request", "variables"],
+              "required": ["per_page", "request", "keys"],
               "additionalProperties": false
             }
           ]
         }
       },
       "required": ["adapter"],
+      "minProperties": 2,
       "additionalProperties": false
     },
     "static_prefix": { "type": "string" },

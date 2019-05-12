@@ -10,7 +10,7 @@ title:
   search: Search
 
 footer:
-  powered: "Powered by %s"
+  powered: Powered by %s
   theme: Theme
 
 reward:
@@ -49,4 +49,4 @@ page:
     hits:
       zero: No result found for ":query"
       one: 1 result found in :time ms
-      other: :hits results found in :time ms
+      other: ":hits results found in :time ms"
