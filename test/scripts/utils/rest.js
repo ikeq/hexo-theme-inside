@@ -2,24 +2,24 @@
 
 const cheerio = require('cheerio');
 
-describe('utils', () => {
-  const { type, isEmptyObject, pick, md5, base64, getPagePath, getAssetsName, Pagination, parseToc, validateSchema, escapeIdentifier, localeId, parseJs, snippet } = require('../../lib/utils');
+describe('utils/rest', function () {
+  const { type, isEmptyObject, pick, md5, base64, getPagePath, getAssetsName, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet } = require('../../../lib/utils');
 
-  it('type()', () => {
+  it('type()', function () {
     expect(type({})).toBe('object');
     expect(type([])).toBe('array');
     expect(type()).toBe('undefined');
   });
 
-  it('isEmptyObject()', () => {
+  it('isEmptyObject()', function () {
     expect(isEmptyObject({})).toBe(true);
     expect(isEmptyObject({ a: 1 })).toBe(false);
     expect(isEmptyObject([])).toBe(false);
   });
 
-  it('pick()', () => {
-    const o = { a: 1, b: 2, c: 3, d: 4 };
-    const keys = ['a', 'b'];
+  it('pick()', function () {
+    const o = { a: 1, b: 2, c: 3, d: false };
+    const keys = ['a', 'b', 'd'];
     const result = { a: 1, b: 2 };
     const curying = pick(keys);
 
@@ -27,23 +27,23 @@ describe('utils', () => {
     expect(curying(o)).toEqual(result);
   });
 
-  it('md5()', () => {
+  it('md5()', function () {
     expect(md5('foo')).toBe('acbd18db4cc2f85cedef');
     expect(md5('foo', 6)).toBe('acbd18');
   })
 
-  it('base64()', () => {
+  it('base64()', function () {
     expect(base64('foo')).toBe('Zm9v');
     expect(base64('foo/')).toBe('Zm9vLw');
     expect(base64('foo/a')).toBe('Zm9vL2E');
   })
 
-  it('getPagePath()', () => {
+  it('getPagePath()', function () {
     expect(getPagePath('root/page/index.md')).toEqual('root/page');
     expect(getPagePath('root/page/v2.md')).toEqual('root/page/v2');
   });
 
-  it('getAssetsName()', () => {
+  it('getAssetsName()', function () {
     expect(getAssetsName(
       [
         '404.12848da7f1026d4027da.jpg',
@@ -68,25 +68,25 @@ describe('utils', () => {
     ])
   });
 
-  it('Pagination', () => {
+  it('Pagination', function () {
     const pagination = new Pagination({
       html: { generateFn: ({ path, data }) => ({ path: path + '/index.html', data, layout: 'index' }) },
       json: { generateFn: ({ path, data }) => ({ path: 'api/' + path + '.json', data: JSON.stringify(data) }) },
     });
     const posts = [1, 2, 3, 4, 5, 6];
-    const datium = pagination.apply(posts, { perPage: 5, id: 'test' }, [{ type: 'html' }, { type: 'json' }]);
+    const datum = pagination.apply(posts, { perPage: 5, id: 'test' }, [{ type: 'html' }, { type: 'json' }]);
 
-    expect(datium[0]).toEqual([
+    expect(datum[0]).toEqual([
       { path: 'test/index.html', data: { per_page: 5, total: 2, current: 1, data: [1, 2, 3, 4, 5] }, layout: 'index' },
       { path: 'api/test.json', data: '{"per_page":5,"total":2,"current":1,"data":[1,2,3,4,5]}' },
     ]);
-    expect(datium[1]).toEqual([
+    expect(datum[1]).toEqual([
       { path: 'test/2/index.html', data: { per_page: 5, total: 2, current: 2, data: [6] }, layout: 'index' },
       { path: 'api/test/2.json', data: '{"per_page":5,"total":2,"current":2,"data":[6]}' },
     ]);
   });
 
-  it('parseToc()', () => {
+  it('parseToc()', function () {
     const cnt1 = `
       <h1 a="a" id="title-1" b="b">title 1<a href></a></h1>
       content
@@ -141,61 +141,17 @@ describe('utils', () => {
     ]);
   });
 
-  it('validateSchema()', () => {
-    const schema = {
-      a: { type: 'number', default: '$a', required: true },
-      b: { type: 'number', default: 2, required: true },
-      c: { type: 'number', default: 3 },
-      d: { type: 'object', properties: { a: { type: 'number', default: '$a', required: true }, b: { type: 'number', default: 2, required: true } } },
-      e: { type: { a: { type: 'number' } } }
-    };
-    expect(validateSchema(schema, { b: 'b', c: 'c', d: { b: 2 }, e: { a: 1 } }, { $a: 1 })).toEqual({
-      a: 1,
-      b: 2,
-      d: { a: 1, b: 2 },
-      e: { a: 1 }
-    });
-
-    const schemaOneOf = {
-      a: {
-        oneOf: [
-          { type: 'number' },
-          { enum: [false, 'a'] },
-          { type: 'array', items: { enum: [1, 2, 3], required: true } },
-        ]
-      }
-    };
-    expect(validateSchema(schemaOneOf, { a: 1 })).toEqual({ a: 1 });
-    expect(validateSchema(schemaOneOf, { a: false })).toEqual({ a: false });
-    expect(validateSchema(schemaOneOf, { a: 'a' })).toEqual({ a: 'a' });
-    expect(validateSchema(schemaOneOf, { a: [1, 'a'] })).toEqual({ a: [1] });
-
-    const schemaOneOf2 = {
-      a: {
-        oneOf: [
-          { type: 'string' },
-          { type: 'array', items: { type: 'string' } },
-        ]
-      }
-    };
-    expect(validateSchema(schemaOneOf2, { a: 'a' })).toEqual({ a: 'a' });
-    expect(validateSchema(schemaOneOf2, { a: ['a', 'b', 1, {}] })).toEqual({ a: ['a', 'b'] });
-
-    const schemaArray = { a: { type: 'array', items: { type: { a: { type: 'number' }, b: { type: 'string' } } } } };
-    expect(validateSchema(schemaArray, { a: [{ a: 1, b: 'b' }] })).toEqual({ a: [{ a: 1, b: 'b' }] })
-  });
-
-  it('escapeIdentifier()', () => {
+  it('escapeIdentifier()', function () {
     expect(escapeIdentifier('A & B & C')).toBe('A and B and C');
     expect(escapeIdentifier('A + B + C')).toBe('A plus B plus C');
   });
 
-  it('localeId()', () => {
+  it('localeId()', function () {
     expect(localeId('zh-cn', true)).toBe('zh-Hans');
     expect(localeId('zh-Hans')).toBe('zh-cn');
   });
 
-  it('jsParser()', () => {
+  it('jsParser()', function () {
     expect(parseJs()).toBe('');
     expect(parseJs({})).toBe('');
     expect(parseJs(`const foo = 1; // foo`)).toBe('var foo=1;');
@@ -204,7 +160,7 @@ describe('utils', () => {
                     })();`)).toBe('');
   });
 
-  it('snippet()', () => {
+  it('snippet()', function () {
     expect(snippet('')).toBe('');
 
     expect(snippet('alert(1)'))

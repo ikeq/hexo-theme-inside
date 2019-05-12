@@ -7,9 +7,10 @@ title:
   archives: Archive
   categories: Category
   tags: Tag
+  search: Search
 
 footer:
-  powered: "Powered by %s"
+  powered: Powered by %s
   theme: Theme
 
 reward:
@@ -42,3 +43,10 @@ page:
     direct_failed: Failed to direct to %s
     empty: Nothing here.
     home: back to home
+
+  search:
+    placeholder: Search
+    hits:
+      zero: No result found for ":query"
+      one: 1 result found in :time ms
+      other: ":hits results found in :time ms"

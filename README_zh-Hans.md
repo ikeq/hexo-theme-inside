@@ -21,7 +21,7 @@
 ## 特色
 
 - SPA built with [angular]
-- 自定义色调、背景
+- 自定义色调、背景、字体
 - 可嵌套的 page 路由
 - 多语言 (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
@@ -31,6 +31,7 @@
   - [Disqus]
   - [LiveRe]
   - 以插件的形式支持大多数评论系统
+- 搜索
 - 文章图片 CDN 设置
 - 增强的文章展示
   - 缩略图

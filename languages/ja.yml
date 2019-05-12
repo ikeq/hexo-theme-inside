@@ -7,9 +7,10 @@ title:
   archives: アーカイブ
   categories: カテゴリ
   tags: タグ
+  search: 検索
 
 footer:
-  powered: 'Powered by %s'
+  powered: Powered by %s
   theme: テーマ
 
 reward:
@@ -19,8 +20,8 @@ reward:
   bitcoin: Bitcoin
 
 comments:
-  load: '%s をロードする'
-  load_faild: '%s の読み込みに失敗し、再試行'
+  load: "%s をロードする"
+  load_faild: "%s の読み込みに失敗し、再試行"
   livere: Livere
   disqus: Disqus
 
@@ -36,9 +37,16 @@ page:
   tags:
     zero: タグなし
     one: 全 1 タグ
-    other: '全 %d タグ'
+    other: 全 %d タグ
 
   notfound:
-    direct_failed: '%s への誘導に失敗しました。'
+    direct_failed: "%s への誘導に失敗しました。"
     empty: ここには何もありません。
     home: ホームページに戻る
+
+  search:
+    placeholder: 検索
+    hits:
+      zero: 「:query」の検索結果はありません
+      one: ":time ミリ秒で検索結果 1 件"
+      other: ":time ミリ秒で検索結果 :hits 件"

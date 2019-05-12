@@ -7,6 +7,7 @@ describe('post', function () {
     this.ctx = {
       theme: {
         config: {
+          assets: { prefix: 'https://sample.com', suffix: '?q=80' },
           comments: {},
           reward: {},
           toc: {},
@@ -41,12 +42,14 @@ describe('post', function () {
       slug: 'test'
     }
     post.call(this.ctx, data);
-    expect(data.link).toBe('//example.com/post/test/');
+    expect(data.link).toBe('post/test');
+    expect(data.plink).toBe('//example.com/post/test/');
 
     data.layout = 'page';
     data.source = 'test/index.md';
     post.call(this.ctx, data);
-    expect(data.link).toBe('//example.com/test/');
+    expect(data.link).toBe('test');
+    expect(data.plink).toBe('//example.com/test/');
   })
 
   it('comments', function () {
@@ -152,5 +155,86 @@ describe('post', function () {
     data.content = '<script></script>';
     post.call(this.ctx, data);
     expect(data.content).toBe('<script></script>');
+  });
+
+  // assets
+  it('modify image url', function () {
+    const data = {
+      layout: 'post',
+      thumbnail: 'img/sample.jpg',
+      excerpt: '',
+      source: 'test/index.md',
+      content: '<img src="img/sample.jpg">',
+    };
+
+    post.call(this.ctx, data);
+    expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
+
+    data.layout = 'page'
+    post.call(this.ctx, data);
+
+    data.thumbnail = 'img/sample.jpg';
+    post.call(this.ctx, data);
+    expect(data.thumbnail).toBe('img/sample.jpg')
+  });
+
+  it('escape with data:image', function () {
+    const data = {
+      layout: 'post',
+      thumbnail: 'data:image',
+      excerpt: '',
+      content: '<img src="data:image">',
+    };
+
+    post.call(this.ctx, data);
+
+    expect(data.thumbnail).toBe('data:image')
+    expect(data.content).toBe('<img src="data:image">')
+  });
+
+  it('escape with absolute path', function () {
+    const data = {
+      layout: 'post',
+      thumbnail: 'https://abc.com',
+      excerpt: '',
+      content: '<img src="https://abc.com">',
+    };
+
+    post.call(this.ctx, data);
+
+    expect(data.thumbnail).toBe('https://abc.com')
+    expect(data.content).toBe('<img src="https://abc.com">')
+  });
+
+  it('parses color', function () {
+    const data = {
+      layout: 'post',
+      thumbnail: 'img/sample.jpg #000',
+      excerpt: '',
+      content: '<img src="img/sample.jpg">',
+    };
+
+    post.call(this.ctx, data);
+
+    expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
+    expect(data.color).toBe('#000')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
+  });
+
+  it('don\'t parses color when `color` is specified', function () {
+    const data = {
+      layout: 'post',
+      thumbnail: 'img/sample.jpg #000',
+      color: '#fff',
+      excerpt: '',
+      content: '<img src="img/sample.jpg">',
+    };
+
+    post.call(this.ctx, data);
+
+    expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
+    expect(data.color).toBe('#fff')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
   });
 });

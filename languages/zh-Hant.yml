@@ -7,9 +7,10 @@ title:
   archives: 歸檔
   categories: 分類
   tags: 標簽
+  search: 檢索
 
 footer:
-  powered: '由 %s 強力驅動'
+  powered: 由 %s 強力驅動
   theme: 主題
 
 reward:
@@ -36,9 +37,16 @@ page:
   tags:
     zero: 暫無標籤
     one: 目前共有 1 個標籤
-    other: '目前共有 %d 個標籤'
+    other: 目前共有 %d 個標籤
 
   notfound:
     direct_failed: 無法跳轉到 %s
     empty: 什麼也沒有。
     home: 返回首頁
+
+  search:
+    placeholder: 檢索
+    hits:
+      zero: 未發現與「:query」相關的内容
+      one: 1 條相關條目，使用了 :time 毫秒
+      other: ":hits 條相關條目，使用了 :time 毫秒"

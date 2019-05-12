@@ -7,9 +7,10 @@ title:
   archives: 归档
   categories: 分类
   tags: 标签
+  search: 搜索
 
 footer:
-  powered: '由 %s 强力驱动'
+  powered: 由 %s 强力驱动
   theme: 主题
 
 reward:
@@ -36,9 +37,16 @@ page:
   tags:
     zero: 暂无标签
     one: 目前共计 1 个标签
-    other: '目前共计 %d 个标签'
+    other: 目前共计 %d 个标签
 
   notfound:
     direct_failed: 无法跳转到 %s
     empty: 什么也没有。
     home: 返回首页
+
+  search:
+    placeholder: 搜索
+    hits:
+      zero: 未发现与「:query」相关的内容
+      one: 1 条相关条目，使用了 :time 毫秒
+      other: ":hits 条相关条目，使用了 :time 毫秒"

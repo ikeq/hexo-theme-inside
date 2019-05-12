@@ -1,4 +1,4 @@
-describe('hexo-theme-inside', () => {
+describe('hexo-theme-inside', function () {
   require('./scripts/utils');
   require('./scripts/filters');
   require('./scripts/tags');

@@ -16,13 +16,14 @@
 <% if (config.feed && config.feed.path) { -%>
 <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% } -%>
+<% if (theme.appearance.font && theme.appearance.font.url) { -%><%- css(theme.appearance.font.url) -%><% } %>
 <%- theme_static('css') %>
 <% if (theme.runtime.themeHash) { %><%- css('theme.' + theme.runtime.themeHash) %><% } %>
 <%- js('config.' + theme.runtime.configHash) %>
 <% if (theme.seo.structured_data) { %><%- structured_data(page) %><% } -%>
 <% if (theme.ga) { %><%- ga(theme.ga) %><% } -%>
 </head>
-<body>
+<body lang="<%= config.language || 'en' %>">
 <is-d2a57d></is-d2a57d>
 <%- theme_static('js') -%>
 </body>

@@ -22,12 +22,13 @@
 ## Features
 
 - SPA built with [angular]
-- Custom accent color, background
+- Custom accent color, background and fonts
 - Sub-page routes
 - Internationalization (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
   - :us: English
   - :jp: Japanese
+- Search
 - Comments
   - [Disqus]
   - [LiveRe]

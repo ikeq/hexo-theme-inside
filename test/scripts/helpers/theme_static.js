@@ -3,7 +3,7 @@
 const cheerio = require('cheerio');
 const urlFor = require('hexo/lib/plugins/helper/url_for');
 
-describe('theme_static', () => {
+describe('theme_static', function () {
   const Hexo = require('hexo');
   const hexo = new Hexo();
   const ctx = {
@@ -13,13 +13,12 @@ describe('theme_static', () => {
   };
   const themeStatic = require('../../../lib/helper/theme_static').bind(ctx);
 
-  it('css', () => {
+  it('css', function () {
     const $ = cheerio.load(themeStatic('css'));
-    expect($('link').eq(0).attr('href')).toMatch(/^\/fonts\.\w*\.css$/);
-    expect($('link').eq(1).attr('href')).toMatch(/^\/styles\.\w*\.css$/);
+    expect($('link').eq(0).attr('href')).toMatch(/^\/styles\.\w*\.css$/);
   });
 
-  it('js', () => {
+  it('js', function () {
     const $ = cheerio.load(themeStatic('js'));
     expect($('script').eq(0).attr('src')).toMatch(/^\/runtime\.\w*\.js$/);
     expect($('script').eq(1).attr('src')).toMatch(/^\/polyfills\.\w*\.js$/);

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Tags', () => {
+describe('Tags', function () {
   require('./canvas');
   require('./gist');
 });

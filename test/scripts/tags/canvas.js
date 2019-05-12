@@ -2,10 +2,10 @@
 
 const cheerio = require('cheerio');
 
-describe('canvas', () => {
+describe('canvas', function () {
   const canvas = require('../../../lib/tag/canvas');
 
-  it('increase the id and reset when title is changed', () => {
+  it('increase the id and reset when title is changed', function () {
     const $1 = cheerio.load(canvas.call({ title: 'foo' }, []));
     const $2 = cheerio.load(canvas.call({ title: 'foo' }, []));
     const $3 = cheerio.load(canvas.call({ title: 'bar' }, []));
@@ -15,14 +15,14 @@ describe('canvas', () => {
     expect($3('canvas').attr('id')).toBe('canvas-0');
   });
 
-  it('create canvas and script', () => {
+  it('create canvas and script', function () {
     const $ = cheerio.load(canvas([], 'ctx'));
 
     expect($('canvas')).not.toBeNull();
     expect($('script').html()).not.toBe('');
   });
 
-  it('set width and height', () => {
+  it('set width and height', function () {
     const $1 = cheerio.load(canvas([]));
     const $2 = cheerio.load(canvas([100, 50]));
 
