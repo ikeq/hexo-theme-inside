@@ -28,15 +28,15 @@ appearance:
     # Below is a built-in font set containing Baloo Bhaijaan, Josefin Sans,
     # Montserrat and Inconsolata from Google Fonts.
     # Please feel free to replace it with your own css file
-    url: /fonts.b9b22ef890c930ac7a13.css
+    url: //unpkg.com/hexo-theme-inside@2.1.0-beta.2/source/fonts.b9b22ef890c930ac7a13.css
 
     # Base font which applied to <body>
-    base: Josefin Sans, PingFang SC, Microsoft YaHei
+    base: "'Josefin Sans', 'PingFang SC', Microsoft YaHei"
     # Sidebar author name, fallback to `base`
     logo:
     # Sidebar menu font, fallback to `base`
-    menu: Baloo Bhaijaan
-    # Percentage on the fab button, month text on archives page, toc index and category pill,
+    menu: 'Baloo Bhaijaan'
+    # Percentage on the fab button, month text on archives page, count, pager, toc index and category pill,
     # fallback to `base`
     label: Montserrat
     # Headlines(h1, h2, h3, h4, h5, h6), fallback to `base`

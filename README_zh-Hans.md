@@ -21,7 +21,7 @@
 ## 特色
 
 - SPA built with [angular]
-- 自定义色调、背景
+- 自定义色调、背景、字体
 - 可嵌套的 page 路由
 - 多语言 (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
