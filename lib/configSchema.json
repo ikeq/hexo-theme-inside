@@ -293,7 +293,8 @@
       "properties": {
         "structured_data": { "type": "boolean" }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "default": {}
     },
     "plugins": {
       "type": "array",
@@ -378,6 +379,6 @@
       "default": {}
     }
   },
-  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo"],
   "additionalProperties": false
 }

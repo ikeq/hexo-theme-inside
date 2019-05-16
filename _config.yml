@@ -25,10 +25,10 @@ appearance:
   # Fonts
   font:
     # Url of font css file
-    # Below is a built-in font set containing Baloo Bhaijaan, Josefin Sans,
+    # Below is a font set containing Baloo Bhaijaan, Josefin Sans,
     # Montserrat and Inconsolata from Google Fonts.
     # Please feel free to replace it with your own css file
-    url: //unpkg.com/hexo-theme-inside@2.1.0-beta.2/source/fonts.b9b22ef890c930ac7a13.css
+    url: //unpkg.com/hexo-theme-inside@2.0.0/source/fonts.b9b22ef890c930ac7a13.css
 
     # Base font which applied to <body>
     base: "'Josefin Sans', 'PingFang SC', Microsoft YaHei"
@@ -168,7 +168,7 @@ search:
   #     url: https://APPLICATION_ID-dsn.algolia.net/1/indexes/INDEX/query
   #     method: post
   #     # Available variables: :query, :per_page, :current
-  #     body: query=:query&hitsPerPage=:per_page&page=:current
+  #     body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
   #     headers:
   #       X-Algolia-API-Key: API_KEY
   #       X-Algolia-Application-Id: APPLICATION_ID
