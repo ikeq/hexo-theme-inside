@@ -77,7 +77,7 @@
         }
       },
       "patternProperties": {
-        "^(github|twitter|facebook|google+|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
+        "^(github|twitter|facebook|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
       }
     },
     "footer": {
