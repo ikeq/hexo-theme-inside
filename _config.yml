@@ -25,23 +25,27 @@ appearance:
   # Fonts
   font:
     # Url of font css file
-    # Below is a font set containing Baloo Bhaijaan, Josefin Sans,
-    # Montserrat and Inconsolata from Google Fonts.
-    # Please feel free to replace it with your own css file
-    url: //unpkg.com/hexo-theme-inside@2.0.0/source/fonts.b9b22ef890c930ac7a13.css
+    # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
+    url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
 
-    # Base font which applied to <body>
+    # Base font which applied to body
     base: "'Josefin Sans', 'PingFang SC', Microsoft YaHei"
-    # Sidebar author name, fallback to `base`
+    # Sidebar author font, fallback to `base`
     logo:
     # Sidebar menu font, fallback to `base`
     menu: 'Baloo Bhaijaan'
-    # Percentage on the fab button, month text on archives page, count, pager, toc index and category pill,
+    # Font for:
+    # - percentage on the fab button
+    # - month text on archives page
+    # - count
+    # - pager
+    # - toc index
+    # - category pill
     # fallback to `base`
     label: Montserrat
-    # Headlines(h1, h2, h3, h4, h5, h6), fallback to `base`
+    # Headline(h1, h2, h3, h4, h5, h6) font, fallback to `base`
     heading:
-    # <code> and code block, fallback to `base`
+    # Code and code block, fallback to `base`
     code: Inconsolata, Consolas, Menlo, Courier
 
 # Sidebar profile
@@ -97,7 +101,7 @@ footer:
 
   # Custom text.
   # custom: Hosted by <a target="_blank" rel="noopener"
-  #   href="https://pages.coding.me"><b>Coding Pages</b></a>
+  #   href="https://pages.github.com/"><b>Github Pages</b></a>
 
 
 # ---------------------------------------------------------------
@@ -164,13 +168,13 @@ search:
   #   # Optional
   #   logo: //cdn.worldvectorlogo.com/logos/algolia.svg
   #   request:
-  #     url: https://APPLICATION_ID-dsn.algolia.net/1/indexes/INDEX/query
+  #     url: https://{APPLICATION_ID}-dsn.algolia.net/1/indexes/{INDEX}/query
   #     method: post
   #     # Available variables: :query, :per_page, :current
   #     body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
   #     headers:
-  #       X-Algolia-API-Key: API_KEY
-  #       X-Algolia-Application-Id: APPLICATION_ID
+  #       X-Algolia-API-Key: {API_KEY}
+  #       X-Algolia-Application-Id: {APPLICATION_ID}
   #       Content-Type: application/json; charset=UTF-8
   #   keys:
   #     # Used to retrieve result list
@@ -193,14 +197,14 @@ search:
 # Content addons
 # ---------------------------------------------------------------
 
-# Prefix/Suffix content image's path, useful for CDN setting,
-# for example: `![cat](images/cat.gif)` will convert to:
+# Prefix/Suffix of image URL, useful for CDN, for example,
+# `![cat](images/cat.gif)` will convert to
 # <img src="https://cdn.example.com/images/cat.gif?m=webp&q=80" alt="cat">
 assets:
   # prefix: 'https://cdn.example.com'
   # suffix: '?m=webp&q=80'
 
-# Table of content, enabled by default, set to false to disable.
+# Table of content, enabled by default, set to `false` to disable.
 toc:
   # The depth of toc, default to `3`, maximum to `4`.
   # depth: 3
