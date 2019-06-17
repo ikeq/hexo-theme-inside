@@ -48,6 +48,28 @@ appearance:
     # Code and code block, fallback to `base`
     code: Inconsolata, Consolas, Menlo, Courier
 
+  # Code Highlight theme
+  # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
+  # the default highlight theme is a customized Atelier Dune Light theme,
+  # please feel free to explore more
+  highlight:
+
+  # Tomorrow
+  # highlight: [
+  #   '#ffffff', '#e0e0e0', '#d6d6d6', '#8e908c',
+  #   '#969896', '#4d4d4c', '#282a2e', '#1d1f21',
+  #   '#c82829', '#f5871f', '#eab700', '#718c00',
+  #   '#3e999f', '#4271ae', '#8959a8', '#a3685a'
+  # ]
+
+  # Tomorrow night
+  # highlight: [
+  #   '#1d1f21', '#282a2e', '#373b41', '#969896',
+  #   '#b4b7b4', '#c5c8c6', '#e0e0e0', '#ffffff',
+  #   '#cc6666', '#de935f', '#f0c674', '#b5bd68',
+  #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
+  # ]
+
 # Sidebar profile
 profile:
   # `email` will fallback to `hexo.config.email` if not specified
