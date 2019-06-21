@@ -42,7 +42,6 @@ page:
   notfound:
     direct_failed: 無法跳轉到 %s
     empty: 什麼也沒有。
-    home: 返回首頁
 
   search:
     placeholder: 檢索

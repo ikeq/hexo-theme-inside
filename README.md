@@ -1,6 +1,6 @@
 # Inside
 
-[![build-img]]() [![release-img]][releases] [![license-img]](LICENSE)
+[![build-img]](travis) [![release-img]][releases] [![license-img]](LICENSE)
 
 ❤️ SPA, flat and clean theme for [Hexo].
 
@@ -22,7 +22,8 @@
 ## Features
 
 - SPA built with [angular]
-- Custom accent color, background and fonts
+- Custom accent color, background, fonts
+- Custom code syntax highlighting
 - Sub-page routes
 - Internationalization (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
@@ -33,7 +34,6 @@
   - [Disqus]
   - [LiveRe]
   - Support most comment systems as plugin
-- Content image CDN
 - Enhanced content display
   - Thumbnail
   - Dropcap
@@ -43,12 +43,12 @@
   - Copyright notice
   - Reward
 - [PWA]
-  - Dynamically updated `theme-color` meta tag (by extracting thumbnail pixel values)
+  - Immersive design (Chrome on Android)
   - [manifest.json]
   - Offline support ([workbox])
 - SEO
-  - canonical link
-  - built-in `sitemap.xml`
+  - Canonical link
+  - Built-in `sitemap.xml`
   - [Structured Data]
   - Open Graph Meta Tags
 
@@ -77,9 +77,9 @@ theme: inside
 
 Licensed under [MIT](LICENSE).
 
-[build-img]: https://img.shields.io/travis/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
-[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
-[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[build-img]: https://img.shields.io/travis/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
+[release-img]: https://img.shields.io/github/release/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
+[license-img]: https://img.shields.io/github/license/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
 
 [angular]: https://angular.io
 [hexo]: https://hexo.io/
@@ -89,4 +89,5 @@ Licensed under [MIT](LICENSE).
 [Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
 [disqus]: https://disqus.com
 [livere]: https://livere.com
-[releases]: https://github.com/elmorec/hexo-theme-inside/releases
+[releases]: https://github.com/ike-c/hexo-theme-inside/releases
+[travis]: https://travis-ci.org/ike-c/hexo-theme-inside

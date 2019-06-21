@@ -42,7 +42,6 @@ page:
   notfound:
     direct_failed: "%s への誘導に失敗しました。"
     empty: ここには何もありません。
-    home: ホームページに戻る
 
   search:
     placeholder: 検索

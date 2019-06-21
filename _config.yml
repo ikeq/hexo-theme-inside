@@ -29,7 +29,7 @@ appearance:
     url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
 
     # Base font which applied to body
-    base: "'Josefin Sans', 'PingFang SC', Microsoft YaHei"
+    base: "'Josefin Sans', 'PingFang SC'"
     # Sidebar author font, fallback to `base`
     logo:
     # Sidebar menu font, fallback to `base`
@@ -45,8 +45,38 @@ appearance:
     label: Montserrat
     # Headline(h1, h2, h3, h4, h5, h6) font, fallback to `base`
     heading:
-    # Code and code block, fallback to `base`
-    code: Inconsolata, Consolas, Menlo, Courier
+    # Code and code block
+    code: Inconsolata, monospace
+
+  # Code Highlight theme
+  # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
+  # the default highlight theme is a customized Atelier Dune Light theme,
+  # please feel free to explore more.
+  highlight:
+
+  # Default Light by Chris Kempson (http://chriskempson.com)
+  # highlight: [
+  #   '#f8f8f8', '#e8e8e8', '#d8d8d8', '#b8b8b8',
+  #   '#585858', '#383838', '#282828', '#181818',
+  #   '#ab4642', '#dc9656', '#f7ca88', '#a1b56c',
+  #   '#86c1b9', '#7cafc2', '#ba8baf', '#a16946'
+  # ]
+
+  # Harmonic16 Light by Jannik Siebert (https://github.com/janniks)
+  # highlight: [
+  #   '#f7f9fb', '#e5ebf1', '#cbd6e2', '#aabcce',
+  #   '#627e99', '#405c79', '#223b54', '#0b1c2c',
+  #   '#bf8b56', '#bfbf56', '#8bbf56', '#56bf8b',
+  #   '#568bbf', '#8b56bf', '#bf568b', '#bf5656'
+  # ]
+
+  # Tomorrow Night by Chris Kempson (http://chriskempson.com)
+  # highlight: [
+  #   '#1d1f21', '#282a2e', '#373b41', '#969896',
+  #   '#b4b7b4', '#c5c8c6', '#e0e0e0', '#ffffff',
+  #   '#cc6666', '#de935f', '#f0c674', '#b5bd68',
+  #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
+  # ]
 
 # Sidebar profile
 profile:
