@@ -29,7 +29,7 @@ appearance:
     url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
 
     # Base font which applied to body
-    base: "'Josefin Sans', 'PingFang SC', Microsoft YaHei"
+    base: "'Josefin Sans', 'PingFang SC'"
     # Sidebar author font, fallback to `base`
     logo:
     # Sidebar menu font, fallback to `base`
@@ -46,7 +46,7 @@ appearance:
     # Headline(h1, h2, h3, h4, h5, h6) font, fallback to `base`
     heading:
     # Code and code block, fallback to `base`
-    code: Inconsolata, Consolas, Menlo, Courier
+    code: Inconsolata, monospace
 
   # Code Highlight theme
   # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
