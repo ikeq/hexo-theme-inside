@@ -1,6 +1,6 @@
 # Inside
 
-[![build-img]](travis) [![release-img]][releases] [![license-img]](LICENSE)
+[![build-img]][travis] [![release-img]][releases] [![license-img]](LICENSE)
 
 ❤️ SPA, flat and clean theme for [Hexo].
 
