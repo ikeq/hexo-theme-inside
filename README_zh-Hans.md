@@ -1,6 +1,6 @@
 # Inside
 
-[![build-img]]() [![release-img]][releases] [![license-img]](LICENSE)
+[![build-img]][travis] [![release-img]][releases] [![license-img]](LICENSE)
 
 ❤️ SPA, flat and clean theme for [Hexo].
 
@@ -22,6 +22,7 @@
 
 - SPA built with [angular]
 - 自定义色调、背景、字体
+- 自定义代码语法高亮
 - 可嵌套的 page 路由
 - 多语言 (i18n)
   - :cn: Simplified Chinese & Traditional Chinese
@@ -32,7 +33,6 @@
   - [LiveRe]
   - 以插件的形式支持大多数评论系统
 - 搜索
-- 文章图片 CDN 设置
 - 增强的文章展示
   - 缩略图
   - 首字下沉
@@ -42,7 +42,7 @@
   - 版权声明
   - 打赏
 - [PWA]
-  - 动态更新的 `theme-color` meta 标签（通过提取缩略图像素值）
+  - 沉浸式设计（限安卓手机 Chrome）
   - [manifest.json]
   - 离线支持 ([workbox])
 - SEO
@@ -78,9 +78,9 @@ theme: inside
 
 Licensed under [MIT](LICENSE).
 
-[build-img]: https://img.shields.io/travis/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
-[release-img]: https://img.shields.io/github/release/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
-[license-img]: https://img.shields.io/github/license/elmorec/hexo-theme-inside.svg?longCache=true&style=flat-square
+[build-img]: https://img.shields.io/travis/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
+[release-img]: https://img.shields.io/github/release/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
+[license-img]: https://img.shields.io/github/license/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
 
 [angular]: https://angular.io
 [hexo]: https://hexo.io/
@@ -90,4 +90,5 @@ Licensed under [MIT](LICENSE).
 [Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
 [disqus]: https://disqus.com
 [livere]: https://livere.com
-[releases]: https://github.com/elmorec/hexo-theme-inside/releases
+[releases]: https://github.com/ike-c/hexo-theme-inside/releases
+[travis]: https://travis-ci.org/ike-c/hexo-theme-inside

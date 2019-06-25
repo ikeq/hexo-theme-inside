@@ -20,8 +20,9 @@ describe('theme_static', function () {
 
   it('js', function () {
     const $ = cheerio.load(themeStatic('js'));
-    expect($('script').eq(0).attr('src')).toMatch(/^\/runtime\.\w*\.js$/);
-    expect($('script').eq(1).attr('src')).toMatch(/^\/polyfills\.\w*\.js$/);
-    expect($('script').eq(2).attr('src')).toMatch(/^\/main\.\w*\.en\.js$/);
+    expect($('script').eq(0).attr('src')).toMatch(/^\/runtime/);
+    expect($('script').eq(1).attr('src')).toMatch(/^\/polyfills/);
+    expect($('script').eq(2).attr('src')).toMatch(/^\/polyfills/);
+    expect($('script').eq(3).attr('src')).toMatch(/^\/main/);
   });
 });

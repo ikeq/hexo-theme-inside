@@ -44,6 +44,11 @@
             "base": { "type": "string" }
           },
           "additionalProperties": false
+        },
+        "highlight": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 15
         }
       },
       "required": ["accent_color"],

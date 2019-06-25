@@ -1,13 +1,13 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.2.0",
+  "version": "2.3.0-rc.0",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elmorec/hexo-theme-inside.git"
+    "url": "git+https://github.com/ike-c/hexo-theme-inside.git"
   },
   "keywords": [
     "hexo",
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elmorec/hexo-theme-inside/issues"
+    "url": "https://github.com/ike-c/hexo-theme-inside/issues"
   },
-  "homepage": "https://github.com/elmorec/hexo-theme-inside#readme",
+  "homepage": "https://github.com/ike-c/hexo-theme-inside#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

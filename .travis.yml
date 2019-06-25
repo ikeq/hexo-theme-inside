@@ -5,10 +5,10 @@ branches:
   only:
     - master
 
-before_script:
-  - npm test
-  - rm -rf node_modules/
-  - git clone https://github.com/elmorec/hexo-starter.git generate_test
-  - git clone https://github.com/elmorec/hexo-theme-inside.git generate_test/themes/inside
+before_install:
+  - git clone https://github.com/hexojs/hexo-theme-unit-test generate_test
+  - git clone https://github.com/ike-c/hexo-theme-inside.git generate_test/themes/landscape
   - cd generate_test
   - npm install
+  - hexo g & hexo g
+  - cd ..
