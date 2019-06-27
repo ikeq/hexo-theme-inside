@@ -47,7 +47,7 @@
         },
         "highlight": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": { "$ref": "#/definitions/color" },
           "minItems": 15
         }
       },
@@ -308,17 +308,38 @@
       },
       "items": {
         "type": "object",
-        "properties": {
-          "template": { "type": "string" },
-          "position": {
-            "oneOf": [
-              { "$ref": "#/properties/plugins/definitions/position" },
-              { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
-            ]
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "template": { "type": "string" },
+              "position": {
+                "oneOf": [
+                  { "$ref": "#/properties/plugins/definitions/position" },
+                  { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
+                ]
+              }
+            },
+            "required": ["template", "position"],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "resources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "tag": { "enum": ["script", "style", "link"] }
+                  },
+                  "required": ["tag"]
+                }
+              }
+            },
+            "required": ["resources"]
           }
-        },
-        "required": ["template", "position"],
-        "additionalProperties": false
+        ]
       }
     },
     "pwa": {

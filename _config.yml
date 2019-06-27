@@ -130,7 +130,7 @@ footer:
   # theme: false
 
   # Custom text.
-  # custom: Hosted by <a target="_blank" rel="noopener"
+  # custom: Hosted by <a target="_blank" rel="external nofollow noopener"
   #   href="https://pages.github.com/"><b>Github Pages</b></a>
 
 
@@ -374,14 +374,57 @@ pwa:
   #       sizes: 144x144
   #       type: image/png
 
-# Plugins, inject html snippet to a specified position
-#  - position: `sidebar` | `post` | `page` | `comments`, can be an array
-#    template: html code
-# For the lastest ES grammar and code minification
-# Run the following command in the root directory of Hexo (not `themes/inside`):
-# ```bash
-# npm install babel-core babel-preset-env html-minifier uglify-js --save
-# ```
-plugins:
-  # - position:
-  #   template:
+# Plugins
+# Inject html snippet to a specified position,
+# Or global inject additional scripts/styles.
+# plugins:
+#   # Dynamic inject html snippet
+#   - position: # `sidebar` | `post` | `page` | `comments`, can be an array
+
+#     # HTML code
+#     # For the lastest ES grammar and code minification
+#     # Run the following command in the root directory of Hexo (not `themes/inside`):
+#     # ```bash
+#     # npm install babel-core babel-preset-env html-minifier uglify-js --save
+#     # ```
+#     template:
+
+#   # Inject additional scripts/styles resources
+#   # scripts will be injected into <body>, and styles will be injected into <head>
+#   - resources:
+#       # In general, script or style depends on their ext name.
+#       - //xxx.css
+#       - //xxx.js
+
+#       # A few more flexible examples
+
+#       # <script src="//sample.com/api.php?format=jsonp" id="sample-api" whatever></script>
+#       - tag: script # html tag, `script` | `style` | `link`
+#         # Any possible attributes
+#         src: //sample.com/api.php?format=jsonp
+#         id: sample-api
+#         whatever: true
+
+#       # <link rel="stylesheet" href="xxx.css" disable>
+#       - tag: link
+#         href: xxx.css
+#         disable: true
+
+#       # Inline script
+#       # <script type="text/x-mathjax-config">MathJax.Hub.Config({...})</script>
+#       - tag: script
+#         type: text/x-mathjax-config
+#         code: |
+#            MathJax.Hub.Config({
+#              showProcessingMessages: false,
+#              messageStyle: 'none',
+#              tex2jax: { inlineMath: [['s;,'s;], ['\\(','\\)']] }
+#            })
+
+#       # Inline style
+#       # <style>.mycss{...}</style>
+#       - tag: style
+#         code: |
+#            .mycss {
+#              color: rebeccapurple;
+#            }
