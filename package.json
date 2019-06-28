@@ -26,8 +26,8 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "hexo": "^3.8.0",
-    "jasmine": "^3.3.1",
-    "uglify-js": "^3.4.9"
+    "hexo": "^3.9.0",
+    "jasmine": "^3.4.0",
+    "uglify-js": "^3.6.0"
   }
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<%= config.language || 'en' %>">
+<html lang="<%= config.language %>">
 <head>
 <meta charset="utf-8">
 <title><%= title %></title>
@@ -13,18 +13,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <% } -%>
 <%- open_graph({ image: page.thumbnail || theme.profile.avatar }) %>
-<% if (theme.seo.structured_data) { %><%- structured_data(page) %><% } -%>
+<% if (theme.seo.structured_data) { %><%- structured_data(page) %>
+<% } -%>
 <% if (config.feed && config.feed.path) { -%>
 <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
 <% } -%>
-<% if (theme.appearance.font && theme.appearance.font.url) { -%><%- css(theme.appearance.font.url) -%><% } %>
 <%- theme.styles %>
-<% if (theme.runtime.themeHash) { %><%- css('theme.' + theme.runtime.themeHash) %><% } %>
+<%- css('theme.' + theme.runtime.themeHash) %>
 <%- js('config.' + theme.runtime.configHash) %>
 <% if (theme.ga) { %><%- ga(theme.ga) %><% } -%>
 </head>
-<body lang="<%= config.language || 'en' %>">
+<body lang="<%= config.language %>">
 <is-d2a57d></is-d2a57d>
-<%- theme.scripts -%>
+<%- theme.scripts %>
 </body>
 </html>

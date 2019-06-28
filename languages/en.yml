@@ -1,0 +1,51 @@
+menu:
+  archives: Archives
+  categories: Categories
+  tags: Tags
+
+title:
+  archives: Archive
+  categories: Category
+  tags: Tag
+  search: Search
+
+footer:
+  powered: Powered by %s
+  theme: Theme
+
+reward:
+  paypal: Paypal
+  wechat: WeChat
+  alipay: 支
+  bitcoin: Bitcoin
+
+comments:
+  load: Load %s
+  load_faild: Faild to load %s, click to retry
+  livere: Livere
+  disqus: Disqus
+
+post:
+  copyright:
+    author: Author
+    link: Link
+    license: Copyright
+    published: Published
+    updated: Updated
+
+page:
+  tags:
+    zero: No tags
+    one: 1 tag in total
+    other: "%d tags in total"
+
+  notfound:
+    direct_failed: Failed to direct to %s
+    empty: Nothing here.
+
+  search:
+    placeholder: Search
+    hits:
+      zero: No result found for ":query"
+      one: 1 result found in :time ms
+      other: ":hits results found in :time ms"
