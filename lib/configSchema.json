@@ -26,7 +26,7 @@
       "properties": {
         "accent_color": { "$ref": "#/definitions/color" },
         "background": {
-          "oneOf":[
+          "oneOf": [
             { "type": "string" },
             { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 2 }
           ]
@@ -47,7 +47,7 @@
         },
         "highlight": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": { "$ref": "#/definitions/color" },
           "minItems": 15
         }
       },
@@ -307,18 +307,30 @@
         "position": { "enum": ["sidebar", "post", "page", "comments"] }
       },
       "items": {
-        "type": "object",
-        "properties": {
-          "template": { "type": "string" },
-          "position": {
-            "oneOf": [
-              { "$ref": "#/properties/plugins/definitions/position" },
-              { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
-            ]
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "properties": {
+              "template": { "type": "string" },
+              "position": {
+                "oneOf": [
+                  { "$ref": "#/properties/plugins/definitions/position" },
+                  { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
+                ]
+              }
+            },
+            "required": ["template", "position"],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "tag": { "enum": ["script", "style", "link"] }
+            },
+            "required": ["tag"]
           }
-        },
-        "required": ["template", "position"],
-        "additionalProperties": false
+        ]
       }
     },
     "pwa": {
