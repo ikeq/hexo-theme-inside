@@ -63,7 +63,7 @@ permalink: post/:title/
 theme: inside
 ```
 
-3\. See [inside/_config.yml](_config.yml) for theme configuration.
+3\. Read [documentation] to configure the theme.
 
 ## Browser Support
 
@@ -91,3 +91,4 @@ Licensed under [MIT](LICENSE).
 [livere]: https://livere.com
 [releases]: https://github.com/ike-c/hexo-theme-inside/releases
 [travis]: https://travis-ci.org/ike-c/hexo-theme-inside
+[documentation]: https://blog.oniuo.com/theme-inside

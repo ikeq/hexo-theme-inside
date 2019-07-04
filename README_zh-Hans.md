@@ -58,13 +58,11 @@
 2\. 配置 `HEXO/_config.yml` 如下：
 
 ```yml
-language: zh-Hans
-# language: zh-Hant
 permalink: post/:title/
 theme: inside
 ```
 
-3\. 主题配置见 [inside/_config.yml](_config.yml)，详细说明见[这里](https://blog.oniuo.com/post/inside-theme-configuration)。
+3\. 主题配置请参阅 [documentation]。
 
 ## 浏览器支持
 
@@ -92,3 +90,4 @@ Licensed under [MIT](LICENSE).
 [livere]: https://livere.com
 [releases]: https://github.com/ike-c/hexo-theme-inside/releases
 [travis]: https://travis-ci.org/ike-c/hexo-theme-inside
+[documentation]: https://blog.oniuo.com/theme-inside

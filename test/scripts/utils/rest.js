@@ -3,7 +3,7 @@
 const cheerio = require('cheerio');
 
 describe('utils/rest', function () {
-  const { type, isEmptyObject, pick, md5, base64, getPagePath, getAssetsName, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet } = require('../../../lib/utils');
+  const { type, isEmptyObject, pick, md5, base64, getPagePath, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet, tag } = require('../../../lib/utils');
 
   it('type()', function () {
     expect(type({})).toBe('object');
@@ -41,31 +41,6 @@ describe('utils/rest', function () {
   it('getPagePath()', function () {
     expect(getPagePath('root/page/index.md')).toEqual('root/page');
     expect(getPagePath('root/page/v2.md')).toEqual('root/page/v2');
-  });
-
-  it('getAssetsName()', function () {
-    expect(getAssetsName(
-      [
-        '404.12848da7f1026d4027da.jpg',
-        'fonts.e15b7f98c5fa14803416.css',
-        'main.59ea5ab0236c806259b7.ja.js',
-        'main.d585f7caa9803a0b3184.zh-Hant.js',
-        'main.e03c502d4e39a3813ed1.zh-Hans.js',
-        'main.ed840fafa9b7040ecb3a.en.js',
-        'polyfills.d08f09f49682da52980e.js',
-        'runtime.ec2944dd8b20ec099bf3.js',
-        'styles.33c538ae674b89d5ccc1.css'
-      ],
-      'js',
-      ['polyfills', 'main', 'runtime']
-    )).toEqual([
-      'polyfills.d08f09f49682da52980e.js',
-      'main.59ea5ab0236c806259b7.ja.js',
-      'main.d585f7caa9803a0b3184.zh-Hant.js',
-      'main.e03c502d4e39a3813ed1.zh-Hans.js',
-      'main.ed840fafa9b7040ecb3a.en.js',
-      'runtime.ec2944dd8b20ec099bf3.js',
-    ])
   });
 
   it('Pagination', function () {
@@ -147,8 +122,26 @@ describe('utils/rest', function () {
   });
 
   it('localeId()', function () {
-    expect(localeId('zh-cn', true)).toBe('zh-Hans');
-    expect(localeId('zh-Hans')).toBe('zh-cn');
+    expect(localeId('zh-cn')).toBe('zh-Hans');
+    expect(localeId('zh-hk')).toBe('zh-Hant');
+    expect(localeId('zh-tw')).toBe('zh-Hant');
+    expect(localeId('zh-CN')).toBe('zh-Hans');
+    expect(localeId('zh-HK')).toBe('zh-Hant');
+    expect(localeId('zh-TW')).toBe('zh-Hant');
+    expect(localeId('zh-Hans')).toBe('zh-Hans');
+    expect(localeId('zh-Hant')).toBe('zh-Hant');
+    expect(localeId('en')).toBe('en');
+    expect(localeId('wrong')).toBe('en');
+
+    expect(localeId('zh-Hans', true)).toBe('zh-cn');
+    expect(localeId('zh-Hant', true)).toBe('zh-hk');
+    expect(localeId('zh-Hant', true)).toBe('zh-hk');
+    expect(localeId('en')).toBe('en');
+    expect(localeId('wrong')).toBe('en');
+
+
+    expect(localeId(['zh-cn'])).toBe('zh-Hans');
+    expect(localeId(['zh-Hans'], true)).toBe('zh-cn');
   });
 
   it('jsParser()', function () {
@@ -170,6 +163,20 @@ describe('utils/rest', function () {
 
     expect(snippet('alert(1)', code => `<foo>${code}</foo>`))
       .toBe('<div class="is-snippet"><foo>alert(1);</foo></div>');
+  });
+
+  it('tag()', function () {
+    expect(tag({ tag: 'script' })).toBe('');
+    expect(tag({ tag: 'link' })).toBe('');
+    expect(tag({ tag: 'style' })).toBe('');
+
+    expect(tag({ tag: 'script', src: 'xxx.js' })).toBe('<script src="xxx.js"></script>');
+    expect(tag({ tag: 'script', code: 'var a=1;alert(1)' })).toBe('<script>alert(1);</script>');
+    // escape es code transformation when `type` is specified
+    expect(tag({ tag: 'script', type: 'xxx', code: 'alert(1)' })).toBe('<script type="xxx">alert(1)</script>');
+
+    expect(tag({ tag: 'style', code: 'body{}' })).toBe('<style>body{}</style>');
+    expect(tag({ tag: 'link', href: 'xxx.css' })).toBe('<link href="xxx.css" rel="stylesheet">');
   });
 
 });

@@ -375,19 +375,21 @@ pwa:
   #       type: image/png
 
 # Plugins
-# Inject html snippet to a specified position,
-# Or global inject scripts/styles.
+# Inject html snippet to a specified position, Or global inject scripts/styles.
+# The code will take advantage of babel, uglifyjs and html-minifier if possible.
+# Simply run the following command in the root directory of Hexo (not `themes/inside`):
+# ```bash
+# npm install babel-core babel-preset-env html-minifier uglify-js --save
+# ```
 # plugins:
 #   # Dynamic inject html snippet
 #   - position: # `sidebar` | `post` | `page` | `comments`, can be an array
 
 #     # HTML code
-#     # For the lastest ES grammar and code minification
-#     # Run the following command in the root directory of Hexo (not `themes/inside`):
-#     # ```bash
-#     # npm install babel-core babel-preset-env html-minifier uglify-js --save
-#     # ```
-#     template:
+#     template: |
+#       <script>...</script>
+#     # Or a path relative to theme folder
+#     template: snippets/snippet-1.html
 
 #   # Global Inject scripts/styles
 #   # scripts will be injected into <body>, and styles will be injected into <head>
@@ -419,6 +421,8 @@ pwa:
 #           messageStyle: 'none',
 #           tex2jax: { inlineMath: [['s;,'s;], ['\\(','\\)']] }
 #         })
+#     # Or a path relative to theme folder
+#     code: snippets/mathjax-config.js
 
 #   # Inline style
 #   # <style>.mycss{...}</style>
@@ -427,3 +431,5 @@ pwa:
 #         .mycss {
 #           color: rebeccapurple;
 #         }
+#     # Or a path relative to theme folder
+#     code: snippets/mycss.css
