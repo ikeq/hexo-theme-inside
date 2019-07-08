@@ -23,11 +23,7 @@
 - SPA built with [angular]
 - 自定义色调、背景、字体
 - 自定义代码语法高亮
-- 可嵌套的 page 路由
-- 多语言 (i18n)
-  - :cn: Simplified Chinese & Traditional Chinese
-  - :us: English
-  - :jp: Japanese
+- 可嵌套 page 路由
 - 评论
   - [Disqus]
   - [LiveRe]
@@ -46,10 +42,8 @@
   - [manifest.json]
   - 离线支持 ([workbox])
 - SEO
-  - canonical link
   - 内置 `sitemap.xml`
   - [Structured Data]
-  - Open Graph Meta Tags
 
 ## 开始使用
 

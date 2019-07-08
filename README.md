@@ -24,11 +24,7 @@
 - SPA built with [angular]
 - Custom accent color, background, fonts
 - Custom code syntax highlighting
-- Sub-page routes
-- Internationalization (i18n)
-  - :cn: Simplified Chinese & Traditional Chinese
-  - :us: English
-  - :jp: Japanese
+- Sub-page
 - Search
 - Comments
   - [Disqus]
@@ -47,10 +43,8 @@
   - [manifest.json]
   - Offline support ([workbox])
 - SEO
-  - Canonical link
   - Built-in `sitemap.xml`
   - [Structured Data]
-  - Open Graph Meta Tags
 
 ## Quick start
 
