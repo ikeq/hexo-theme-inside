@@ -22,7 +22,7 @@
 ## Features
 
 - SPA built with [angular]
-- Custom accent color, background, fonts
+- Custom accent color, background, fonts, dark mode
 - Custom code syntax highlighting
 - Sub-page
 - Search

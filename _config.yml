@@ -82,6 +82,13 @@ appearance:
   #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
   # ]
 
+  # Mode
+  # Specify `dark` to apply a built-in dark mode,
+  # or fully custom colors: `[foreground color, card background, border-color]`
+  # Note, the middle value can be any valid css background value
+  # `mode: dark` is equivalent to `mode: ['#d8d8d8', '#252525', '#444']`
+  mode:
+
 # Sidebar profile
 profile:
   # `email` is used for gravatar(https://en.gravatar.com),

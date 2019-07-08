@@ -49,6 +49,20 @@
           "type": "array",
           "items": { "$ref": "#/definitions/color" },
           "minItems": 15
+        },
+        "mode": {
+          "oneOf": [
+            { "enum": ["dark"] },
+            {
+              "type": "array",
+              "items": [
+                { "$ref": "#/definitions/color" },
+                { "type": "string" },
+                { "$ref": "#/definitions/color" }
+              ],
+              "minItems": 3
+            }
+          ]
         }
       },
       "required": ["accent_color"],

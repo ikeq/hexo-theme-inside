@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.3.0-beta.3",
+  "version": "2.3.0-beta.4",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
