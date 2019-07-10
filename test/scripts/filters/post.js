@@ -132,15 +132,16 @@ describe('post', function () {
     const data = {
       layout: 'post',
       excerpt: '',
-      content: `<p><img></p><p>img<img></p><p><img><img></p>`,
+      content: `<p><img></p><p>img<img></p><p><img><img></p><figure><img></figure>`,
     };
 
     post.call(this.ctx, data);
 
     expect(data.content.replace(/\=\"\"/g, '')).toBe(
-      '<div class="article-img"><p><img data-zoomable></p></div>' +
+      '<p><img class="article-img"></p>' +
       '<p>img<img></p>' +
-      '<div class="article-img"><p><img data-zoomable><img data-zoomable></p></div>');
+      '<p><img class="article-img"><img class="article-img"></p>' +
+      '<figure><img class="article-img"></figure>');
   });
 
   it('add additional tag for script', function () {
@@ -169,7 +170,7 @@ describe('post', function () {
 
     post.call(this.ctx, data);
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
-    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" class="article-img">')
 
     data.layout = 'page'
     post.call(this.ctx, data);
@@ -184,13 +185,13 @@ describe('post', function () {
       layout: 'post',
       thumbnail: 'data:image',
       excerpt: '',
-      content: '<img src="data:image">',
+      content: '<p>inline<img src="data:image"></p>',
     };
 
-    post.call(this.ctx, data);
+    post.call(this.ctx, { ...data });
 
     expect(data.thumbnail).toBe('data:image')
-    expect(data.content).toBe('<img src="data:image">')
+    expect(data.content).toBe('<p>inline<img src="data:image"></p>')
   });
 
   it('escape with absolute path', function () {
@@ -198,13 +199,13 @@ describe('post', function () {
       layout: 'post',
       thumbnail: 'https://abc.com',
       excerpt: '',
-      content: '<img src="https://abc.com">',
+      content: '<p>inline<img src="https://abc.com"></p>',
     };
 
     post.call(this.ctx, data);
 
     expect(data.thumbnail).toBe('https://abc.com')
-    expect(data.content).toBe('<img src="https://abc.com">')
+    expect(data.content).toBe('<p>inline<img src="https://abc.com"></p>')
   });
 
   it('parses color', function () {
@@ -212,14 +213,13 @@ describe('post', function () {
       layout: 'post',
       thumbnail: 'img/sample.jpg #000',
       excerpt: '',
-      content: '<img src="img/sample.jpg">',
+      content: '',
     };
 
     post.call(this.ctx, data);
 
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
     expect(data.color).toBe('#000')
-    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
   });
 
   it('don\'t parses color when `color` is specified', function () {
@@ -235,6 +235,6 @@ describe('post', function () {
 
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
     expect(data.color).toBe('#fff')
-    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80">')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" class="article-img">')
   });
 });

@@ -19,6 +19,10 @@ appearance:
   #   - 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
   #   - '#2a2b33'
 
+  # You can also set only the background when the sidebar is open.
+  # background:
+  #   - '#2a2b33'
+
   # Maximum width of content
   # content_width: 640
 
@@ -48,9 +52,9 @@ appearance:
     # Code and code block
     code: Inconsolata, monospace
 
-  # Code Highlight theme
+  # Code Syntax Highlighting
   # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
-  # the default highlight theme is a customized Atelier Dune Light theme,
+  # the default theme is a customized Atelier Dune Light theme,
   # please feel free to explore more.
   highlight:
 
@@ -78,29 +82,38 @@ appearance:
   #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
   # ]
 
+  # Mode
+  # Specify `dark` to apply a built-in dark mode,
+  # or fully custom colors: `[foreground color, card background, border-color]`
+  # Note, the middle value can be any valid css background value
+  # `mode: dark` is equivalent to `mode: ['#d8d8d8', '#252525', '#444']`
+  mode:
+
 # Sidebar profile
 profile:
-  # `email` will fallback to `hexo.config.email` if not specified
+  # `email` is used for gravatar(https://en.gravatar.com),
+  # fallback to `hexo.config.email` if not specified
   email:
 
-  # Avatar URL, email address will be used for gravatar(https://en.gravatar.com) avatar if not specified.
+  # You can set Avatar URL directly
   # avatar:
 
   bio: Awesome guy.
 
-# Sidebar menu
+# Sidebar navigation links
 menu:
   Home: /
   # About: /about
   # Links: /links
   # Github: https://github.com/username
 
-# Sidebar social media
+# Social media URL
 # Try to sort by changing the order of the keys
 sns:
   # `email` will fallback to `profile.email` if not specified
   email:
-  # `feed` will fallback to `hexo.config.feed.path` if not specified
+  # If you use hexo-generator-feed, `sns.feed` can be left blank
+  # and the theme will try to get `hexo.config.feed.path`.
   feed:
   github:
   twitter:
@@ -118,10 +131,10 @@ sns:
   weibo:
   qq:
 
-# Sidebar footer
+# Sidebar footer copyright info
 footer:
-  # Default to `©year • author`, set to false to disable.
-  # copyright:
+  # Set to false to hide.
+  # copyright: '&copy; 2019 • <a href="">John Doe</a>'
 
   # Set to false to hide Hexo link.
   # powered: false
@@ -154,13 +167,9 @@ page:
 post:
   # per_page: 10
 
-  # Display Table of content, default to `true`
+  # The following settings are the same as the page
   # toc: false
-
-  # Display reward, default to `false`
   # reward: true
-
-  # Display copyright notice, default to `false`
   # copyright: true
 
 # Archive
