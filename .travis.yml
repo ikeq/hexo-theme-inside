@@ -1,9 +1,8 @@
 language: node_js
-node_js:
-  - "10"
-branches:
-  only:
-    - master
+
+cache:
+  directories:
+    - node_modules
 
 before_install:
   - git clone https://github.com/hexojs/hexo-theme-unit-test generate_test
