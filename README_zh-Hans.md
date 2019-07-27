@@ -44,6 +44,7 @@
 - SEO
   - 内置 `sitemap.xml`
   - [Structured Data]
+- 打印友好
 
 ## 开始使用
 
@@ -70,9 +71,9 @@ theme: inside
 
 Licensed under [MIT](LICENSE).
 
-[build-img]: https://img.shields.io/travis/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
-[release-img]: https://img.shields.io/github/release/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
-[license-img]: https://img.shields.io/github/license/ike-c/hexo-theme-inside.svg?longCache=true&style=flat-square
+[build-img]: https://img.shields.io/travis/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
+[release-img]: https://img.shields.io/github/release/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
+[license-img]: https://img.shields.io/github/license/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
 
 [angular]: https://angular.io
 [hexo]: https://hexo.io/
@@ -82,6 +83,6 @@ Licensed under [MIT](LICENSE).
 [Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
 [disqus]: https://disqus.com
 [livere]: https://livere.com
-[releases]: https://github.com/ike-c/hexo-theme-inside/releases
-[travis]: https://travis-ci.org/ike-c/hexo-theme-inside
+[releases]: https://github.com/ikeq/hexo-theme-inside/releases
+[travis]: https://travis-ci.org/ikeq/hexo-theme-inside
 [documentation]: https://blog.oniuo.com/theme-inside

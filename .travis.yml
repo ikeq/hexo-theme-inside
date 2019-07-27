@@ -7,7 +7,7 @@ branches:
 
 before_install:
   - git clone https://github.com/hexojs/hexo-theme-unit-test generate_test
-  - git clone https://github.com/ike-c/hexo-theme-inside.git generate_test/themes/landscape
+  - git clone https://github.com/ikeq/hexo-theme-inside.git generate_test/themes/landscape
   - cd generate_test
   - npm install
   - hexo g & hexo g
