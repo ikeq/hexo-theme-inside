@@ -24,7 +24,7 @@
 <% if (theme.ga) { %><%- ga(theme.ga) %><% } -%>
 </head>
 <body lang="<%= config.language %>">
-<is-d2a57d></is-d2a57d>
+<%- `<${theme.runtime.rootSelector}></${theme.runtime.rootSelector}>` %>
 <%- theme.scripts %>
 </body>
 </html>

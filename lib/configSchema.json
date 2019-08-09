@@ -318,7 +318,7 @@
     "plugins": {
       "type": "array",
       "definitions": {
-        "position": { "enum": ["sidebar", "post", "page", "comments"] }
+        "position": { "enum": ["sidebar", "avatar", "post", "page", "comments"] }
       },
       "items": {
         "oneOf": [
