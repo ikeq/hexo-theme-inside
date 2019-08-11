@@ -25,12 +25,11 @@
       "type": "object",
       "properties": {
         "accent_color": { "$ref": "#/definitions/color" },
-        "background": {
-          "oneOf": [
-            { "type": "string" },
-            { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 2 }
-          ]
-        },
+        "foreground_color": { "$ref": "#/definitions/color" },
+        "border_color": { "$ref": "#/definitions/color" },
+        "background": { "type": "string" },
+        "sidebar_background": { "type": "string" },
+        "card_background": { "type": "string" },
         "content_width": { "type": "number", "minimum": 320 },
         "font": {
           "type": "object",
@@ -41,7 +40,8 @@
             "label": { "type": "string" },
             "heading": { "type": "string" },
             "code": { "type": "string" },
-            "base": { "type": "string" }
+            "base": { "type": "string" },
+            "print": { "type": "string" }
           },
           "additionalProperties": false
         },
@@ -49,20 +49,6 @@
           "type": "array",
           "items": { "$ref": "#/definitions/color" },
           "minItems": 15
-        },
-        "mode": {
-          "oneOf": [
-            { "enum": ["dark"] },
-            {
-              "type": "array",
-              "items": [
-                { "$ref": "#/definitions/color" },
-                { "type": "string" },
-                { "$ref": "#/definitions/color" }
-              ],
-              "minItems": 3
-            }
-          ]
         }
       },
       "required": ["accent_color"],
@@ -318,7 +304,7 @@
     "plugins": {
       "type": "array",
       "definitions": {
-        "position": { "enum": ["sidebar", "post", "page", "comments"] }
+        "position": { "enum": ["sidebar", "avatar", "post", "page", "comments"] }
       },
       "items": {
         "oneOf": [

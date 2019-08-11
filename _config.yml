@@ -4,24 +4,22 @@
 
 # Appearance
 appearance:
-  # Accent color
-  # accent_color: '#2a2b33'
+  # Accent color, default '#2a2b33'
+  accent_color:
+  # Font color, default '#363636'
+  foreground_color:
+  # Border color, default '#e0e0e0'
+  border_color:
+  # body background, default '#f5f7fa'
+  background:
+  # Sidebar background (when opened), default to accent_color
+  sidebar_background:
+  # Card background, default '#fff'
+  card_background:
 
-  # Set background
-  # background: '#f5f7fa'
-  # background: '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa'
-  # background: 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
-
-  # background can be an array, in which case, the second value
-  # is used as the background when the sidebar is open, default to accent_color,
-  # for the best appearance, Keep its accent consistent with accent_color
-  # background:
-  #   - 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
-  #   - '#2a2b33'
-
-  # You can also set only the background when the sidebar is open.
-  # background:
-  #   - '#2a2b33'
+  # All background settings above support image, e.g.,
+  # '//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png #f5f7fa' or
+  # 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
 
   # Maximum width of content
   # content_width: 640
@@ -51,6 +49,8 @@ appearance:
     heading:
     # Code and code block
     code: Inconsolata, monospace
+    # Base font for printing which applied to body
+    print:
 
   # Code Syntax Highlighting
   # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
@@ -81,13 +81,6 @@ appearance:
   #   '#cc6666', '#de935f', '#f0c674', '#b5bd68',
   #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
   # ]
-
-  # Mode
-  # Specify `dark` to apply a built-in dark mode,
-  # or fully custom colors: `[foreground color, card background, border-color]`
-  # Note, the middle value can be any valid css background value
-  # `mode: dark` is equivalent to `mode: ['#d8d8d8', '#252525', '#444']`
-  mode:
 
 # Sidebar profile
 profile:
@@ -392,7 +385,7 @@ pwa:
 # ```
 # plugins:
 #   # Dynamic inject html snippet
-#   - position: # `sidebar` | `post` | `page` | `comments`, can be an array
+#   - position: # `sidebar` | `post` | `page` | `comments` | `avatar`, can be an array
 
 #     # HTML code
 #     template: |

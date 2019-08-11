@@ -3,7 +3,7 @@
 const cheerio = require('cheerio');
 
 describe('utils/rest', function () {
-  const { type, isEmptyObject, pick, md5, base64, getPagePath, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet, tag } = require('../../../lib/utils');
+  const { type, isEmptyObject, pick, md5, base64, getPagePath, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet, tag, parseBackground } = require('../../../lib/utils');
 
   it('type()', function () {
     expect(type({})).toBe('object');
@@ -178,5 +178,13 @@ describe('utils/rest', function () {
     expect(tag({ tag: 'style', code: 'body{}' })).toBe('<style>body{}</style>');
     expect(tag({ tag: 'link', href: 'xxx.css' })).toBe('<link href="xxx.css" rel="stylesheet">');
   });
+
+  it('parseBackground()', function () {
+    expect(parseBackground('')).toEqual({})
+    expect(parseBackground('#fff xxx.jpg xx')).toEqual({ color: '#fff', image: 'xxx.jpg xx' })
+    expect(parseBackground('xx xxx.jpg #fff')).toEqual({ color: '#fff', image: 'xx xxx.jpg' })
+    expect(parseBackground('#fff')).toEqual({ color: '#fff', image: '' })
+    expect(parseBackground('xxx.jpg')).toEqual({ image: 'xxx.jpg' })
+  })
 
 });
