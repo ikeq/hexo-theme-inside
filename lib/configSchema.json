@@ -131,7 +131,8 @@
               "name": { "type": "string" },
               "text": { "type": "string" },
               "qrcode": { "type": "string" },
-              "url": { "type": "string" }
+              "url": { "type": "string" },
+              "color": { "$ref": "#/definitions/color" }
             },
             "required": ["name"],
             "minProperties": 2,

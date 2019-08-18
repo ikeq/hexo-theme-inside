@@ -251,13 +251,14 @@ reward:
 
   # Payment Methods
   # qrcode, url and text must be set at least one
-  # wechat, alipay, paypal and bitcoin has built-in icon and color themes,
+  # wechat, alipay, paypal and bitcoin has a built-in icon,
   # use `name` to apply
   # methods:
   #   - name: paypal
   #     qrcode: paypal.jpg
   #     url: https://paypal.me/imelmore
   #     text: This is a paypal payment link
+  #     color: '#09bb07'
 
 # Copyright notice
 # It is possible to use front matter `copyright` to override this setting.
