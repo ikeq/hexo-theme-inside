@@ -39,13 +39,15 @@ describe('post', function () {
       layout: 'post',
       excerpt: '',
       content: '',
-      slug: 'test'
+      slug: 'test',
+      path: 'post/test'
     }
     post.call(this.ctx, data);
     expect(data.link).toBe('post/test');
     expect(data.plink).toBe('//example.com/post/test/');
 
     data.layout = 'page';
+    data.path = 'test'
     data.source = 'test/index.md';
     post.call(this.ctx, data);
     expect(data.link).toBe('test');
@@ -105,6 +107,7 @@ describe('post', function () {
       layout: 'post',
       excerpt: '',
       slug: 'test',
+      path: 'post/test',
       content: '<h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2>'
     };
 

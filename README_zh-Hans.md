@@ -23,7 +23,6 @@
 - SPA built with [angular]
 - 自定义色调、背景、字体、暗色主题
 - 自定义代码语法高亮
-- 可嵌套 page 路由
 - 评论
   - [Disqus]
   - [LiveRe]
@@ -53,7 +52,6 @@
 2\. 配置 `HEXO/_config.yml` 如下：
 
 ```yml
-permalink: post/:title/
 theme: inside
 ```
 
