@@ -24,7 +24,6 @@
 - SPA built with [angular]
 - Custom accent color, background, fonts, dark mode
 - Custom code syntax highlighting
-- Sub-page
 - Search
 - Comments
   - [Disqus]
@@ -54,7 +53,6 @@
 2\. Config `HEXO/_config.yml` as follows:
 
 ```yml
-permalink: post/:title/
 theme: inside
 ```
 
