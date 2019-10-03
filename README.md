@@ -60,7 +60,7 @@ theme: inside
 
 ## Browser Support
 
-- Modern browser
+- Evergreen
 
 ## Changelog
 

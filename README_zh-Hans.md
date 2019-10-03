@@ -59,7 +59,7 @@ theme: inside
 
 ## 浏览器支持
 
-- Modern browser
+- Evergreen
 
 ## 更新日志
 
