@@ -151,7 +151,7 @@
         "license": {
           "type": "string",
           "contentMediaType": "text/html" ,
-          "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow\" target=\"_blank\">CC BY-NC-ND 4.0</a>)"
+          "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)"
         },
         "published": { "type": "boolean" },
         "updated": { "type": "boolean" },

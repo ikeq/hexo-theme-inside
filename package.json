@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
@@ -14,9 +14,9 @@
     "hexo theme",
     "angular"
   ],
-  "author": "elmorec <elmore.c@outlook.com>",
+  "author": "ikeq <ikeq@foxmail.com>",
   "maintainers": [
-    "elmorec <elmore.c@outlook.com>"
+    "ikeq <ikeq@foxmail.com>"
   ],
   "license": "MIT",
   "bugs": {
