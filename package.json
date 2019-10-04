@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/ikeq/hexo-theme-inside#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "hexo": "^3.9.0",
-    "jasmine": "^3.4.0",
-    "uglify-js": "^3.6.0"
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "hexo": "3.9.0",
+    "jasmine": "3.5.0",
+    "uglify-js": "3.6.0"
   }
 }
