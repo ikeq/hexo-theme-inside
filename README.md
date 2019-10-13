@@ -12,6 +12,7 @@
 - [Features](#features)
 - [Quick start](#quick-start)
 - [Changelog](#changelog)
+- [FAQ](#faq)
 - [License](#license)
 
 ## Preview
@@ -38,7 +39,7 @@
   - Copyright notice
   - Reward
 - [PWA]
-  - Immersive design (Chrome on Android)
+  - Immersive design
   - [manifest.json]
   - Offline support ([workbox])
 - SEO
@@ -65,6 +66,12 @@ theme: inside
 ## Changelog
 
 [releases]
+
+## FAQ
+
+- Where to find front-end source code?
+
+  It's placed at https://bitbucket.org/ikeq/hexo-theme-inside-ng for historical reason.
 
 ## License
 

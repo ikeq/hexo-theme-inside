@@ -11,6 +11,7 @@
 - [开始使用](#开始使用)
 - [浏览器支持](#浏览器支持)
 - [更新日志](#更新日志)
+- [常见问题](#faq)
 - [License](#license)
 
 ## 预览
@@ -37,7 +38,7 @@
   - 版权声明
   - 打赏
 - [PWA]
-  - 沉浸式设计（限安卓手机 Chrome）
+  - 沉浸式设计
   - [manifest.json]
   - 离线支持 ([workbox])
 - SEO
@@ -64,6 +65,12 @@ theme: inside
 ## 更新日志
 
 [releases]
+
+## 常见问题
+
+- source 目录的源码在哪?
+
+  因历史原因托管在 https://bitbucket.org/ikeq/hexo-theme-inside-ng 。
 
 ## License
 

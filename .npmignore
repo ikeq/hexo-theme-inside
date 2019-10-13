@@ -1,5 +1,5 @@
 test/
-tmp/
 .travis.yml
 .github/
 .DS_Store
+renovate.json
