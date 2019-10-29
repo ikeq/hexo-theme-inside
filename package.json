@@ -28,6 +28,6 @@
     "babel-preset-env": "1.7.0",
     "hexo": "4.0.0",
     "jasmine": "3.5.0",
-    "uglify-js": "3.6.4"
+    "uglify-js": "3.6.5"
   }
 }
