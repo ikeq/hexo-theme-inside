@@ -173,7 +173,7 @@ describe('post', function () {
 
     post.call(this.ctx, data);
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
-    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" loading="lazy" class="article-img">')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" class="article-img">')
 
     data.layout = 'page'
     post.call(this.ctx, data);
@@ -194,7 +194,7 @@ describe('post', function () {
     post.call(this.ctx, data);
 
     expect(data.thumbnail).toBe('data:image')
-    expect(data.content).toBe('<p>inline<img src="data:image" loading="lazy"></p>')
+    expect(data.content).toBe('<p>inline<img src="data:image"></p>')
   });
 
   it('escape with absolute path', function () {
@@ -208,7 +208,7 @@ describe('post', function () {
     post.call(this.ctx, data);
 
     expect(data.thumbnail).toBe('https://abc.com')
-    expect(data.content).toBe('<p>inline<img src="https://abc.com" loading="lazy"></p>')
+    expect(data.content).toBe('<p>inline<img src="https://abc.com"></p>')
   });
 
   it('parses color', function () {
@@ -238,6 +238,6 @@ describe('post', function () {
 
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
     expect(data.color).toBe('#fff')
-    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" loading="lazy" class="article-img">')
+    expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" class="article-img">')
   });
 });
