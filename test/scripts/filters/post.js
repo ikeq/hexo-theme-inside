@@ -191,7 +191,7 @@ describe('post', function () {
       content: '<p>inline<img src="data:image"></p>',
     };
 
-    post.call(this.ctx, { ...data });
+    post.call(this.ctx, data);
 
     expect(data.thumbnail).toBe('data:image')
     expect(data.content).toBe('<p>inline<img src="data:image"></p>')

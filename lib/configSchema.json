@@ -30,7 +30,12 @@
         "background": { "type": "string" },
         "sidebar_background": { "type": "string" },
         "card_background": { "type": "string" },
-        "content_width": { "type": "number", "minimum": 320 },
+        "content_width": {
+          "oneOf": [
+            { "type": "number" },
+            { "type": "string" }
+          ]
+        },
         "font": {
           "type": "object",
           "properties": {
