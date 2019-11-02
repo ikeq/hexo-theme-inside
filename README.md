@@ -1,6 +1,9 @@
 # Inside
 
-[![build-img]][travis] [![release-img]][releases] [![license-img]](LICENSE)
+[![build-img]][travis]
+[![release-img]][releases]
+[![hexo-image]][hexo]
+[![license-img]](LICENSE)
 
 ❤️ SPA, flat and clean theme for [Hexo].
 
@@ -92,3 +95,4 @@ Licensed under [MIT](LICENSE).
 [releases]: https://github.com/ikeq/hexo-theme-inside/releases
 [travis]: https://travis-ci.org/ikeq/hexo-theme-inside
 [documentation]: https://blog.oniuo.com/theme-inside
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.0-blue.svg?longCache=true&style=flat-square
