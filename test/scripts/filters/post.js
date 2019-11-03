@@ -19,7 +19,8 @@ describe('post', function () {
         }
       },
       config: {
-        url: '//example.com'
+        url: '//example.com',
+        post_asset_folder: true
       }
     };
   });
@@ -169,11 +170,17 @@ describe('post', function () {
       excerpt: '',
       source: 'test/index.md',
       content: '<img src="img/sample.jpg">',
+      path: 'post/test'
     };
 
     post.call(this.ctx, data);
     expect(data.thumbnail).toBe('https://sample.com/img/sample.jpg?q=80')
     expect(data.content).toBe('<img src="https://sample.com/img/sample.jpg?q=80" class="article-img">')
+
+    // post_asset_folder
+    data.thumbnail = 'sample.jpg'
+    post.call(this.ctx, data)
+    expect(data.thumbnail).toBe('https://sample.com/post/test/sample.jpg?q=80')
 
     data.layout = 'page'
     post.call(this.ctx, data);
@@ -181,6 +188,7 @@ describe('post', function () {
     data.thumbnail = 'img/sample.jpg';
     post.call(this.ctx, data);
     expect(data.thumbnail).toBe('img/sample.jpg')
+
   });
 
   it('escape with data:image', function () {
