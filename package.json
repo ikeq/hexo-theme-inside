@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
@@ -28,6 +28,6 @@
     "babel-preset-env": "1.7.0",
     "hexo": "4.0.0",
     "jasmine": "3.5.0",
-    "uglify-js": "3.6.7"
+    "terser": "^4.4.0"
   }
 }
