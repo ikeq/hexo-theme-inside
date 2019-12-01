@@ -92,6 +92,6 @@ Licensed under [MIT](LICENSE).
 [disqus]: https://disqus.com
 [livere]: https://livere.com
 [releases]: https://github.com/ikeq/hexo-theme-inside/releases
-[travis]: https://travis-ci.org/ikeq/hexo-theme-inside
+[travis]: https://travis-ci.com/ikeq/hexo-theme-inside
 [documentation]: https://blog.oniuo.com/theme-inside
 [hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.0-blue.svg?longCache=true&style=flat-square
