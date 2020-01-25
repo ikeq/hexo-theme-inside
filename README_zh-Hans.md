@@ -94,4 +94,4 @@ Licensed under [MIT](LICENSE).
 [releases]: https://github.com/ikeq/hexo-theme-inside/releases
 [travis]: https://travis-ci.com/ikeq/hexo-theme-inside
 [documentation]: https://blog.oniuo.com/theme-inside
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.0-blue.svg?longCache=true&style=flat-square
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.2-blue.svg?longCache=true&style=flat-square
