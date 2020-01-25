@@ -3,4 +3,5 @@ describe('hexo-theme-inside', function () {
   require('./scripts/filters');
   require('./scripts/tags');
   require('./scripts/helpers');
+  require('./scripts/renderers');
 });

@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
@@ -26,8 +26,10 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
-    "hexo": "4.0.0",
+    "cheerio": "1.0.0-rc.3",
+    "hexo": "4.2.0",
     "jasmine": "3.5.0",
-    "terser": "4.4.0"
+    "marked": "0.8.0",
+    "terser": "4.6.3"
   }
 }
