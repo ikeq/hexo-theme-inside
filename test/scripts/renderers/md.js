@@ -62,6 +62,6 @@ describe('md', function () {
       text: `&nbsp;|&nbsp;|&nbsp;
     -|-|-
     a|b|c` }))
-      .toBe('<div class="bd"><div class="tb"><table><tbody><tr><td>a</td><td>b</td><td>c</td></tr></tbody></table></div></div>');
+      .toBe('<div class="bd"><div class="tb"><table><thead><tr><th style="padding:0"></th><th style="padding:0"></th><th style="padding:0"></th></tr></thead><tbody><tr><td>a</td><td>b</td><td>c</td></tr></tbody></table></div></div>');
   });
 });
