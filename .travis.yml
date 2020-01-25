@@ -6,11 +6,19 @@ cache:
 node_js:
   - "10"
 
+before_script:
+ - rm -rf node_modules
+ - rm -rf .git
+ - git clone https://github.com/hexojs/hexo-theme-unit-test temp
+ - mkdir temp/themes
+ - mkdir temp/themes/landscape
+ - rsync -av ./ ./temp/themes/landscape --exclude ./temp/
+ - cd temp
+ - npm install
+ - cd themes/landscape
+ - npm install
+
 script:
-  - git clone https://github.com/hexojs/hexo-theme-unit-test generate_test
-  - git clone https://github.com/ikeq/hexo-theme-inside.git generate_test/themes/landscape
-  - cd generate_test
-  - npm install
-  - hexo g & hexo g
-  - cd ..
   - npm test
+  - cd ../..
+  - hexo g && hexo g
