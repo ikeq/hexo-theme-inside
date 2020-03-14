@@ -20,7 +20,7 @@
 <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ url_for(config.feed.path) }}">
 {% endif %}
 {{ theme.styles | safe }}
-{{ css('theme.' + theme.runtime.themeHash) | safe }}
+{{ css({ href: 'theme.' + theme.runtime.themeHash, is: 'theme' }) | safe }}
 {{ js('config.' + theme.runtime.configHash) | safe }}
 {% if theme.ga %}
 {{ ga(theme.ga) | safe }}
