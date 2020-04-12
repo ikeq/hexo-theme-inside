@@ -400,8 +400,30 @@
       },
       "additionalProperties": false,
       "default": {}
+    },
+    "markdown": {
+      "type": "object",
+      "properties": {
+        "html": { "type": "boolean" },
+        "xhtmlOut": { "type": "boolean" },
+        "breaks": { "type": "boolean" },
+        "linkify": { "type": "boolean" },
+        "typographer": { "type": "boolean" },
+        "quotes": { "type": "string" },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "object" }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "default": {}
     }
   },
-  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown"],
   "additionalProperties": false
 }
