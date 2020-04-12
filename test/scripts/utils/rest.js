@@ -3,7 +3,7 @@
 const cheerio = require('cheerio');
 
 describe('utils/rest', function () {
-  const { type, isEmptyObject, pick, md5, base64, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet, htmlTag, parseBackground, trimHtml } = require('../../../lib/utils');
+  const { type, isEmptyObject, pick, md5, base64, Pagination, parseToc, escapeIdentifier, localeId, parseJs, snippet, htmlTag, parseBackground, trimHtml, parsePipe } = require('../../../lib/utils');
 
   it('type()', function () {
     expect(type({})).toBe('object');
@@ -181,5 +181,12 @@ describe('utils/rest', function () {
     expect(trimHtml('post/a/b.html')).toBe('post/a/b')
     expect(trimHtml('post/a/index.html')).toBe('post/a')
     expect(trimHtml('post/a/index.html', true)).toBe('post/a/index')
+  })
+
+  it('parsePipe()', function () {
+    expect(parsePipe('a|b|c:1|d:2')).toEqual({ value: 'a', options: { b: true, c: 1, d: 2 } });
+    expect(parsePipe('|b|c:1|d:2')).toEqual({ options: { b: true, c: 1, d: 2 } });
+    expect(parsePipe(' a  | b | c : 1 | d : 2  '))
+      .toEqual({ value: 'a', options: { b: true, c: 1, d: 2 } });
   })
 });
