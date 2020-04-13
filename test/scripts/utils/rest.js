@@ -184,9 +184,9 @@ describe('utils/rest', function () {
   })
 
   it('parsePipe()', function () {
-    expect(parsePipe('a|b|c:1|d:2')).toEqual({ value: 'a', options: { b: true, c: 1, d: 2 } });
-    expect(parsePipe('|b|c:1|d:2')).toEqual({ options: { b: true, c: 1, d: 2 } });
+    expect(parsePipe('a|b|c:1|d:2')).toEqual({ value: 'a', options: { b: true, c: '1', d: '2' } });
+    expect(parsePipe('|b|c:1|d:2')).toEqual({ options: { b: true, c: '1', d: '2' } });
     expect(parsePipe(' a  | b | c : 1 | d : 2  '))
-      .toEqual({ value: 'a', options: { b: true, c: 1, d: 2 } });
+      .toEqual({ value: 'a', options: { b: true, c: '1', d: '2' } });
   })
 });
