@@ -29,7 +29,7 @@
     "cheerio": "1.0.0-rc.3",
     "hexo": "4.2.0",
     "jasmine": "3.5.0",
-    "markdown-it": "10.0.0",
+    "markdown-it": "11.0.0",
     "markdown-it-container": "2.0.0",
     "terser": "4.6.11"
   }
