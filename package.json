@@ -27,10 +27,10 @@
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
     "cheerio": "1.0.0-rc.3",
-    "hexo": "4.2.0",
+    "hexo": "4.2.1",
     "jasmine": "3.5.0",
-    "markdown-it": "10.0.0",
-    "markdown-it-container": "2.0.0",
-    "terser": "4.6.11"
+    "markdown-it": "11.0.0",
+    "markdown-it-container": "3.0.0",
+    "terser": "4.7.0"
   }
 }
