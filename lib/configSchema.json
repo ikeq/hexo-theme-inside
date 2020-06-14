@@ -302,7 +302,8 @@
     "seo": {
       "type": "object",
       "properties": {
-        "structured_data": { "type": "boolean" }
+        "structured_data": { "type": "boolean" },
+        "ssr": { "type": "boolean" }
       },
       "additionalProperties": false,
       "default": {}
