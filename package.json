@@ -31,6 +31,6 @@
     "jasmine": "3.5.0",
     "markdown-it": "11.0.0",
     "markdown-it-container": "3.0.0",
-    "terser": "4.7.0"
+    "terser": "4.8.0"
   }
 }
