@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.7.0-beta.1",
+  "version": "2.7.0-beta.2",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
@@ -31,6 +31,6 @@
     "jasmine": "3.5.0",
     "markdown-it": "11.0.0",
     "markdown-it-container": "3.0.0",
-    "terser": "4.7.0"
+    "terser": "4.8.0"
   }
 }

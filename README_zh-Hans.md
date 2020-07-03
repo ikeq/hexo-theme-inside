@@ -45,6 +45,7 @@
   - [manifest.json]
   - 离线支持 ([workbox])
 - SEO
+  - Server-side rendering (SSR)
   - 内置 `sitemap.xml`
   - [Structured Data]
 - 打印友好
