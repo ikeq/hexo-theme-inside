@@ -28,7 +28,7 @@
     "babel-preset-env": "1.7.0",
     "cheerio": "1.0.0-rc.3",
     "hexo": "4.2.1",
-    "jasmine": "3.5.0",
+    "jasmine": "3.6.1",
     "markdown-it": "11.0.0",
     "markdown-it-container": "3.0.0",
     "terser": "4.8.0"
