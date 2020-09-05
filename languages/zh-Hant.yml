@@ -32,6 +32,7 @@ post:
     license: 版權聲明
     published: 發表日期
     updated: 更新日期
+  reading_time: "%(words)i 字約 %(minutes)i 分鍾"
 
 page:
   tags:
