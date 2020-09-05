@@ -32,6 +32,7 @@ post:
     license: 著作権表示
     published: 出版日
     updated: 更新日
+  reading_time: "%(words)i 分で %(minutes)i 語"
 
 page:
   tags:

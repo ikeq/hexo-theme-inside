@@ -32,6 +32,7 @@ post:
     license: Copyright
     published: Published
     updated: Updated
+  reading_time: "%(words)i words in %(minutes)i min"
 
 page:
   tags:

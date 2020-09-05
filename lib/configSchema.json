@@ -217,9 +217,23 @@
         "per_page": { "$ref": "#/definitions/per_page" },
         "toc": { "type": "boolean", "default": true },
         "reward": { "type": "boolean" },
-        "copyright": { "type": "boolean" }
+        "copyright": { "type": "boolean" },
+        "reading_time": {
+          "oneOf": [
+            { "type": "boolean" },
+            {
+              "type": "object",
+              "properties": {
+                "wpm": { "type": "number", "default": 150 },
+                "text": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "default": true
+        }
       },
-      "required": ["per_page", "toc"],
+      "required": ["per_page", "toc", "reading_time"],
       "additionalProperties": false
     },
     "archive": {

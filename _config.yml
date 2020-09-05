@@ -159,6 +159,10 @@ page:
 # Post
 post:
   # per_page: 10
+  # reading_time: false
+  # reading_time:
+  #   wpm: 150
+  #   text: ":words words in :minutes min"
 
   # The following settings are the same as the page
   # toc: false
