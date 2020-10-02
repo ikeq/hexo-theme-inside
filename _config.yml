@@ -442,3 +442,9 @@ pwa:
 #         }
 #     # Or a path relative to theme folder
 #     code: snippets/mycss.css
+
+#   # New: Built-in plugins
+#   - cipher
+#   - cipher:
+#       placeholder: Passcode is required
+#       excerpt: Content encrypted

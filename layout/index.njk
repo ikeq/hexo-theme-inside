@@ -17,13 +17,7 @@
 {% if config.feed and config.feed.path -%}
 <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ url_for(config.feed.path) }}">
 {%- endif %}
-{{ theme.styles | join -}}
-{{ css({ href: 'theme.' + theme.runtime.themeHash, is: 'theme' }) -}}
-{{ js('config.' + theme.runtime.configHash) -}}
 {{ ga(theme.ga) if theme.ga }}
 </head>
-<body lang="{{ config.language }}">
-<{{ theme.runtime.selector }}></{{ theme.runtime.selector }}>
-{{ theme.scripts | join -}}
-</body>
+<body lang="{{ config.language }}"></body>
 </html>

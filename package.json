@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/ikeq/hexo-theme-inside#readme",
   "dependencies": {
-    "markdown-it": "11.0.0",
+    "markdown-it": "11.0.1",
     "markdown-it-container": "3.0.0"
   },
   "devDependencies": {
