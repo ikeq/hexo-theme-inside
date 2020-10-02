@@ -350,6 +350,10 @@
               "tag": { "enum": ["script", "style", "link"] }
             },
             "required": ["tag"]
+          },
+          {
+            "type": "object",
+            "additionalProperties": true
           }
         ]
       }
