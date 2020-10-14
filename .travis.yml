@@ -4,7 +4,7 @@ cache:
   npm: true
 
 node_js:
-  - "10"
+  - "12"
 
 before_script:
  - rm -rf node_modules
