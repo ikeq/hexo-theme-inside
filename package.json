@@ -30,7 +30,7 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
-    "cheerio": "1.0.0-rc.3",
+    "cheerio": "1.0.0-rc.5",
     "hexo": "5.2.0",
     "jasmine": "3.6.3",
     "terser": "4.8.0"
