@@ -398,8 +398,7 @@ pwa:
 #   - xxx.jss
 
 #   # Dynamic inject html snippet
-#   - position: # one of [sidebar, post, page, comments, avatar, head_begin, head_end, body_begin, body_end]
-
+#   - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
 #     # HTML code
 #     template: <script>...</script>
 #     # Or a path relative to theme folder
