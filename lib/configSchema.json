@@ -325,7 +325,11 @@
     "plugins": {
       "type": "array",
       "definitions": {
-        "position": { "enum": ["sidebar", "avatar", "post", "page", "comments"] }
+        "position": {
+          "enum": [
+            "sidebar", "avatar", "post", "page", "comments", "head_begin", "head_end", "body_begin", "body_end"
+          ]
+        }
       },
       "items": {
         "oneOf": [
@@ -343,13 +347,6 @@
             },
             "required": ["template", "position"],
             "additionalProperties": false
-          },
-          {
-            "type": "object",
-            "properties": {
-              "tag": { "enum": ["script", "style", "link"] }
-            },
-            "required": ["tag"]
           },
           {
             "type": "object",
