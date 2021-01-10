@@ -323,37 +323,56 @@
       "default": {}
     },
     "plugins": {
-      "type": "array",
       "definitions": {
         "position": {
           "enum": [
             "sidebar", "avatar", "post", "page", "comments", "head_begin", "head_end", "body_begin", "body_end"
           ]
+        },
+        "items": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "properties": {
+                "template": { "type": "string" },
+                "position": {
+                  "oneOf": [
+                    { "$ref": "#/properties/plugins/definitions/position" },
+                    { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
+                  ]
+                }
+              },
+              "required": ["template", "position"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "additionalProperties": true
+            }
+          ]
         }
       },
-      "items": {
-        "oneOf": [
-          { "type": "string" },
-          {
-            "type": "object",
-            "properties": {
-              "template": { "type": "string" },
-              "position": {
-                "oneOf": [
-                  { "$ref": "#/properties/plugins/definitions/position" },
-                  { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
-                ]
-              }
+      "oneOf": [
+        {
+          "type": "array",
+          "items": { "$ref": "#/properties/plugins/definitions/items" }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dir": {
+              "type": "array",
+              "items": { "type": "string" }
             },
-            "required": ["template", "position"],
-            "additionalProperties": false
+            "definitions": {
+              "type": "array",
+              "items": { "$ref": "#/properties/plugins/definitions/items" }
+            }
           },
-          {
-            "type": "object",
-            "additionalProperties": true
-          }
-        ]
-      }
+          "additionalProperties": false
+        }
+      ]
     },
     "pwa": {
       "type": "object",
