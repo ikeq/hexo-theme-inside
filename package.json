@@ -32,7 +32,7 @@
     "babel-preset-env": "1.7.0",
     "cheerio": "1.0.0-rc.3",
     "hexo": "5.2.0",
-    "jasmine": "3.6.3",
+    "jasmine": "3.6.4",
     "terser": "4.8.0"
   }
 }
