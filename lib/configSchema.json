@@ -71,24 +71,41 @@
     },
     "menu": { "type": "object", "additionalProperties": { "type": "string" } },
     "sns": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "oneOf": [
-            { "$ref": "#/definitions/email" },
-            { "type": "null" }
-          ]
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "email": {
+              "oneOf": [
+                { "$ref": "#/definitions/email" },
+                { "type": "null" }
+              ]
+            },
+            "feed": {
+              "oneOf": [
+                { "type": "string", "format": "uri", "default": "$feed" },
+                { "type": "null" }
+              ]
+            }
+          },
+          "patternProperties": {
+            "^(github|twitter|facebook|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
+          }
         },
-        "feed": {
-          "oneOf": [
-            { "type": "string", "format": "uri", "default": "$feed" },
-            { "type": "null" }
-          ]
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string" },
+              "template": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
         }
-      },
-      "patternProperties": {
-        "^(github|twitter|facebook|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
-      }
+      ]
     },
     "footer": {
       "type": "object",
