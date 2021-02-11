@@ -382,11 +382,15 @@ pwa:
 
 # Plugins
 # plugins:
-#   Built-in plugins
+#   # Built-in plugins
 #   - cipher
 #   - cipher:
 #       placeholder: Passcode is required
 #       excerpt: Content encrypted
+#   - palette
+#   - position: sidebar
+#       template: |
+#         <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548" col="4"></is-palette>
 
 #   # Global Inject script/style
 #   # By default script will be injected into <body>, and style will be injected into <head>
