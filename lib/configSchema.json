@@ -345,51 +345,33 @@
           "enum": [
             "sidebar", "avatar", "post", "page", "comments", "head_begin", "head_end", "body_begin", "body_end"
           ]
-        },
-        "items": {
-          "oneOf": [
-            { "type": "string" },
-            {
-              "type": "object",
-              "properties": {
-                "template": { "type": "string" },
-                "position": {
-                  "oneOf": [
-                    { "$ref": "#/properties/plugins/definitions/position" },
-                    { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
-                  ]
-                }
-              },
-              "required": ["template", "position"],
-              "additionalProperties": false
-            },
-            {
-              "type": "object",
-              "additionalProperties": true
-            }
-          ]
         }
       },
-      "oneOf": [
-        {
-          "type": "array",
-          "items": { "$ref": "#/properties/plugins/definitions/items" }
-        },
-        {
-          "type": "object",
-          "properties": {
-            "root": {
-              "type": "array",
-              "items": { "type": "string" }
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "properties": {
+              "template": { "type": "string" },
+              "position": {
+                "oneOf": [
+                  { "$ref": "#/properties/plugins/definitions/position" },
+                  { "type": "array", "items": { "$ref": "#/properties/plugins/definitions/position" } }
+                ]
+              }
             },
-            "definitions": {
-              "type": "array",
-              "items": { "$ref": "#/properties/plugins/definitions/items" }
-            }
+            "required": ["template", "position"],
+            "additionalProperties": false
           },
-          "additionalProperties": false
-        }
-      ]
+          {
+            "type": "object",
+            "additionalProperties": true
+          }
+        ]
+      },
+      "default": []
     },
     "pwa": {
       "type": "object",
@@ -477,6 +459,6 @@
       "default": {}
     }
   },
-  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown", "plugins"],
   "additionalProperties": false
 }
