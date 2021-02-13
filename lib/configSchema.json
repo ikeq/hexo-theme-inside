@@ -71,24 +71,41 @@
     },
     "menu": { "type": "object", "additionalProperties": { "type": "string" } },
     "sns": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "oneOf": [
-            { "$ref": "#/definitions/email" },
-            { "type": "null" }
-          ]
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "email": {
+              "oneOf": [
+                { "$ref": "#/definitions/email" },
+                { "type": "null" }
+              ]
+            },
+            "feed": {
+              "oneOf": [
+                { "type": "string", "format": "uri", "default": "$feed" },
+                { "type": "null" }
+              ]
+            }
+          },
+          "patternProperties": {
+            "^(github|twitter|facebook|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
+          }
         },
-        "feed": {
-          "oneOf": [
-            { "type": "string", "format": "uri", "default": "$feed" },
-            { "type": "null" }
-          ]
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string" },
+              "template": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
         }
-      },
-      "patternProperties": {
-        "^(github|twitter|facebook|instagram|tumblr|dribbble|telegram|youtube|hangouts|linkedin|pinterest|soundcloud|myspace|weibo|qq)$": { "type": "string" }
-      }
+      ]
     },
     "footer": {
       "type": "object",
@@ -323,10 +340,14 @@
       "default": {}
     },
     "plugins": {
-      "type": "array",
       "definitions": {
-        "position": { "enum": ["sidebar", "avatar", "post", "page", "comments"] }
+        "position": {
+          "enum": [
+            "sidebar", "avatar", "post", "page", "comments", "head_begin", "head_end", "body_begin", "body_end"
+          ]
+        }
       },
+      "type": "array",
       "items": {
         "oneOf": [
           { "type": "string" },
@@ -346,17 +367,11 @@
           },
           {
             "type": "object",
-            "properties": {
-              "tag": { "enum": ["script", "style", "link"] }
-            },
-            "required": ["tag"]
-          },
-          {
-            "type": "object",
             "additionalProperties": true
           }
         ]
-      }
+      },
+      "default": []
     },
     "pwa": {
       "type": "object",
@@ -444,6 +459,6 @@
       "default": {}
     }
   },
-  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown", "plugins"],
   "additionalProperties": false
 }

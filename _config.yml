@@ -101,28 +101,25 @@ menu:
   # Github: https://github.com/username
 
 # Social media URL
-# Try to sort by changing the order of the keys
 sns:
-  # `email` will fallback to `profile.email` if not specified
-  email:
-  # If you use hexo-generator-feed, `sns.feed` can be left blank
-  # and the theme will try to get `hexo.config.feed.path`.
-  feed:
-  github:
-  twitter:
-  facebook:
-  instagram:
-  tumblr:
-  dribbble:
-  telegram:
-  youtube:
-  hangouts:
-  linkedin:
-  pinterest:
-  soundcloud:
-  myspace:
-  weibo:
-  qq:
+  # Built-in icons
+  # `email`, `feed`, `github`, `twitter`, `facebook`, `instagram`, `tumblr`, `dribbble`, `telegram`
+  # `youtube`, `hangouts`, `linkedin`, `pinterest`, `soundcloud`, `myspace`, `weibo`, `qq
+  - icon: email
+    title: Email
+    url: # default to `profile.email`
+  - icon: feed
+    title: Feed
+    url: # default to `hexo.config.feed.path`
+
+  # custom icon
+  # - title: Email me
+  #   url: # default to `profile.email`
+  #   template: <i class="fa fa-github"></i>
+  # - title: Love you
+  #   url:
+  #   template: |
+  #     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
 
 # Sidebar footer copyright info
 footer:
@@ -384,67 +381,26 @@ pwa:
   #       type: image/png
 
 # Plugins
-# Inject html snippet to a specified position, Or global inject scripts/styles.
-# The code will take advantage of babel, uglifyjs and html-minifier if possible.
-# Simply run the following command in the root directory of Hexo (not `themes/inside`):
-# ```bash
-# npm install babel-core babel-preset-env html-minifier uglify-js --save
-# ```
 # plugins:
-#   # Dynamic inject html snippet
-#   - position: # `sidebar` | `post` | `page` | `comments` | `avatar`, can be an array
-
-#     # HTML code
-#     template: |
-#       <script>...</script>
-#     # Or a path relative to theme folder
-#     template: snippets/snippet-1.html
-
-#   # Global Inject scripts/styles
-#   # scripts will be injected into <body>, and styles will be injected into <head>
-#   # In general, script or style depends on their ext name.
-#   - //xxx.css
-#   - //xxx.js
-
-#   # A few more flexible examples
-
-#   # <script src="//sample.com/api.php?format=jsonp" id="sample-api" defer></script>
-#   - tag: script # html tag, `script` | `style` | `link`
-#     # Any possible attributes
-#     src: //sample.com/api.php?format=jsonp
-#     id: sample-api
-#     defer: true
-
-#   # <link rel="stylesheet" href="xxx.css" disable>
-#   - tag: link
-#     href: xxx.css
-#     disable: true
-
-#   # Inline script
-#   # <script type="text/x-mathjax-config">MathJax.Hub.Config({...})</script>
-#   - tag: script
-#     type: text/x-mathjax-config
-#     code: |
-#         MathJax.Hub.Config({
-#           showProcessingMessages: false,
-#           messageStyle: 'none',
-#           tex2jax: { inlineMath: [['s;,'s;], ['\\(','\\)']] }
-#         })
-#     # Or a path relative to theme folder
-#     code: snippets/mathjax-config.js
-
-#   # Inline style
-#   # <style>.mycss{...}</style>
-#   - tag: style
-#     code: |
-#         .mycss {
-#           color: rebeccapurple;
-#         }
-#     # Or a path relative to theme folder
-#     code: snippets/mycss.css
-
-#   # New: Built-in plugins
+#   # Built-in plugins
 #   - cipher
 #   - cipher:
 #       placeholder: Passcode is required
 #       excerpt: Content encrypted
+#   - palette
+#   - position: sidebar
+#       template: |
+#         <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548" col="4"></is-palette>
+
+#   # Global Inject script/style
+#   # By default script will be injected into <body>, and style will be injected into <head>
+#   # In general, script or style depends on their ext name.
+#   - xxx.css
+#   - xxx.jss
+
+#   # Dynamic inject html snippet
+#   - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
+#     # HTML code
+#     template: <script>...</script>
+#     # Or a path relative to theme folder
+#     template: snippets/snippet-1.html
