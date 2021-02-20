@@ -1,98 +1,72 @@
-# Inside
+<div align="right">
+  Language:
+  <a title="English" href="https://github.com/ikeq/hexo-theme-inside/blob/dev/README.md">EN</a>
+  中文
+</div>
 
-[![build-img]][travis]
-[![release-img]][releases]
-[![license-img]](LICENSE)
-[![hexo-image]][hexo]
+<h1 align="center">INSIDE</h1>
 
-❤️ SPA, flat and clean theme for [Hexo].
+<p align="center">🌈 &nbsp;简约、现代的 SPA 主题, built with <a href="https://angular.io">Angular</a>.</p>
 
-## Summary
+<p align="center">
+  <a href="https://travis-ci.com/ikeq/hexo-theme-inside" rel="nofollow"><img src="https://img.shields.io/travis/ikeq/hexo-theme-inside?label=Travis+CI&color=limegreen&style=flat-square"></a>
+  <a href="https://www.npmjs.com/@angular/core">
+    <img src="https://img.shields.io/npm/v/hexo-theme-inside.svg?label=NPM&color=limegreen&style=flat-square" alt="Theme inside on npm" />
+  </a>
+  <img src="https://img.shields.io/badge/Hexo-5.2%2B-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/Node.js-12%2B-blue?style=flat-square">
+</p>
 
-- [预览](#预览)
-- [特色](#特色)
-- [开始使用](#开始使用)
-- [浏览器支持](#浏览器支持)
-- [更新日志](#更新日志)
-- [常见问题](#faq)
-- [License](#license)
+<p align="center">
+  <img src="https://blog.oniuo.com/screenshot.webp">
+</p>
 
 ## 预览
 
 - https://blog.oniuo.com
 - https://blog.oniuo.com/post/inside-theme-showcase
 
-## 特色
+## 特性
 
-- SPA built with [angular]
-- 自定义色调、背景、字体、暗色主题
-- 自定义代码语法高亮
-- 评论
-  - [Disqus]
-  - [LiveRe]
-  - 以插件的形式支持大多数评论系统
-- 搜索
-- 增强的文章展示
-  - 缩略图
-  - 首字下沉
-  - 文章图片点击放大
-  - 优化的 table 展示（无头表格、长表格）
-  - 目录
-  - 版权声明
-  - 打赏
-- [PWA]
-  - 沉浸式设计
-  - [manifest.json]
-  - 离线支持 ([workbox])
-- SEO
-  - SSR (服务端渲染)
-  - 内置 `sitemap.xml`
-  - [Structured Data]
-- 打印友好
+- 自定义换肤
+- 内置搜索
+- 内置 [Disqus](https://disqus.com)
+- 灵活的插件机制
+- 增强的内容展示
+  - 打赏、版权声明、图片缩放
+  - 表格 (headless table, long table)
+  - 内容组件，开箱即用 (Collapse、时间线、文字加密)
+- 其他
+  - [PWA](https://developers.google.com/web/progressive-web-apps) (沉浸式设计、离线支持 ([workbox](https://developers.google.com/web/tools/workbox/)))
+  - SEO (SSR、sitemap)
+  - 打印机友好
 
-## 开始使用
+## Quick start
 
-1\. 自行下载（[releases]），解压并重命名为 `inside`，然后将其放在 themes 目录。
+1\. Locate to `project/` and run
 
-2\. 配置 `HEXO/_config.yml` 如下：
+```bash
+npm install hexo-theme-inside
+```
 
-```yml
+2\. Config `project/_config.yml`
+
+```yaml
 theme: inside
 ```
 
-3\. 主题配置请参阅 [documentation]。
+3\. Copy [_config.yml](https://github.com/ikeq/hexo-theme-inside/blob/master/_config.yml) to `project/_config.inside.yml`, see [here](https://blog.oniuo.com/theme-inside) for full documentation.
 
-## 浏览器支持
+## Changelog
 
-- Evergreen
+[releases](https://github.com/ikeq/hexo-theme-inside/releases)
 
-## 更新日志
+## FAQ
 
-[releases]
+- Where to find front-end source code?
 
-## 常见问题
-
-- source 目录的源码在哪?
-
-  因历史原因托管在 https://bitbucket.org/ikeq/hexo-theme-inside-ng 。
+  https://bitbucket.org/ikeq/hexo-theme-inside-ng
 
 ## License
 
-Licensed under [MIT](LICENSE).
-
-[build-img]: https://img.shields.io/travis/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-[release-img]: https://img.shields.io/github/release/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-[license-img]: https://img.shields.io/github/license/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-
-[angular]: https://angular.io
-[hexo]: https://hexo.io/
-[PWA]: https://developers.google.com/web/progressive-web-apps
-[manifest.json]: https://developers.google.com/web/fundamentals/web-app-manifest/
-[workbox]: https://developers.google.com/web/tools/workbox/
-[Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
-[disqus]: https://disqus.com
-[livere]: https://livere.com
-[releases]: https://github.com/ikeq/hexo-theme-inside/releases
-[travis]: https://travis-ci.com/ikeq/hexo-theme-inside
-[documentation]: https://blog.oniuo.com/theme-inside
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.2-blue.svg?longCache=true&style=flat-square
+[MIT](LICENSE)

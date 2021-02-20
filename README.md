@@ -1,22 +1,25 @@
-# Inside
+<div align="right">
+  Language:
+  EN
+  <a title="中文" href="README_zh-Hans.md">中文</a>
+</div>
 
-[![build-img]][travis]
-[![release-img]][releases]
-[![hexo-image]][hexo]
-[![license-img]](LICENSE)
+<h1 align="center">INSIDE</h1>
 
-❤️ SPA, flat and clean theme for [Hexo].
+<p align="center">🌈 &nbsp;SPA, Flat and clean theme for Hexo, built with <a href="https://angular.io">Angular</a>.</p>
 
-[中文文档](README_zh-Hans.md)
+<p align="center">
+  <a href="https://travis-ci.com/ikeq/hexo-theme-inside" rel="nofollow"><img src="https://img.shields.io/travis/ikeq/hexo-theme-inside?label=Travis+CI&color=limegreen&style=flat-square"></a>
+  <a href="https://www.npmjs.com/@angular/core">
+    <img src="https://img.shields.io/npm/v/hexo-theme-inside.svg?label=NPM&color=limegreen&style=flat-square" alt="Theme inside on npm" />
+  </a>
+  <img src="https://img.shields.io/badge/Hexo-5.2%2B-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/Node.js-12%2B-blue?style=flat-square">
+</p>
 
-## Summary
-
-- [Preview](#preview)
-- [Features](#features)
-- [Quick start](#quick-start)
-- [Changelog](#changelog)
-- [FAQ](#faq)
-- [License](#license)
+<p align="center">
+  <img src="https://blog.oniuo.com/screenshot.webp">
+</p>
 
 ## Preview
 
@@ -25,75 +28,45 @@
 
 ## Features
 
-- SPA built with [angular]
-- Custom accent color, background, fonts, dark mode
-- Custom code syntax highlighting
-- Search
-- Comments
-  - [Disqus]
-  - [LiveRe]
-  - Support most comment systems as plugin
+- Custom theming
+- Built-in Search
+- Built-in [Disqus](https://disqus.com)
+- Flexible plugin mechanism
 - Enhanced content display
-  - Thumbnail
-  - Dropcap
-  - Zoomable images
-  - Optimized table display (headless table, long table)
-  - Table of content
-  - Copyright notice
-  - Reward
-- [PWA]
-  - Immersive design
-  - [manifest.json]
-  - Offline support ([workbox])
-- SEO
-  - SSR (Server-side rendering)
-  - Built-in `sitemap.xml`
-  - [Structured Data]
-- Print friendly
+  - Reward, Copyright notice, Picture zooming
+  - Table (headless table, long table)
+  - Content addons, out of the box (Collapse, Timeline, Content Crypto)
+- Misc
+  - [PWA](https://developers.google.com/web/progressive-web-apps) (Immersive design, Offline support ([workbox](https://developers.google.com/web/tools/workbox/)))
+  - SEO (SSR、sitemap)
+  - Print friendly
 
 ## Quick start
 
-1\. Download the latest version from [releases], unpack and rename to `inside`, then put it in the themes directory.
+1\. Locate to `project/` and run
 
-2\. Config `HEXO/_config.yml` as follows:
+```bash
+npm install hexo-theme-inside
+```
 
-```yml
+2\. Config `project/_config.yml`
+
+```yaml
 theme: inside
 ```
 
-3\. Read [documentation] to configure the theme.
-
-## Browser Support
-
-- Evergreen
+3\. Copy [_config.yml](https://github.com/ikeq/hexo-theme-inside/blob/master/_config.yml) to `project/_config.inside.yml`, see [here](https://blog.oniuo.com/theme-inside) for full documentation.
 
 ## Changelog
 
-[releases]
+[releases](https://github.com/ikeq/hexo-theme-inside/releases)
 
 ## FAQ
 
 - Where to find front-end source code?
 
-  It's placed at https://bitbucket.org/ikeq/hexo-theme-inside-ng for historical reason.
+  https://bitbucket.org/ikeq/hexo-theme-inside-ng
 
 ## License
 
-Licensed under [MIT](LICENSE).
-
-[build-img]: https://img.shields.io/travis/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-[release-img]: https://img.shields.io/github/release/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-[license-img]: https://img.shields.io/github/license/ikeq/hexo-theme-inside.svg?longCache=true&style=flat-square
-
-[angular]: https://angular.io
-[hexo]: https://hexo.io/
-[PWA]: https://developers.google.com/web/progressive-web-apps
-[manifest.json]: https://developers.google.com/web/fundamentals/web-app-manifest/
-[workbox]: https://developers.google.com/web/tools/workbox/
-[Structured Data]: https://developers.google.com/search/docs/guides/intro-structured-data
-[disqus]: https://disqus.com
-[livere]: https://livere.com
-[releases]: https://github.com/ikeq/hexo-theme-inside/releases
-[travis]: https://travis-ci.com/ikeq/hexo-theme-inside
-[documentation]: https://blog.oniuo.com/theme-inside
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%204.2-blue.svg?longCache=true&style=flat-square
+[MIT](LICENSE)
