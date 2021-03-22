@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-inside",
-  "version": "2.7.0-beta.10",
+  "version": "2.7.0-beta.11",
   "description": "❤️ SPA, flat and clean theme for Hexo.",
   "scripts": {
     "test": "jasmine --config=test/jasmine.json"
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ikeq/hexo-theme-inside#readme",
   "dependencies": {
+    "html-to-text": "7.0.0",
     "markdown-it": "12.0.4",
     "markdown-it-container": "3.0.0"
   },
