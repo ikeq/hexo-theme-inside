@@ -22,8 +22,6 @@ reward:
 comments:
   load: 加載 %s
   load_faild: 加載 %s 失敗，點擊嘗試重新加載
-  livere: Livere
-  disqus: Disqus
 
 post:
   copyright:

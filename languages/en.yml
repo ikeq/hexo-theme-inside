@@ -22,8 +22,6 @@ reward:
 comments:
   load: Load %s
   load_faild: Faild to load %s, click to retry
-  livere: Livere
-  disqus: Disqus
 
 post:
   copyright:

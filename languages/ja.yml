@@ -22,8 +22,6 @@ reward:
 comments:
   load: "%s をロードする"
   load_faild: "%s の読み込みに失敗し、再試行"
-  livere: Livere
-  disqus: Disqus
 
 post:
   copyright:

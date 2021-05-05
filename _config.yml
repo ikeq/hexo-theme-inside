@@ -376,9 +376,11 @@ pwa:
   #     - src: icon-194x194.png
   #       sizes: 194x194 512x512
   #       type: image/png
+  #       purpose: any
   #     - src: icon-144x144.png
   #       sizes: 144x144
   #       type: image/png
+  #       purpose: any
 
 # Plugins
 # plugins:
