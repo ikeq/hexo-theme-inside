@@ -383,26 +383,34 @@ pwa:
   #       purpose: any
 
 # Plugins
-# plugins:
-#   # Built-in plugins
-#   - cipher
-#   - cipher:
-#       placeholder: Passcode is required
-#       excerpt: Content encrypted
-#   - palette
-#   - position: sidebar
-#       template: |
-#         <is-palette palette="#673ab7,#3f51b5,#2196f3,#009688,#4caf50,#ff9800,#ff5722,#795548" col="4"></is-palette>
+plugins:
+  # Built-in plugins
+  # - cipher:
+  #     placeholder: Passcode is required
+  #     excerpt: Content encrypted
+  # - palette:
+  #     theme: [
+  #       '#673ab7',
+  #       '#3f51b5',
+  #       '#2196f3',
+  #       '#009688',
+  #       '#4caf50',
+  #       '#ff9800',
+  #       '#ff5722',
+  #       '#795548',
+  #       '#607D8B',
+  #       '#2a2b33'
+  #     ]
 
-#   # Global Inject script/style
-#   # By default script will be injected into <body>, and style will be injected into <head>
-#   # In general, script or style depends on their ext name.
-#   - xxx.css
-#   - xxx.jss
+  # Global Inject script/style
+  # By default script will be injected into <body>, and style will be injected into <head>
+  # In general, script or style depends on their ext name.
+  # - xxx.css
+  # - xxx.jss
 
-#   # Dynamic inject html snippet
-#   - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
-#     # HTML code
-#     template: <script>...</script>
-#     # Or a path relative to theme folder
-#     template: snippets/snippet-1.html
+  # Dynamic inject html snippet
+  # - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
+    # HTML code
+    # template: <script>...</script>
+    # Or a path relative to `hexo.base_dir`
+    # template: snippets/snippet-1.html
