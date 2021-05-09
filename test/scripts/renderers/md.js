@@ -26,12 +26,12 @@ describe('md', function () {
 
   it('render img', function () {
     expect(render({ text: 'a ![img](img.png)' }))
-      .toBe('<p>a <img src="img.png?" alt="img"></p>');
+      .toBe('<p>a <img src="img.png?" alt="img" loading="lazy"></p>');
     // block img
     expect(render({ text: '![img](img.png "|block")' }))
-      .toBe('<p><img src="img.png?" alt="img" class="img"></p>');
+      .toBe('<p><img src="img.png?" alt="img" loading="lazy" class="img"></p>');
     expect(render({ text: '![img](img.png "|||")' }))
-      .toBe('<p><img src="img.png?" alt="img" class="img"></p>');
+      .toBe('<p><img src="img.png?" alt="img" loading="lazy" class="img"></p>');
   });
 
   it('render link', function () {
