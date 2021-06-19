@@ -82,6 +82,20 @@ appearance:
   #   '#8abeb7', '#81a2be', '#b294bb', '#a3685a'
   # ]
 
+  darkmode:
+    accent_color: '#539bf5'
+    foreground_color: '#adbac7'
+    border_color: '#373e47'
+    background: '#22272e'
+    sidebar_background: '#22272e'
+    card_background: '#2d333b'
+    highlight: [
+      '#2d333b', '#444c56', '#3e4451', '#545862',
+      '#565c64', '#abb2bf', '#b6bdca', '#c8ccd4',
+      '#e06c75', '#d19a66', '#e5c07b', '#98c379',
+      '#56b6c2', '#61afef', '#c678dd', '#be5046'
+    ]
+
 # Sidebar profile
 profile:
   # `email` is used for gravatar(https://en.gravatar.com),
@@ -294,13 +308,6 @@ comments:
   #   # Autoload, default to `true`, set to `false` to display a button
   #   autoload: false
 
-  # livere:
-  #   uid: livere_uid
-  #   # LiveRe script, default to `https://cdn-city.livere.com/js/embed.dist.js`
-  #   script:
-  #   # Autoload, default to `true`, set to `false` to display a button
-  #   autoload: false
-
 
 # ---------------------------------------------------------------
 # Misc
@@ -389,6 +396,7 @@ plugins:
   #     placeholder: Passcode is required
   #     excerpt: Content encrypted
   # - palette:
+  #     col: 5
   #     theme: [
   #       '#673ab7',
   #       '#3f51b5',

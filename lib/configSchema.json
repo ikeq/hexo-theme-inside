@@ -17,6 +17,11 @@
       },
       "additionalProperties": false,
       "required": ["url"]
+    },
+    "highlight": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/color" },
+      "minItems": 15
     }
   },
   "type": "object",
@@ -30,6 +35,7 @@
         "background": { "type": "string" },
         "sidebar_background": { "type": "string" },
         "card_background": { "type": "string" },
+        "highlight": { "$ref": "#/definitions/highlight" },
         "content_width": {
           "oneOf": [
             { "type": "number" },
@@ -50,10 +56,18 @@
           },
           "additionalProperties": false
         },
-        "highlight": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/color" },
-          "minItems": 15
+        "darkmode": {
+          "type": "object",
+          "properties": {
+            "accent_color": { "$ref": "#/definitions/color" },
+            "foreground_color": { "$ref": "#/definitions/color" },
+            "border_color": { "$ref": "#/definitions/color" },
+            "background": { "type": "string" },
+            "sidebar_background": { "type": "string" },
+            "card_background": { "type": "string" },
+            "highlight": { "$ref": "#/definitions/highlight" }
+          },
+          "additionalProperties": false
         }
       },
       "required": ["accent_color"],
