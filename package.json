@@ -24,16 +24,16 @@
   },
   "homepage": "https://github.com/ikeq/hexo-theme-inside#readme",
   "dependencies": {
-    "html-to-text": "8.1.0",
-    "markdown-it": "12.2.0",
+    "html-to-text": "8.2.0",
+    "markdown-it": "13.0.0",
     "markdown-it-container": "3.0.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
     "cheerio": "1.0.0-rc.10",
-    "hexo": "5.4.0",
-    "jasmine": "3.10.0",
+    "hexo": "6.1.0",
+    "jasmine": "4.1.0",
     "terser": "4.8.0"
   }
 }
