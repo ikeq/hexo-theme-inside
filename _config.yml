@@ -284,6 +284,7 @@ copyright:
   # Display link, default to `true`
   # link: false
 
+  # Set to `false` to hide
   # license: Attribution-NonCommercial-NoDerivatives 4.0 International
   #   (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\"
   #   rel=\"external nofollow\" target=\"_blank\">CC BY-NC-ND 4.0</a>)

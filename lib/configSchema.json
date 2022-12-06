@@ -185,8 +185,10 @@
         "author": { "type": "boolean", "default": true },
         "link": { "type": "boolean", "default": true },
         "license": {
-          "type": "string",
-          "contentMediaType": "text/html" ,
+          "oneOf": [
+            { "type": "string", "contentMediaType": "text/html" },
+            { "enum": [false] }
+          ],
           "default": "Attribution-NonCommercial-NoDerivatives 4.0 International (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" rel=\"external nofollow noopener\" target=\"_blank\">CC BY-NC-ND 4.0</a>)"
         },
         "published": { "type": "boolean" },
