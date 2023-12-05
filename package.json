@@ -26,7 +26,7 @@
   "dependencies": {
     "html-to-text": "8.2.1",
     "markdown-it": "13.0.1",
-    "markdown-it-container": "3.0.0"
+    "markdown-it-container": "4.0.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
