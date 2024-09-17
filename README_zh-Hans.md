@@ -9,12 +9,8 @@
 <p align="center">🌈 &nbsp;简约、现代的 SPA 主题, built with <a href="https://angular.io">Angular</a>.</p>
 
 <p align="center">
-  <a href="https://travis-ci.com/ikeq/hexo-theme-inside" rel="nofollow"><img src="https://img.shields.io/travis/ikeq/hexo-theme-inside?label=Travis+CI&color=limegreen&style=flat-square"></a>
-  <a href="https://www.npmjs.com/@angular/core">
-    <img src="https://img.shields.io/npm/v/hexo-theme-inside.svg?label=NPM&color=limegreen&style=flat-square" alt="Theme inside on npm" />
-  </a>
-  <img src="https://img.shields.io/badge/Hexo-5.2%2B-blue?style=flat-square">
-  <img src="https://img.shields.io/badge/Node.js-12%2B-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/Hexo-7.0%2B-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/Node.js-18%2B-blue?style=flat-square">
 </p>
 
 <p align="center">
