@@ -24,14 +24,15 @@
   },
   "homepage": "https://github.com/ikeq/hexo-theme-inside#readme",
   "dependencies": {
+    "chalk": "^5.6.2",
     "html-to-text": "^9.0.5",
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^4.0.0"
   },
   "devDependencies": {
     "cheerio": "^1.0.0",
-    "hexo": "^7.3.0",
-    "jasmine": "^5.3.0",
+    "hexo": "^8.1.1",
+    "jasmine": "^5.13.0",
     "terser": "^5.32.0"
   }
 }
